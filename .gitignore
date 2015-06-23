@@ -1,2 +1,4 @@
 *.suo
 packages
+obj
+bin
