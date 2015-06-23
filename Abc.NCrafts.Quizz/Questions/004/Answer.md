@@ -1,0 +1,2 @@
+﻿The `List<T>` capacity is the length of the list inner array. When the array is filled, the next call to `List<T>.Add` will re-allocate a new array with an increased length.
+To avoid allocations, the initial capacity must be greater than or equal to the number of item added to the list.

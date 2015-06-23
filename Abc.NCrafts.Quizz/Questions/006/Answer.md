@@ -1,0 +1,2 @@
+﻿`Execute(DoSomething)` and `Execute(answer3.DoSomething)` are *syntactic sugar* for `Execute(new Action(DoSomething))` and `Execute(new Action(answer3.DoSomething))` respectively. Both generate an `Action` allocation.
+`Execute(action)` does not generate an allocation because the action is created before.

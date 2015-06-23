@@ -1,0 +1,3 @@
+﻿The enumerator returned by `List<T>.GetEnumerator` is a struct. So a foreach on a `List<T>` instance will not generate an allocation. **This is the same for most .NET collections** (e.g., `Dictionary`, `Queue`).
+`IList<T>.GetEnumerator` returns an `IEnumerator<T>`, which is a reference type, generating an allocation.
+An enumeration on an array does not allocate, but `Enumerable.Cast<T>` will cast the array to an `IEnumerable<T>`. `IEnumerable<T>.GetEnumerator` returns an `IEnumerator<T>`, which is a reference type, generating an allocation.

@@ -1,0 +1,3 @@
+﻿Here, we need to look at the different `NCrafts` struct implementations. Both of them instanciate a `byte[]` field in their constructors. These arrays are reference types, and thus, are allocated on the heap no matter what.
+
+The other struct implementation defines a *fixed size* int array field, using the `fixed` keyword. The integer values will be inlined in the struct itself, and the `Array` member will be a `int*` pointing to the first element of the fixed size array. No allocation on the heap when instantiating such a struct.

@@ -1,0 +1,2 @@
+﻿.NET enums are value types. However, the `Enum` type is a reference type, and most .NET enum methods use `Enum` parameters.
+If an enum value is assigned to an `Enum` reference, it will be boxed, generating an allocation.

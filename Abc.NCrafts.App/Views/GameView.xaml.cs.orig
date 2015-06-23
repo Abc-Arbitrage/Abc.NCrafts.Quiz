@@ -1,0 +1,19 @@
+﻿using System.Windows.Controls;
+
+namespace Abc.NCrafts.App.Views
+{
+    /// <summary>
+    ///     Interaction logic for GameView.xaml
+    /// </summary>
+    public partial class GameView : UserControl
+    {
+        public GameView()
+        {
+            InitializeComponent();
+<<<<<<< local
+            answerEditor1.TextArea.TextView.BackgroundRenderers.Add(new LineHighlighterBackgroundRenderer(new[] { 5, 6, 7, 8 }));
+=======
+>>>>>>> other
+        }
+    }
+}

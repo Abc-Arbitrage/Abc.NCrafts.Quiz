@@ -1,0 +1,1 @@
+﻿`obj` and `equatable` are both references. When `i` is assigned to `obj` or `equatable`, it is implicitly converted from a value type to a reference type. This process is called **boxing** and it generates an allocation on the heap.

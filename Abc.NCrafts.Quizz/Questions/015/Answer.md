@@ -1,0 +1,1 @@
+﻿Obviously both `new List<int>()` and `new int[10]` generate heap allocations. `stackalloc` allocates a fixed size block of memory on the stack.

@@ -1,0 +1,3 @@
+﻿The `Dictionary<TKey,TValue>` uses an `IEqualityComparer<TKey>` to compare keys and generate hash codes.
+The default equality comparer for a type will simply call `object.GetHashCode` and `object.Equals`. Of course the latter generates boxing when invoked on a value type.
+When the key type implements `IEquatable<T>` a special comparer is used that will call `IEquatable<T>.Equals`, thus avoiding boxing.

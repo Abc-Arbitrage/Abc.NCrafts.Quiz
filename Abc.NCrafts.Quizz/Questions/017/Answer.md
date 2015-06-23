@@ -1,0 +1,3 @@
+﻿There are two distinct implementations of the `CreateAndSet` method here. One accepts a `Func<ISettable>` instance, and the other -- used in two answers -- is generic and accepts a `Func<T>` instance. The non-generic one is provided with a `Func<ISettable>` instance built from a lambda that returns a struct instance. This will box the return value and induce a heap allocation.
+
+When using the generic method, it is possible to use a `Func<T>` instance built from a lambda that returns a struct without having the returned value being boxed. However, one of the two lambda implementations relies on `Activator.CreateInstance`. This method allocates while performing its black magic.

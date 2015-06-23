@@ -1,0 +1,170 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F51CD239-9DB6-4C7A-AFC5-49693456DEFE}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Abc.NCrafts.Quizz</RootNamespace>
+    <AssemblyName>Abc.NCrafts.Quizz</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CorrectAnswerAttribute.cs" />
+    <Compile Include="Difficulty.cs" />
+    <Compile Include="Logger.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Questions\009\Answer1.cs" />
+    <Compile Include="Questions\009\Answer2.cs" />
+    <Compile Include="Questions\009\Answer3.cs" />
+    <Compile Include="Questions\008\Answer1.cs" />
+    <Compile Include="Questions\008\Answer2.cs" />
+    <Compile Include="Questions\008\Answer3.cs" />
+    <Compile Include="Questions\005\Answer1.cs" />
+    <Compile Include="Questions\005\Answer2.cs" />
+    <Compile Include="Questions\005\Answer3.cs" />
+    <Compile Include="Questions\004\Answer1.cs" />
+    <Compile Include="Questions\004\Answer2.cs" />
+    <Compile Include="Questions\004\Answer3.cs" />
+    <Compile Include="Questions\003\Answer1.cs" />
+    <Compile Include="Questions\023\Answer1.cs" />
+    <Compile Include="Questions\003\Answer2.cs" />
+    <Compile Include="Questions\023\Answer2.cs" />
+    <Compile Include="Questions\003\Answer3.cs" />
+    <Compile Include="Questions\023\Answer3.cs" />
+    <Compile Include="Questions\007\Answer1.cs" />
+    <Compile Include="Questions\007\Answer2.cs" />
+    <Compile Include="Questions\007\Answer3.cs" />
+    <Compile Include="Questions\006\Answer1.cs" />
+    <Compile Include="Questions\006\Answer2.cs" />
+    <Compile Include="Questions\006\Answer3.cs" />
+    <Compile Include="Questions\024\Answer1.cs" />
+    <Compile Include="Questions\024\Answer2.cs" />
+    <Compile Include="Questions\024\Answer3.cs" />
+    <Compile Include="Questions\020\Answer1.cs" />
+    <Compile Include="Questions\020\Answer2.cs" />
+    <Compile Include="Questions\020\Answer3.cs" />
+    <Compile Include="Questions\022\Answer1.cs" />
+    <Compile Include="Questions\022\Answer2.cs" />
+    <Compile Include="Questions\022\Answer3.cs" />
+    <Compile Include="Questions\021\Answer1.cs" />
+    <Compile Include="Questions\021\Answer2.cs" />
+    <Compile Include="Questions\021\Answer3.cs" />
+    <Compile Include="Questions\001\Answer1.cs" />
+    <Compile Include="Questions\001\Answer2.cs" />
+    <Compile Include="Questions\001\Answer3.cs" />
+    <Compile Include="Questions\019\Answer1.cs" />
+    <Compile Include="Questions\019\Answer2.cs" />
+    <Compile Include="Questions\019\Answer3.cs" />
+    <Compile Include="Questions\018\Answer1.cs" />
+    <Compile Include="Questions\018\Answer2.cs" />
+    <Compile Include="Questions\018\Answer3.cs" />
+    <Compile Include="Questions\016\Answer1.cs" />
+    <Compile Include="Questions\016\Answer2.cs" />
+    <Compile Include="Questions\016\Answer3.cs" />
+    <Compile Include="Questions\015\Answer1.cs" />
+    <Compile Include="Questions\015\Answer2.cs" />
+    <Compile Include="Questions\015\Answer3.cs" />
+    <Compile Include="Questions\014\Answer1.cs" />
+    <Compile Include="Questions\014\Answer2.cs" />
+    <Compile Include="Questions\014\Answer3.cs" />
+    <Compile Include="Questions\012\Answer1.cs" />
+    <Compile Include="Questions\012\Answer2.cs" />
+    <Compile Include="Questions\012\Answer3.cs" />
+    <Compile Include="Questions\000\Answer1.cs" />
+    <Compile Include="Questions\000\Answer2.cs" />
+    <Compile Include="Questions\000\Answer3.cs" />
+    <Compile Include="Questions\011\Answer1.cs" />
+    <Compile Include="Questions\011\Answer2.cs" />
+    <Compile Include="Questions\011\Answer3.cs" />
+    <Compile Include="Questions\013\Answer1.cs" />
+    <Compile Include="Questions\013\Answer2.cs" />
+    <Compile Include="Questions\013\Answer3.cs" />
+    <Compile Include="Questions\017\Answer1.cs" />
+    <Compile Include="Questions\017\Answer2.cs" />
+    <Compile Include="Questions\017\Answer3.cs" />
+    <Compile Include="Questions\025\Answer1.cs" />
+    <Compile Include="Questions\025\Answer2.cs" />
+    <Compile Include="Questions\025\Answer3.cs" />
+    <Compile Include="Questions\025\SocketBuilder.cs" />
+    <Compile Include="Questions\026\Answer1.cs" />
+    <Compile Include="Questions\026\Answer2.cs" />
+    <Compile Include="Questions\026\Answer3.cs" />
+    <Compile Include="Questions\027\Answer1.cs" />
+    <Compile Include="Questions\027\Answer2.cs" />
+    <Compile Include="Questions\027\Answer3.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="Questions\000\Answer.md" />
+    <None Include="Questions\001\Answer.md" />
+    <None Include="Questions\003\Answer.md" />
+    <None Include="Questions\004\Answer.md" />
+    <None Include="Questions\005\Answer.md" />
+    <None Include="Questions\006\Answer.md" />
+    <None Include="Questions\007\Answer.md" />
+    <None Include="Questions\008\Answer.md" />
+    <None Include="Questions\009\Answer.md" />
+    <None Include="Questions\011\Answer.md" />
+    <None Include="Questions\012\Answer.md" />
+    <None Include="Questions\013\Answer.md" />
+    <None Include="Questions\014\Answer.md" />
+    <None Include="Questions\016\Answer.md" />
+    <None Include="Questions\017\Answer.md" />
+    <None Include="Questions\018\Answer.md" />
+    <None Include="Questions\019\Answer.md" />
+    <None Include="Questions\020\Answer.md" />
+    <None Include="Questions\015\Answer.md" />
+    <None Include="Questions\021\Answer.md" />
+    <None Include="Questions\022\Answer.md" />
+    <None Include="Questions\023\Answer.md" />
+    <None Include="Questions\024\Answer.md" />
+    <None Include="Questions\025\Answer.md" />
+    <None Include="Questions\026\Answer.md" />
+    <None Include="Questions\027\Answer.md" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

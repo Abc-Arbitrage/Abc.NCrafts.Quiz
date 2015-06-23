@@ -1,0 +1,3 @@
+﻿When using the `yield` keyword, the compiler generates an iterator type with the appropriate iteration logic implementation. This generated type is always a class. Every time an iterator bloc -- i.e a method implemented using the `yield` keyword -- is called, a new instance of that generated reference type is created on the heap.
+
+`Enumerable.Empty<T>()` method returns a cached static instance of an empty array of `T` which will not allocate anything on the heap once the static instance is initialized.

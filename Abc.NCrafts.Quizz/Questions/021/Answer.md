@@ -1,0 +1,3 @@
+﻿`MemoryStream` is basically implemented as an underlying byte buffer, plus a length. The `ToArray` method of `MemoryStream` allocates a new byte array containing all the significant bytes of the stream (i.e. underlying buffer bytes from index 0 to index *length-1*).
+
+The only answer that doesn't allocate is the one which uses the `GetBuffer` method and the `Length` property to directly access the underlying stream bytes without allocating a new array.

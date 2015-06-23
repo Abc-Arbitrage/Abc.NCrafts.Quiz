@@ -1,0 +1,2 @@
+﻿The return type of `string.GetEnumerator()` is `CharEnumerator`, which is a reference type. A new instance is allocated on the heap on each call.
+And of course `string.ToLowerInvariant` generates a new string on the heap.
