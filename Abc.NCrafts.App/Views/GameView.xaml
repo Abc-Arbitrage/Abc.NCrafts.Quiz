@@ -137,7 +137,7 @@
 
             </Grid>
         </Border>
-        <Border Background="#7E000000" Grid.Row="0" Grid.Column="0" Grid.RowSpan="3" Visibility="{Binding IsHelpVisible, Converter={StaticResource VisibilityConverter}}" MouseDown="HtmlHelpClick">
+        <Border Background="#7E000000" Grid.Row="0" Grid.Column="0" Grid.RowSpan="3" Visibility="{Binding IsHelpVisible, Converter={StaticResource VisibilityConverter}}" MouseDown="HtmlHelpClick" IsVisibleChanged="OnIsVisibleChanged">
             <Border Width="760" Height="420" VerticalAlignment="Center" HorizontalAlignment="Center" Background="#FFF" Padding="10">
                 <Border.Effect>
                     <DropShadowEffect Opacity="0.3" ShadowDepth="3" />
@@ -146,7 +146,7 @@
                     <Border DockPanel.Dock="Bottom">
                         <Button HorizontalAlignment="Right" Command="{Binding CloseHelp}" SnapsToDevicePixels="True">Close</Button>
                     </Border>
-                    <WebBrowser Loaded="LoadContent" LoadCompleted="OnWebBrowserLoaded"/>
+                    <WebBrowser x:Name="_webBrowser" LoadCompleted="OnWebBrowserLoaded"/>
                 </DockPanel>
             </Border>
         </Border>

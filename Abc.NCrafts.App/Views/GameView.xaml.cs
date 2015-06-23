@@ -3,7 +3,6 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Navigation;
 using Abc.NCrafts.App.ViewModels;
-using Abc.NCrafts.App.ViewModels.Questions;
 
 namespace Abc.NCrafts.App.Views
 {
@@ -23,12 +22,6 @@ namespace Abc.NCrafts.App.Views
             Keyboard.Focus(this);
         }
 
-        private void LoadContent(object sender, RoutedEventArgs e)
-        {
-            var htmlHelpContent = ((GamePage)DataContext).HtmlHelpContent;
-            ((WebBrowser)sender).NavigateToString(htmlHelpContent);
-        }
-
         private void OnWebBrowserLoaded(object sender, NavigationEventArgs e)
         {
             var script = "document.body.style.overflow ='hidden'";
@@ -40,6 +33,12 @@ namespace Abc.NCrafts.App.Views
         {
             var pagePage = (GamePage)DataContext;
             pagePage.IsHelpVisible = false;
+        }
+
+        private void OnIsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+            var htmlHelpContent = ((GamePage)DataContext).HtmlHelpContent;
+            _webBrowser.NavigateToString(htmlHelpContent);
         }
     }
 }
