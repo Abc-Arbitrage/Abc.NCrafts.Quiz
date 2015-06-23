@@ -64,10 +64,11 @@ namespace Abc.NCrafts.App
             var baseDirectory = Path.GetDirectoryName(AppDomain.CurrentDomain.BaseDirectory);
             while (baseDirectory != null)
             {
-                if (Path.GetFileName(baseDirectory) == "Abc.NCrafts.2015")
-                    return Path.Combine(baseDirectory, "Abc.NCrafts.Quizz", "Questions");
+                var parentDirectory = Path.GetDirectoryName(baseDirectory);
+                if (Path.GetFileName(baseDirectory) == "Abc.NCrafts.App" && parentDirectory != null)
+                    return Path.Combine(parentDirectory, "Abc.NCrafts.Quizz", "Questions");
 
-                baseDirectory = Path.GetDirectoryName(baseDirectory);
+                baseDirectory = parentDirectory;
             }
             return AppDomain.CurrentDomain.BaseDirectory;
         }
