@@ -37,6 +37,9 @@ namespace Abc.NCrafts.App.Views
 
         private void OnIsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
         {
+            if (DataContext == null)
+                return;
+
             var htmlHelpContent = ((GamePage)DataContext).HtmlHelpContent;
             _webBrowser.NavigateToString(htmlHelpContent);
         }
