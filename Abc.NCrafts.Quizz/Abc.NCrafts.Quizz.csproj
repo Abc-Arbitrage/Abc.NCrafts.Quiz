@@ -84,6 +84,8 @@
     <Compile Include="Performance\Questions\017\Answer2.cs" />
     <Compile Include="Performance\Questions\015\Answer1.cs" />
     <Compile Include="Performance\Questions\015\Answer2.cs" />
+    <Compile Include="Performance\Questions\020\Answer1.cs" />
+    <Compile Include="Performance\Questions\020\Answer2.cs" />
     <Compile Include="Performance\Questions\018\Answer1.cs" />
     <Compile Include="Performance\Questions\018\Answer2.cs" />
     <Compile Include="Performance\Questions\016\Answer1.cs" />
@@ -216,6 +218,7 @@
     <None Include="Performance\Questions\019\Answer.md" />
     <None Include="Performance\Questions\017\Answer.md" />
     <None Include="Performance\Questions\015\Answer.md" />
+    <None Include="Performance\Questions\020\Answer.md" />
     <None Include="Performance\Questions\018\Answer.md" />
     <None Include="Performance\Questions\016\Answer.md" />
   </ItemGroup>
