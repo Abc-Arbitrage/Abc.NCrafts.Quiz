@@ -60,6 +60,8 @@
     <Compile Include="Performance\Questions\000\Answer2.cs" />
     <Compile Include="Performance\Questions\005\Answer1.cs" />
     <Compile Include="Performance\Questions\005\Answer2.cs" />
+    <Compile Include="Performance\Questions\014\Answer1.cs" />
+    <Compile Include="Performance\Questions\014\Answer2.cs" />
     <Compile Include="Performance\Questions\012\Answer1.cs" />
     <Compile Include="Performance\Questions\012\Answer2.cs" />
     <Compile Include="Performance\Questions\011\Answer1.cs" />
@@ -192,6 +194,7 @@
     <None Include="Performance\Questions\001\Answer.md" />
     <None Include="Performance\Questions\000\Answer.md" />
     <None Include="Performance\Questions\005\Answer.md" />
+    <None Include="Performance\Questions\014\Answer.md" />
     <None Include="Performance\Questions\012\Answer.md" />
     <None Include="Performance\Questions\011\Answer.md" />
     <None Include="Performance\Questions\010\Answer.md" />
