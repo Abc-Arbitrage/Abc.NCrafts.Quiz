@@ -2,7 +2,6 @@
 
 namespace Abc.NCrafts.Quizz.Performance.Questions._016
 {
-    [CorrectAnswer(Difficulty = Difficulty.Hard)]
     public class Answer2
     {
         private struct Item
