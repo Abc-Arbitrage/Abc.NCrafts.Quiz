@@ -80,6 +80,8 @@
     <Compile Include="Performance\Questions\013\Answer2.cs" />
     <Compile Include="Performance\Questions\017\Answer1.cs" />
     <Compile Include="Performance\Questions\017\Answer2.cs" />
+    <Compile Include="Performance\Questions\015\Answer1.cs" />
+    <Compile Include="Performance\Questions\015\Answer2.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Allocation\Questions\009\Answer1.cs" />
@@ -206,6 +208,7 @@
     <None Include="Performance\Questions\006\Answer.md" />
     <None Include="Performance\Questions\013\Answer.md" />
     <None Include="Performance\Questions\017\Answer.md" />
+    <None Include="Performance\Questions\015\Answer.md" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
