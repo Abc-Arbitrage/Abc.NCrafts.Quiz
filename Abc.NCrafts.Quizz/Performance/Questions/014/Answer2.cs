@@ -14,19 +14,22 @@ namespace Abc.NCrafts.Quizz.Performance.Questions._014
 
         public static void Run()
         {
-            var previous = 0;
             var sum = 0;
             // begin
             foreach (var value in _values)
             {
                 if (value < 10)
-                    sum += previous;
-                else if (value % 2 == 0)
-                    sum += 1;
+                    sum += 1000;
+                else if (value < 20)
+                    sum += 2000;
+                else if (value < 30)
+                    sum += 3000;
+                else if (value < 40)
+                    sum += 4000;
                 else if (value >= 100)
                     sum += 42;
-
-                previous = value;
+                else if (value % 2 == 0)
+                    sum += 1;
             }
             // end
             Logger.Log("Sum: {0}", sum);
