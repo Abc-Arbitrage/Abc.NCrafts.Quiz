@@ -7,7 +7,9 @@ namespace Abc.NCrafts.Quizz.Performance.Questions._008
     {
         public static void Run()
         {
+            // begin
             Thread.Sleep(0);
+            // end
         }
     }
 }
