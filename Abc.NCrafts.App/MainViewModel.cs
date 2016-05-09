@@ -66,7 +66,7 @@ namespace Abc.NCrafts.App
             {
                 var parentDirectory = Path.GetDirectoryName(baseDirectory);
                 if (Path.GetFileName(baseDirectory) == "Abc.NCrafts.App" && parentDirectory != null)
-                    return Path.Combine(parentDirectory, "Abc.NCrafts.Quizz", "Questions");
+                    return Path.Combine(parentDirectory, "Abc.NCrafts.Quizz", "Performance", "Questions");
 
                 baseDirectory = parentDirectory;
             }

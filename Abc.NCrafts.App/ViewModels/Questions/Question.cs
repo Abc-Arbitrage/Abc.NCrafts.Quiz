@@ -22,7 +22,7 @@ namespace Abc.NCrafts.App.ViewModels.Questions
 
         public Answer Answer1 { get { return Answers[0]; } }
         public Answer Answer2 { get { return Answers[1]; } }
-        public Answer Answer3 { get { return Answers[2]; } }
+        public Answer Answer3 { get { return Answers.Count >= 3 ? Answers[2] : new Answer(); } }
 
         public int Score { get { return _scoresByDifficulty[Difficulty]; } }
 
