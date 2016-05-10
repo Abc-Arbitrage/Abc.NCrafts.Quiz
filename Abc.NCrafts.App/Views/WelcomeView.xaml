@@ -5,7 +5,6 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:viewModels="clr-namespace:Abc.NCrafts.App.ViewModels"
              xmlns:svgc="http://sharpvectors.codeplex.com/svgc/"
-             xmlns:system="clr-namespace:System;assembly=mscorlib"
              mc:Ignorable="d"
              d:DesignHeight="703.048" d:DesignWidth="1272.612"
              d:DataContext="{d:DesignInstance viewModels:WelcomePage}">
@@ -19,113 +18,79 @@
     </UserControl.Resources>
 
     <Grid Background="White">
-
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="128" />
-            <ColumnDefinition Width="80*" />
-            <ColumnDefinition Width="220" />
-            <ColumnDefinition />
-        </Grid.ColumnDefinitions>
-
         <Grid.RowDefinitions>
             <RowDefinition Height="180" />
-            <RowDefinition Height="45*" />
+            <RowDefinition Height="*" />
             <RowDefinition Height="80" />
         </Grid.RowDefinitions>
 
-        <Border Grid.ColumnSpan="4" Grid.Row="0" Background="#FFB800" Margin="0 0 0 0">
+        <Border Grid.Row="0" Background="#FFB800">
             <Border.Effect>
                 <DropShadowEffect Direction="270" Opacity="0.3" ShadowDepth="3" />
             </Border.Effect>
             <StackPanel Orientation="Horizontal" Margin="20" HorizontalAlignment="Center">
-                <Image
-                    HorizontalAlignment="Left" VerticalAlignment="Center" Source="../ABCLogo.png"
-                    RenderOptions.BitmapScalingMode="HighQuality" Width="128" Height="128" />
-                <Label Content="NCrafts Quizz" HorizontalAlignment="Center" VerticalAlignment="Center"
-                       FontSize="80" FontFamily="Segoe UI" Margin="10" Padding="40 0 0 0" />
+                <Image VerticalAlignment="Center" Source="../ABCLogo.png" RenderOptions.BitmapScalingMode="HighQuality" Width="128" Height="128" />
+                <Label Content="NCrafts Quizz" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="80" FontFamily="Segoe UI" Margin="10" Padding="40 0 0 0" />
             </StackPanel>
         </Border>
 
-        <Grid Grid.ColumnSpan="4" Grid.Column="0" Grid.Row="1" IsSharedSizeScope="True">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-            </Grid.ColumnDefinitions>
+        <Border Grid.Row="1" VerticalAlignment="Center" Padding="10">
+            <Grid >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
 
-            <Button Grid.Column="0" Grid.Row="0" Command="{Binding StartPerformanceQuizzCommand}" VerticalAlignment="Center"
-                    HorizontalAlignment="Center" Margin="20,0,10,0">
-                <Viewbox Stretch="Uniform">
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition SharedSizeGroup="col" />
-                        </Grid.ColumnDefinitions>
-                        <Grid.RowDefinitions>
-                            <RowDefinition SharedSizeGroup="row" />
-                        </Grid.RowDefinitions>
+                <Button Grid.Column="0" Grid.Row="0" Command="{Binding StartPerformanceQuizzCommand}" VerticalAlignment="Stretch" Margin="0 0 5 0" Padding="0 20 0 20">
+                    <Viewbox Stretch="Uniform">
                         <Grid>
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto"/>
                                 <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="1*" />
-                                <RowDefinition Height="2*" />
-                            </Grid.RowDefinitions>
-                            <svgc:SvgViewbox Grid.Column="0" Margin="5" Stretch="Uniform" Height="100" Width="100"
-                                             Source="../performance.svg" />
-                            <TextBlock Grid.Column="1" Text="Performance" VerticalAlignment="Center" FontSize="50" />
-                            <TextBlock Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" VerticalAlignment="Center" Foreground="White"
-                                       FontSize="25">
-                                <Run>Find the code that is most likely</Run><LineBreak />
-                                <Run>to perform better</Run>
-                            </TextBlock>
+                            <Border Grid.Column="0" Margin="20 20 10 20" Width="150" Height="150">
+                                <svgc:SvgViewbox Stretch="Uniform" Source="../performance.svg" />
+                            </Border>
+                            <StackPanel Grid.Column="1" Margin="10 15 20 20">
+                                <TextBlock FontSize="50" HorizontalAlignment="Center">Performance</TextBlock>
+                                <TextBlock FontSize="25" Foreground="White" TextWrapping="Wrap">
+                                    <Run>Find the code that is most likely</Run>
+                                    <LineBreak />
+                                    <Run>to perform better</Run>
+                                </TextBlock>
+                            </StackPanel>
                         </Grid>
-                    </Grid>
-                </Viewbox>
-            </Button>
+                    </Viewbox>
+                </Button>
 
-            <Button Grid.Column="1"  Grid.Row="0"  Command="{Binding StartAllocationQuizzCommand}" VerticalAlignment="Center"
-                    HorizontalAlignment="Center" Margin="10,0,20,0">
-                <Viewbox Stretch="Uniform">
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition SharedSizeGroup="col" />
-                        </Grid.ColumnDefinitions>
-                        <Grid.RowDefinitions>
-                            <RowDefinition SharedSizeGroup="row" />
-                        </Grid.RowDefinitions>
+                <Button Grid.Column="1" Grid.Row="0" Command="{Binding StartAllocationQuizzCommand}" VerticalAlignment="Stretch" Margin="5 0 0 0" Padding="0">
+                    <Viewbox Stretch="Uniform">
                         <Grid>
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto"/>
                                 <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="1*" />
-                                <RowDefinition Height="2*" />
-                            </Grid.RowDefinitions>
-
-                            <svgc:SvgViewbox Grid.Column="0" Margin="5" Stretch="Uniform"
-                                             Source="../garbage.svg" Height="100" Width="100" />
-                            <TextBlock Grid.Column="1" Text="Zero Alloc" VerticalAlignment="Center" FontSize="50" />
-                            <TextBlock Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" VerticalAlignment="Center" FontSize="25" Foreground="White">
-                                <Run>Chase heap allocations to prevent</Run><LineBreak/>
-                                <Run>the GC from killing your latencies</Run>
-                            </TextBlock>
+                            <Border Grid.Column="0" Margin="20 20 10 20" Width="150" Height="150">
+                                <svgc:SvgViewbox Stretch="Uniform" Source="../garbage.svg" />
+                            </Border>
+                            <StackPanel Grid.Column="1" Margin="10 15 20 20">
+                                <TextBlock FontSize="50" HorizontalAlignment="Center">Zero Alloc</TextBlock>
+                                <TextBlock FontSize="25" Foreground="White" TextWrapping="Wrap">
+                                    <Run>Chase heap allocations to prevent</Run>
+                                    <LineBreak />
+                                    <Run>the GC from killing your latencies</Run>
+                                </TextBlock>
+                            </StackPanel>
                         </Grid>
-                    </Grid>
-                </Viewbox>
-            </Button>
-
-        </Grid>
+                    </Viewbox>
+                </Button>
+            </Grid>
+        </Border>
 
         <Border Grid.ColumnSpan="4" Grid.Row="2" Background="#565656" Margin="0 0 0 0">
             <Border.Effect>
                 <DropShadowEffect Direction="90" Opacity="0.3" ShadowDepth="3" />
             </Border.Effect>
-
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0 0 10 0" />
         </Border>
-
     </Grid>
-
 </UserControl>
