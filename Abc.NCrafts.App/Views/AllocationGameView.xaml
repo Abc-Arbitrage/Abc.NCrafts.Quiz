@@ -6,6 +6,7 @@
              xmlns:viewModels="clr-namespace:Abc.NCrafts.App.ViewModels"
              xmlns:avalonEdit="http://icsharpcode.net/sharpdevelop/avalonedit"
              xmlns:views="clr-namespace:Abc.NCrafts.App.Views"
+             xmlns:svgc="http://sharpvectors.codeplex.com/svgc/"
              mc:Ignorable="d"
              d:DesignHeight="1091.045" d:DesignWidth="1138.806" d:DataContext="{d:DesignInstance viewModels:AllocationGamePage}"
              x:Name="gameView"
@@ -38,6 +39,7 @@
                 <DropShadowEffect Direction="270" Opacity="0.3" ShadowDepth="3" />
             </Border.Effect>
             <StackPanel Orientation="Horizontal" Margin="20" HorizontalAlignment="Center">
+                <svgc:SvgViewbox Stretch="Uniform" Source="../garbage.svg" Margin="0,0,30,0"/>
                 <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center"
                            FontSize="60" FontFamily="Segoe UI Light" Margin="10">
                     <Run Text="{Binding Path=QuestionNumber, Mode=OneWay}" />

@@ -30,7 +30,7 @@
             </Border.Effect>
             <StackPanel Orientation="Horizontal" Margin="20" HorizontalAlignment="Center">
                 <Image VerticalAlignment="Center" Source="../ABCLogo.png" RenderOptions.BitmapScalingMode="HighQuality" Width="128" Height="128" />
-                <Label Content="NCrafts Quizz" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="80" FontFamily="Segoe UI" Margin="10" Padding="40 0 0 0" />
+                <Label Content="NCrafts Quiz" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="80" FontFamily="Segoe UI" Margin="10" Padding="40 0 0 0" />
             </StackPanel>
         </Border>
 
@@ -78,7 +78,7 @@
                                 <TextBlock FontSize="25" Foreground="White" TextWrapping="Wrap">
                                     <Run>Chase heap allocations to prevent</Run>
                                     <LineBreak />
-                                    <Run>the GC from killing your latencies</Run>
+                                    <Run>the GC from killing your latency</Run>
                                 </TextBlock>
                             </StackPanel>
                         </Grid>

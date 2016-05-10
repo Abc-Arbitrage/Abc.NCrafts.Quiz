@@ -7,7 +7,7 @@ namespace Abc.NCrafts.App.Views
 {
     public class LineHighlighterBackgroundRenderer : IBackgroundRenderer
     {
-        public KnownLayer Layer { get { return KnownLayer.Background; } }
+        public KnownLayer Layer => KnownLayer.Background;
 
         public int[] HighlightedLines { get; set; }
 
