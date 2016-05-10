@@ -1,27 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Runtime.CompilerServices;
 
 namespace Abc.NCrafts.Quizz.Performance.Questions._017
 {
     public class Answer2
     {
-        private static readonly List<Item> _items;
-
-        static Answer2()
-        {
-            _items = Enumerable.Range(0, 200)
-                               .Select(x => new Item { Value2 = x })
-                               .ToList();
-        }
-
         public static void Run()
         {
-            var sum = 0L;
             // begin
-            foreach (var item in _items)
+            var sum = 0L;
+            for (var index = 0; index < 100; index++)
             {
+                var item = new Item { Value2 = index };
                 sum += GetValue2(item);
             }
             // end
@@ -40,6 +30,7 @@ namespace Abc.NCrafts.Quizz.Performance.Questions._017
             public long Value2 { get; set; }
             public DateTime Value3 { get; set; }
             public decimal Value4 { get; set; }
+            public TimeSpan Value5 { get; set; }
         }
     }
 }
