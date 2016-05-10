@@ -19,8 +19,6 @@ namespace Abc.NCrafts.App.ViewModels.Questions
         public Answer Answer2 => Answers[1];
         public Answer Answer3 => Answers.Count >= 3 ? Answers[2] : new Answer();
 
-
-
         public int Score => _scoresByDifficulty[Difficulty];
 
         public string MarkdownHelpContent { get; set; }

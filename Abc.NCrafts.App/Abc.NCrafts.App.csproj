@@ -116,6 +116,7 @@
     <Compile Include="ViewModels\Questions\Quiz.cs" />
     <Compile Include="ViewModels\Questions\QuizLoader.cs" />
     <Compile Include="ViewModel.cs" />
+    <Compile Include="QuizzType.cs" />
     <Compile Include="ViewModels\WelcomePage.cs" />
     <Compile Include="Views\PerformanceGameView.xaml.cs">
       <DependentUpon>PerformanceGameView.xaml</DependentUpon>

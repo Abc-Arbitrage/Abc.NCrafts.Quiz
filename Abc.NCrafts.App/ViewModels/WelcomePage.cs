@@ -1,4 +1,5 @@
 ﻿using System.Windows.Input;
+using Abc.NCrafts.App.ViewModels.Questions;
 
 namespace Abc.NCrafts.App.ViewModels
 {
@@ -18,13 +19,13 @@ namespace Abc.NCrafts.App.ViewModels
 
         private void StartPerformanceQuizz(object obj)
         {
-            MainViewModel.StartGame(MainViewModel.QuizzType.Performance);
+            MainViewModel.StartGame(QuizzType.Performance);
             base.GoToNext();
         }
 
         private void StartAllocationCommand(object obj)
         {
-            MainViewModel.StartGame(MainViewModel.QuizzType.Allocation);
+            MainViewModel.StartGame(QuizzType.Allocation);
             base.GoToNext();
         }
     }

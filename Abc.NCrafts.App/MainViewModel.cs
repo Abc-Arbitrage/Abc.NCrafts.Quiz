@@ -17,7 +17,8 @@ namespace Abc.NCrafts.App
         public MainViewModel()
         {
             // useless LoadQuiz to make sure we fail fast if the question files are invalid
-            LoadQuiz();
+            LoadQuiz(QuizzType.Allocation);
+            LoadQuiz(QuizzType.Performance);
 
             _welcomePage = new WelcomePage(this);
 
@@ -37,15 +38,9 @@ namespace Abc.NCrafts.App
         public Quiz Quiz { get; private set; }
         public ViewModel CurrentPage { get; set; }
 
-        public enum QuizzType
-        {
-            Performance,
-            Allocation,
-        }
-
         public void StartGame(QuizzType quizzType)
         {
-            Quiz = LoadQuiz();
+            Quiz = LoadQuiz(quizzType);
 
             switch (quizzType)
             {
@@ -60,12 +55,21 @@ namespace Abc.NCrafts.App
             }
         }
 
-        private static Quiz LoadQuiz()
+        private static Quiz LoadQuiz(QuizzType quizzType)
         {
-            return QuizLoader.LoadFrom(GetQuizPath());
+            return QuizLoader.LoadFrom(GetQuizPath(quizzType));
         }
 
-        private static string GetQuizPath()
+        private static string GetQuizPath(QuizzType quizzType)
+        {
+            var quizPathRoot = GetQuizPathRoot();
+            if (string.IsNullOrEmpty(quizPathRoot))
+                throw new InvalidOperationException("Unable to locate quiz path, you should set \"Quiz.Path\" setting key.");
+
+            return Path.Combine(quizPathRoot, quizzType.ToString(), "Questions");
+        }
+
+        private static string GetQuizPathRoot()
         {
             var quizPath = ConfigurationManager.AppSettings["Quiz.Path"];
             return string.IsNullOrEmpty(quizPath) ? FindQuizPath() : quizPath;
@@ -78,7 +82,7 @@ namespace Abc.NCrafts.App
             {
                 var parentDirectory = Path.GetDirectoryName(baseDirectory);
                 if (Path.GetFileName(baseDirectory) == "Abc.NCrafts.App" && parentDirectory != null)
-                    return Path.Combine(parentDirectory, "Abc.NCrafts.Quizz", "Performance", "Questions");
+                    return Path.Combine(parentDirectory, "Abc.NCrafts.Quizz");
 
                 baseDirectory = parentDirectory;
             }
