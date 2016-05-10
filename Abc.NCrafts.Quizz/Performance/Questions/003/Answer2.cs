@@ -14,12 +14,8 @@ namespace Abc.NCrafts.Quizz.Performance.Questions._003
 
         public static void Run()
         {
-            var sum = 0;
             // begin
-            foreach (var item in _items)
-            {
-                sum += item;
-            }
+            var sum = _items.Max();
             // end
             Logger.Log("Sum: {0}", sum);
         }
