@@ -6,14 +6,8 @@
         {
         }
 
-        public int AnsweredQuestionCount
-        {
-            get
-            {
-                return MainViewModel.Quiz.CurrentQuestionIndex;
-            }
-        }
+        public int AnsweredQuestionCount => MainViewModel.Quiz.CurrentQuestionIndex;
 
-        public int Score { get { return MainViewModel.Quiz.CurrentScore; } }
+        public int Score => MainViewModel.Quiz.CurrentScore;
     }
 }

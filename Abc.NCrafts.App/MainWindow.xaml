@@ -14,9 +14,6 @@
         <DataTemplate DataType="{x:Type viewModels:WelcomePage}">
             <views:WelcomeView></views:WelcomeView>
         </DataTemplate>
-        <DataTemplate DataType="{x:Type viewModels:RulesPage}">
-            <views:RulesView></views:RulesView>
-        </DataTemplate>
         <DataTemplate DataType="{x:Type viewModels:GamePage}">
             <views:GameView></views:GameView>
         </DataTemplate>
