@@ -33,7 +33,7 @@ namespace Abc.NCrafts.Quizz.Performance.Questions._009
                 }
             });
 
-            var max = results.Sum();
+            var max = results.Max();
             // end
 
             Logger.Log("Max: {0}", max);

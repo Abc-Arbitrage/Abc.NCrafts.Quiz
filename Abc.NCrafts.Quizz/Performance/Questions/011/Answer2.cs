@@ -1,53 +1,27 @@
-﻿using System.Linq;
-
-namespace Abc.NCrafts.Quizz.Performance.Questions._011
+﻿namespace Abc.NCrafts.Quizz.Performance.Questions._011
 {
+    [CorrectAnswer(Difficulty = Difficulty.Medium)]
     public class Answer2
     {
-        private static readonly Container[] _containers;
-
-        static Answer2()
-        {
-            _containers = Enumerable.Range(0, 500)
-                                    .Select(x => new Container(x))
-                                    .ToArray();
-        }
-
         public static void Run()
         {
-            var sum = 0;
             // begin
-            foreach (var container in _containers)
-            {
-                sum += container.Entry.Entry.Entry.Value;
-            }
+            var result = Factorial(1234);
             // end
-            Logger.Log("Sum: {0}", sum);
+            Logger.Log("Factorial: {0}", result);
         }
 
-        private struct Container
+        private static long Factorial(long n)
         {
-            public Entry1 Entry;
-
-            public Container(int value)
-            {
-                Entry.Entry.Entry.Value = value;
-            }
+            return Factorial(n, 1);
         }
 
-        private struct Entry1
+        private static long Factorial(long n, long accumulator)
         {
-            public Entry2 Entry;
-        }
+            if (n == 0)
+                return accumulator;
 
-        private struct Entry2
-        {
-            public Entry3 Entry;
-        }
-
-        private struct Entry3
-        {
-            public int Value;
+            return Factorial(n - 1, n * accumulator);
         }
     }
 }
