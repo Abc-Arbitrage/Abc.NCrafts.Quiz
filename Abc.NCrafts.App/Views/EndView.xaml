@@ -12,6 +12,7 @@
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="../SharedResources.xaml" />
             </ResourceDictionary.MergedDictionaries>
+            <BooleanToVisibilityConverter x:Key="VisibilityConverter"></BooleanToVisibilityConverter>
             <Storyboard x:Key="Storyboard1"/>
         </ResourceDictionary>
     </UserControl.Resources>
@@ -102,7 +103,8 @@
                         VerticalAlignment="Center"
                         HorizontalContentAlignment="Center"
                         Margin="10 0"
-                        Background="#626262" />
+                        Background="#626262"
+                        Visibility="{Binding CanContinue, Converter={StaticResource VisibilityConverter}}"/>
 
                 <Button Grid.Column="2"
                     Command="{Binding GoToNextCommand}"

@@ -15,7 +15,7 @@ namespace Abc.NCrafts.App.ViewModels.Questions
             Questions = new List<Question>();
         }
 
-        public Question CurrentQuestion { get { return CurrentQuestionIndex < Questions.Count ? Questions[CurrentQuestionIndex] : null; } }
+        public Question CurrentQuestion => CurrentQuestionIndex < Questions.Count ? Questions[CurrentQuestionIndex] : null;
 
         public void NavigateForward()
         {
