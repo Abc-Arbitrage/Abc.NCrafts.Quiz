@@ -3,7 +3,6 @@ using System.Linq;
 
 namespace Abc.NCrafts.Quizz.Performance.Questions._019
 {
-    [CorrectAnswer(Difficulty = Difficulty.Medium)]
     public class Answer1
     {
         private static readonly List<int> _values = new List<int>();

@@ -14,6 +14,8 @@ namespace Abc.NCrafts.Quizz.Performance.Questions._018
 
         public static void Run()
         {
+            _values.Clear();
+
             // begin
             for (var i = 0; i < _itemCount; i++)
             {

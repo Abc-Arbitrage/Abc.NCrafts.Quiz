@@ -9,7 +9,7 @@ namespace Abc.NCrafts.Quizz
     {
         private static void Main(string[] args)
         {
-            RunPerformanceQuestion("025", 1000);
+            RunPerformanceQuestion("018", 1000);
             //RunPerformanceQuestion("010", 100 * 1000);
             //RunPerformanceQuestion("006", 100);
 
