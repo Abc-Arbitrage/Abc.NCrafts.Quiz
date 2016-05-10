@@ -47,14 +47,29 @@
                 <DropShadowEffect Direction="90" Opacity="0.3" ShadowDepth="3" />
             </Border.Effect>
 
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0 0 10 0">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
 
-                <Button Command="{Binding GoToNextCommand}"
+                <Button Grid.Column="0"
+                        Command="{Binding GoToPreviousCommand}"
+                        Content="Please let me continue!" Height="50"
+                        VerticalAlignment="Center"
+                        HorizontalContentAlignment="Center"
+                        Margin="10 0"
+                        Background="#626262" />
+
+                <Button Grid.Column="2"
+                    Command="{Binding GoToNextCommand}"
                         Content="OK" Width="176" Height="50"
                         VerticalAlignment="Center"
                         HorizontalContentAlignment="Center" Margin="10 0" />
 
-            </StackPanel>
+            </Grid>
+
         </Border>
 
     </Grid>

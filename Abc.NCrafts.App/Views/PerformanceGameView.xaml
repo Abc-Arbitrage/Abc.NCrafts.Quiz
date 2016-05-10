@@ -41,7 +41,7 @@
                 <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center"
                            FontSize="60" FontFamily="Segoe UI Light" Margin="10">
                     <Run Text="{Binding Path=QuestionNumber, Mode=OneWay}" />
-                    <Run>. Which code doesn't allocate?</Run>
+                    <Run>. Which code runs the fastest?</Run>
                 </TextBlock>
             </StackPanel>
         </Border>
@@ -104,7 +104,7 @@
 
                 <Button Grid.Column="0"
                         Command="{Binding ShowHelpContentCommand}"
-                        Content="Spoiler" Width="90" Height="50"
+                        Content="Spoiler" Height="50"
                         VerticalAlignment="Center"
                         HorizontalContentAlignment="Center"
                         Margin="10 0"

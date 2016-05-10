@@ -121,7 +121,7 @@
 
                 <Button Grid.Column="0"
                         Command="{Binding ShowHelpContentCommand}"
-                        Content="Spoiler" Width="90" Height="50"
+                        Content="Spoiler" Height="50"
                         VerticalAlignment="Center"
                         HorizontalContentAlignment="Center"
                         Margin="10 0"

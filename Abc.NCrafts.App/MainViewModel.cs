@@ -13,6 +13,7 @@ namespace Abc.NCrafts.App
         private readonly WelcomePage _welcomePage;
         private readonly AllocationGamePage _allocationGamePage;
         private readonly PerformanceGamePage _performanceGamePage;
+        private EndPage _endPage;
 
         public MainViewModel()
         {
@@ -21,16 +22,14 @@ namespace Abc.NCrafts.App
             LoadQuiz(QuizzType.Performance);
 
             _welcomePage = new WelcomePage(this);
-
             _allocationGamePage = new AllocationGamePage(this);
             _performanceGamePage = new PerformanceGamePage(this);
+            _endPage = new EndPage(this);
 
-            var endPage = new EndPage(this);
+            _allocationGamePage.NextPage = _endPage;
+            _performanceGamePage.NextPage = _endPage;
 
-            _allocationGamePage.NextPage = endPage;
-            _performanceGamePage.NextPage = endPage;
-
-            endPage.NextPage = _welcomePage;
+            _endPage.NextPage = _welcomePage;
 
             CurrentPage = _welcomePage;
         }
@@ -46,9 +45,11 @@ namespace Abc.NCrafts.App
             {
                 case QuizzType.Performance:
                     _welcomePage.NextPage = _performanceGamePage;
+                    _endPage.PreviousPage = _performanceGamePage;
                     break;
                 case QuizzType.Allocation:
                     _welcomePage.NextPage = _allocationGamePage;
+                    _endPage.PreviousPage = _allocationGamePage;
                     break;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(quizzType), quizzType, null);
