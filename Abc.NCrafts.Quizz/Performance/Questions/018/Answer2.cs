@@ -6,11 +6,10 @@ namespace Abc.NCrafts.Quizz.Performance.Questions._018
     public class Answer2
     {
         private static readonly ArrayList _values;
-        private const int _itemCount = 100 * 1000;
 
         static Answer2()
         {
-            _values = new ArrayList(_itemCount);
+            _values = new ArrayList(100 * 1000);
         }
 
         public static void Run()
@@ -18,7 +17,7 @@ namespace Abc.NCrafts.Quizz.Performance.Questions._018
             _values.Clear();
 
             // begin
-            for (var i = 0; i < _itemCount; i++)
+            for (var i = 0; i < _values.Capacity; i++)
             {
                 _values.Add("a" + "b" + "c");
             }
