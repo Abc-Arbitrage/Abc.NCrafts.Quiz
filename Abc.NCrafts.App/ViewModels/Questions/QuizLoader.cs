@@ -79,6 +79,8 @@ namespace Abc.NCrafts.App.ViewModels.Questions
             {
                 if (answerLines[lineIndex].Length >= 8)
                     answerLines[lineIndex] = answerLines[lineIndex].Substring(8);
+
+                answerLines[lineIndex] = answerLines[lineIndex].Replace("Answer1", "Answer").Replace("Answer2", "Answer").Replace("Answer3", "Answer");
             }
         }
 
