@@ -52,7 +52,7 @@
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
-            <Button Grid.Column="0" Grid.Row="0" Command="{Binding GoToNextCommand}" VerticalAlignment="Center"
+            <Button Grid.Column="0" Grid.Row="0" Command="{Binding StartPerformanceQuizzCommand}" VerticalAlignment="Center"
                     HorizontalAlignment="Center" Margin="20,0,10,0">
                 <Viewbox Stretch="Uniform">
                     <Grid>
@@ -72,7 +72,7 @@
                                 <RowDefinition Height="2*" />
                             </Grid.RowDefinitions>
                             <svgc:SvgViewbox Grid.Column="0" Margin="5" Stretch="Uniform" Height="100" Width="100"
-                                             Source="C:\Users\r.verdier\Desktop\performance2.svg" />
+                                             Source="../performance.svg" />
                             <TextBlock Grid.Column="1" Text="Performance" VerticalAlignment="Center" FontSize="50" />
                             <TextBlock Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" VerticalAlignment="Center" Foreground="White"
                                        FontSize="25">
@@ -84,7 +84,7 @@
                 </Viewbox>
             </Button>
 
-            <Button Grid.Column="1"  Grid.Row="0"  Command="{Binding GoToNextCommand}" VerticalAlignment="Center"
+            <Button Grid.Column="1"  Grid.Row="0"  Command="{Binding StartAllocationQuizzCommand}" VerticalAlignment="Center"
                     HorizontalAlignment="Center" Margin="10,0,20,0">
                 <Viewbox Stretch="Uniform">
                     <Grid>
@@ -105,7 +105,7 @@
                             </Grid.RowDefinitions>
 
                             <svgc:SvgViewbox Grid.Column="0" Margin="5" Stretch="Uniform"
-                                             Source="C:\Users\r.verdier\Desktop\garbage.svg" Height="100" Width="100" />
+                                             Source="../garbage.svg" Height="100" Width="100" />
                             <TextBlock Grid.Column="1" Text="Zero Alloc" VerticalAlignment="Center" FontSize="50" />
                             <TextBlock Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" VerticalAlignment="Center" FontSize="25" Foreground="White">
                                 <Run>Chase heap allocations to prevent</Run><LineBreak/>

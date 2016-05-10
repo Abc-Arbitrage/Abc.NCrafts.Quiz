@@ -11,30 +11,27 @@ namespace Abc.NCrafts.App.ViewModels.Questions
         private readonly Markdown _markdown = new Markdown();
         private string _htmlHelpContent;
 
-        public Question()
-        {
-            Answers = new List<Answer>();
-        }
-
+        public List<Answer> Answers { get; }= new List<Answer>();
         public int Difficulty { get; set; }
         public Answer SelectedAnswer { get; set; }
-        public List<Answer> Answers { get; set; }
 
-        public Answer Answer1 { get { return Answers[0]; } }
-        public Answer Answer2 { get { return Answers[1]; } }
-        public Answer Answer3 { get { return Answers.Count >= 3 ? Answers[2] : new Answer(); } }
+        public Answer Answer1 => Answers[0];
+        public Answer Answer2 => Answers[1];
+        public Answer Answer3 => Answers.Count >= 3 ? Answers[2] : new Answer();
 
-        public int Score { get { return _scoresByDifficulty[Difficulty]; } }
+
+
+        public int Score => _scoresByDifficulty[Difficulty];
 
         public string MarkdownHelpContent { get; set; }
 
-        public string HtmlHelpContent { get { return _htmlHelpContent ?? (_htmlHelpContent = CreateHtmlHelpContent()); } }
+        public string HtmlHelpContent => _htmlHelpContent ?? (_htmlHelpContent = CreateHtmlHelpContent());
 
         private string CreateHtmlHelpContent()
         {
             var content = _markdown.Transform(MarkdownHelpContent);
             var css = "code { color: #222; background-color: #EEE; font-family: Consolas; padding: 1 5 1 5; } body { font-family: Helvetica; font-size: 15; line-height: 19.5px; }";
-            return string.Format(@"<html><style type='text/css'>{0}</style><body>{1}</body></html>", css, content);
+            return $@"<html><style type='text/css'>{css}</style><body>{content}</body></html>";
         }
 
         public void ShuffleAnswers()

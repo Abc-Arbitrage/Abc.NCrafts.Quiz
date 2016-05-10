@@ -9,9 +9,9 @@ namespace Abc.NCrafts.App.Views
     /// <summary>
     ///     Interaction logic for GameView.xaml
     /// </summary>
-    public partial class GameView : UserControl
+    public partial class AllocationGameView : UserControl
     {
-        public GameView()
+        public AllocationGameView()
         {
             InitializeComponent();
         }
@@ -31,7 +31,7 @@ namespace Abc.NCrafts.App.Views
 
         private void HtmlHelpClick(object sender, MouseButtonEventArgs e)
         {
-            var pagePage = (GamePage)DataContext;
+            var pagePage = (AllocationGamePage)DataContext;
             pagePage.IsHelpVisible = false;
         }
 
@@ -40,7 +40,7 @@ namespace Abc.NCrafts.App.Views
             if (DataContext == null)
                 return;
 
-            var htmlHelpContent = ((GamePage)DataContext).HtmlHelpContent;
+            var htmlHelpContent = ((AllocationGamePage)DataContext).HtmlHelpContent;
             _webBrowser.NavigateToString(htmlHelpContent);
         }
     }

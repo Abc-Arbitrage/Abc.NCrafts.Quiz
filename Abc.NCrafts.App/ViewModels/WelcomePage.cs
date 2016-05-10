@@ -1,14 +1,30 @@
-﻿namespace Abc.NCrafts.App.ViewModels
+﻿using System.Windows.Input;
+
+namespace Abc.NCrafts.App.ViewModels
 {
     public class WelcomePage : ViewModel
     {
-        public WelcomePage(MainViewModel mainViewModel) : base(mainViewModel)
+        public WelcomePage(MainViewModel mainViewModel)
+            : base(mainViewModel)
         {
         }
 
         public override void GoToNext()
         {
-            MainViewModel.StartGame();
+        }
+
+        public ICommand StartAllocationQuizzCommand => new RelayCommand(StartAllocationCommand);
+        public ICommand StartPerformanceQuizzCommand => new RelayCommand(StartPerformanceQuizz);
+
+        private void StartPerformanceQuizz(object obj)
+        {
+            MainViewModel.StartGame(MainViewModel.QuizzType.Performance);
+            base.GoToNext();
+        }
+
+        private void StartAllocationCommand(object obj)
+        {
+            MainViewModel.StartGame(MainViewModel.QuizzType.Allocation);
             base.GoToNext();
         }
     }

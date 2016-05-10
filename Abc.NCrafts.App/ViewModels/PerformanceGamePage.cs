@@ -10,12 +10,12 @@ using ICSharpCode.AvalonEdit.Highlighting.Xshd;
 
 namespace Abc.NCrafts.App.ViewModels
 {
-    public class GamePage : ViewModel, INotifyPropertyChanged
+    public class PerformanceGamePage : ViewModel, INotifyPropertyChanged
     {
         private Answer _selectedAnswer;
         private IHighlightingDefinition _syntaxHighlighting;
 
-        public GamePage(MainViewModel mainViewModel)
+        public PerformanceGamePage(MainViewModel mainViewModel)
             : base(mainViewModel)
         {
         }
@@ -28,25 +28,17 @@ namespace Abc.NCrafts.App.ViewModels
 
         public string Answer2Text => Quiz.CurrentQuestion.Answer2.Text;
 
-        public string Answer3Text => Quiz.CurrentQuestion.Answer3.Text;
-
         public int[] Answer1HighlightedLines => GetHighlightedLines(Quiz.CurrentQuestion.Answer1);
 
         public int[] Answer2HighlightedLines => GetHighlightedLines(Quiz.CurrentQuestion.Answer2);
-
-        public int[] Answer3HighlightedLines => GetHighlightedLines(Quiz.CurrentQuestion.Answer3);
 
         public ICommand Answer1Click { get { return new ActionCommand(() => SelectAnswer(Quiz.CurrentQuestion.Answer1)); } }
 
         public ICommand Answer2Click { get { return new ActionCommand(() => SelectAnswer(Quiz.CurrentQuestion.Answer2)); } }
 
-        public ICommand Answer3Click { get { return new ActionCommand(() => SelectAnswer(Quiz.CurrentQuestion.Answer3)); } }
-
         public Brush Answer1Background => GetBackground(Quiz.CurrentQuestion.Answer1);
 
         public Brush Answer2Background => GetBackground(Quiz.CurrentQuestion.Answer2);
-
-        public Brush Answer3Background => GetBackground(Quiz.CurrentQuestion.Answer3);
 
         private void SelectAnswer(Answer answer)
         {
@@ -54,7 +46,7 @@ namespace Abc.NCrafts.App.ViewModels
             Quiz.CurrentQuestion.SelectedAnswer = answer;
 
             var canContinue = Quiz.MoveToNextQuestion();
-       
+
             if (!canContinue)
             {
                 GoToNext();
@@ -118,7 +110,7 @@ namespace Abc.NCrafts.App.ViewModels
 
         private static IHighlightingDefinition LoadHighlightingDefinition(string resourceName)
         {
-            var type = typeof(GameView);
+            var type = typeof(AllocationGameView);
             var fullName = type.Namespace + "." + resourceName;
             using (var stream = type.Assembly.GetManifestResourceStream(fullName))
             using (var reader = new XmlTextReader(stream))

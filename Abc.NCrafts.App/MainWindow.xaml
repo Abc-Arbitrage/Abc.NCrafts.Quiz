@@ -14,8 +14,11 @@
         <DataTemplate DataType="{x:Type viewModels:WelcomePage}">
             <views:WelcomeView></views:WelcomeView>
         </DataTemplate>
-        <DataTemplate DataType="{x:Type viewModels:GamePage}">
-            <views:GameView></views:GameView>
+        <DataTemplate DataType="{x:Type viewModels:AllocationGamePage}">
+            <views:AllocationGameView></views:AllocationGameView>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModels:PerformanceGamePage}">
+            <views:PerformanceGameView></views:PerformanceGameView>
         </DataTemplate>
         <DataTemplate DataType="{x:Type viewModels:EndPage}">
             <views:EndView></views:EndView>

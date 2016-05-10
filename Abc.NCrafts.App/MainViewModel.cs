@@ -10,30 +10,56 @@ namespace Abc.NCrafts.App
     [ImplementPropertyChanged]
     public class MainViewModel
     {
+        private readonly WelcomePage _welcomePage;
+        private readonly AllocationGamePage _allocationGamePage;
+        private readonly PerformanceGamePage _performanceGamePage;
+
         public MainViewModel()
         {
             // useless LoadQuiz to make sure we fail fast if the question files are invalid
             LoadQuiz();
 
-            var welcome = new WelcomePage(this);
-            var game = new GamePage(this);
-            var end = new EndPage(this);
+            _welcomePage = new WelcomePage(this);
 
-            welcome.NextPage = game;
-            game.NextPage = end;
-            end.NextPage = welcome;
+            _allocationGamePage = new AllocationGamePage(this);
+            _performanceGamePage = new PerformanceGamePage(this);
 
-            CurrentPage = welcome;
+            var endPage = new EndPage(this);
+
+            _allocationGamePage.NextPage = endPage;
+            _performanceGamePage.NextPage = endPage;
+
+            endPage.NextPage = _welcomePage;
+
+            CurrentPage = _welcomePage;
         }
 
         public Quiz Quiz { get; private set; }
         public ViewModel CurrentPage { get; set; }
 
-        public void StartGame()
+        public enum QuizzType
+        {
+            Performance,
+            Allocation,
+        }
+
+        public void StartGame(QuizzType quizzType)
         {
             Quiz = LoadQuiz();
+
+            switch (quizzType)
+            {
+                case QuizzType.Performance:
+                    _welcomePage.NextPage = _performanceGamePage;
+                    break;
+                case QuizzType.Allocation:
+                    _welcomePage.NextPage = _allocationGamePage;
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(quizzType), quizzType, null);
+            }
         }
-        
+
         private static Quiz LoadQuiz()
         {
             return QuizLoader.LoadFrom(GetQuizPath());
