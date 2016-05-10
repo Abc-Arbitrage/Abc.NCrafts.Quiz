@@ -11,8 +11,10 @@ namespace Abc.NCrafts.Quizz.Performance.Questions._013
 
         static Answer2()
         {
-            _values = Enumerable.Range(0, 100 * 1000).OrderBy(_ => Guid.NewGuid()).ToArray();
             _threshold = 42;
+            _values = Enumerable.Range(0, 100 * 1000)
+                                .OrderBy(_ => Guid.NewGuid())
+                                .ToArray();
         }
 
         public static void Run()

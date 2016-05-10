@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 
 namespace Abc.NCrafts.Quizz.Performance.Questions._023
 {
@@ -19,7 +18,7 @@ namespace Abc.NCrafts.Quizz.Performance.Questions._023
             // begin
             for (var i = 0; i < _values.Length; i++)
             {
-                sum += i;
+                sum += _values[i];
             }
             // end
 
