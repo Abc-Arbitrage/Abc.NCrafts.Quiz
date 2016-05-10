@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 
@@ -21,6 +22,7 @@ namespace Abc.NCrafts.Quizz
             Console.WriteLine();
 
             var types = typeof(Program).Assembly.GetTypes().Where(x => x.Namespace != null && x.Namespace.Contains("Performance") && x.Namespace.EndsWith(number) && !x.IsNested);
+            var durationOfFirstAnswer = (TimeSpan?)null;
 
             foreach (var type in types)
             {
@@ -35,7 +37,18 @@ namespace Abc.NCrafts.Quizz
                 
                 stopwatch.Stop();
 
-                Console.WriteLine($"{number}/{type.Name}: {stopwatch.Elapsed}");
+                if (durationOfFirstAnswer == null)
+                {
+                    durationOfFirstAnswer = stopwatch.Elapsed;
+                    Console.WriteLine($"{number}/{type.Name}: {stopwatch.Elapsed}");
+                }
+                else
+                {
+                    var previousTicks = durationOfFirstAnswer.Value.Ticks;
+                    var newTicks = stopwatch.Elapsed.Ticks;
+                    var increase = (newTicks - previousTicks) / (double)previousTicks;
+                    Console.WriteLine($"{number}/{type.Name}: {stopwatch.Elapsed} ({increase:P0})");
+                }
             }
         }
 
