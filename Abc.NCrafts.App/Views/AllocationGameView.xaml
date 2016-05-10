@@ -39,7 +39,7 @@
                 <DropShadowEffect Direction="270" Opacity="0.3" ShadowDepth="3" />
             </Border.Effect>
             <StackPanel Orientation="Horizontal" Margin="20" HorizontalAlignment="Center">
-                <svgc:SvgViewbox Stretch="Uniform" Source="../garbage.svg" Margin="0,0,30,0"/>
+                <svgc:SvgViewbox Stretch="Uniform" Source="../Images/Allocations.svg" Margin="0,0,30,0"/>
                 <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center"
                            FontSize="60" FontFamily="Segoe UI Light" Margin="10">
                     <Run Text="{Binding Path=QuestionNumber, Mode=OneWay}" />

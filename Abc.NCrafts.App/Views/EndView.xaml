@@ -5,13 +5,14 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:viewModels="clr-namespace:Abc.NCrafts.App.ViewModels"
              mc:Ignorable="d" 
-             d:DesignHeight="667" d:DesignWidth="939" d:DataContext="{d:DesignInstance viewModels:EndPage}">
+             d:DesignHeight="914.037" d:DesignWidth="1241.326" d:DataContext="{d:DesignInstance viewModels:EndPage}">
 
     <UserControl.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="../SharedResources.xaml" />
             </ResourceDictionary.MergedDictionaries>
+            <Storyboard x:Key="Storyboard1"/>
         </ResourceDictionary>
     </UserControl.Resources>
 
@@ -36,10 +37,51 @@
             <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="40" FontFamily="Segoe UI Light">
                    <Run>You answered&#160;</Run><Run Text="{Binding Path=AnsweredQuestionCount, Mode=OneWay}"/><Run>&#160;question(s) correctly</Run>
             </TextBlock>
-            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="40" FontFamily="Segoe UI Light">
-                   <Run>Your score is&#160;</Run><Run Text="{Binding Path=Score, Mode=OneWay}" FontSize="60" Foreground="#FFB800"/><Run>&#160;point(s)</Run>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Image VerticalAlignment="Center" Source="../Images/Raspberry.png" RenderOptions.BitmapScalingMode="HighQuality">
+                    <Image.RenderTransform>
+                        <TranslateTransform x:Name="leftImageTransform" X="0" Y="0"/>
+                    </Image.RenderTransform>
+                    <Image.Triggers>
+                        <EventTrigger RoutedEvent="Image.Loaded">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation From="-100" To="0" Duration="00:00:01" Storyboard.TargetName="leftImageTransform" Storyboard.TargetProperty="X" >
+                                        <DoubleAnimation.EasingFunction>
+                                            <BounceEase Bounces="2" EasingMode="EaseOut" Bounciness="2" />
+                                        </DoubleAnimation.EasingFunction>
+                                    </DoubleAnimation>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </Image.Triggers>
+                </Image>
+                <Image VerticalAlignment="Center" Source="../Images/ProPerformance.png" RenderOptions.BitmapScalingMode="HighQuality" >
+                    <Image.RenderTransform>
+                        <TranslateTransform x:Name="rightImageTransform" X="0" Y="0"/>
+                    </Image.RenderTransform>
+                    <Image.Triggers>
+                        <EventTrigger RoutedEvent="Image.Loaded">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation From="100" To="0" Duration="00:00:01" Storyboard.TargetName="rightImageTransform" Storyboard.TargetProperty="X" >
+                                        <DoubleAnimation.EasingFunction>
+                                            <BounceEase Bounces="2" EasingMode="EaseOut" Bounciness="2" />
+                                        </DoubleAnimation.EasingFunction>
+                                    </DoubleAnimation>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </Image.Triggers>
+                </Image>
+            </StackPanel>
+
+            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center" FontSize="60" FontFamily="Segoe UI Light">
+                <Run Text="Leave us your email address for a"/>
+                <LineBreak/>
+                <Run>chance to win one of our prizes!</Run>
             </TextBlock>
-           
+
         </StackPanel>
 
         <Border Grid.ColumnSpan="4" Grid.Row="2" Background="#565656" Margin="0 0 0 0">

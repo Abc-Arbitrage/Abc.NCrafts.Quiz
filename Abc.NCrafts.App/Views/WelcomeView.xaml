@@ -29,8 +29,8 @@
                 <DropShadowEffect Direction="270" Opacity="0.3" ShadowDepth="3" />
             </Border.Effect>
             <StackPanel Orientation="Horizontal" Margin="20" HorizontalAlignment="Center">
-                <Image VerticalAlignment="Center" Source="../ABCLogo.png" RenderOptions.BitmapScalingMode="HighQuality" Width="128" Height="128" />
-                <Label Content="NCrafts Quiz" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="80" FontFamily="Segoe UI" Margin="10" Padding="40 0 0 0" />
+                <Image VerticalAlignment="Center" Source="../Images/AbcLogo.png" RenderOptions.BitmapScalingMode="HighQuality" Width="128" Height="128" />
+                <Label Content="NCrafts Quiz" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="100" FontFamily="Segoe UI Light" Margin="10" Padding="40 0 0 0" />
             </StackPanel>
         </Border>
 
@@ -49,7 +49,7 @@
                                 <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
                             <Border Grid.Column="0" Margin="20 20 10 20" Width="150" Height="150">
-                                <svgc:SvgViewbox Stretch="Uniform" Source="../performance.svg" />
+                                <svgc:SvgViewbox Stretch="Uniform" Source="../Images/Performance.svg" />
                             </Border>
                             <StackPanel Grid.Column="1" Margin="10 15 20 20">
                                 <TextBlock FontSize="50" HorizontalAlignment="Center">Performance</TextBlock>
@@ -71,7 +71,7 @@
                                 <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
                             <Border Grid.Column="0" Margin="20 20 10 20" Width="150" Height="150">
-                                <svgc:SvgViewbox Stretch="Uniform" Source="../garbage.svg" />
+                                <svgc:SvgViewbox Stretch="Uniform" Source="../Images/Allocations.svg" />
                             </Border>
                             <StackPanel Grid.Column="1" Margin="10 15 20 20">
                                 <TextBlock FontSize="50" HorizontalAlignment="Center">Zero Alloc</TextBlock>
