@@ -7,11 +7,11 @@
         static Answer2()
         {
             _matrix = new int[10, 50];
-            for (var rowIndex = 0; rowIndex < _matrix.GetLength(0); rowIndex++)
+            for (var row = 0; row < _matrix.GetLength(0); row++)
             {
-                for (var columnIndex = 0; columnIndex < _matrix.GetLength(1); columnIndex++)
+                for (var column = 0; column < _matrix.GetLength(1); column++)
                 {
-                    _matrix[rowIndex, columnIndex] = columnIndex;
+                    _matrix[row, column] = column;
                 }
             }
         }
@@ -20,11 +20,11 @@
         {
             var sum = 0;
             // begin
-            for (var rowIndex = 0; rowIndex < _matrix.GetLength(0); rowIndex++)
+            for (var row = 0; row < _matrix.GetLength(0); row++)
             {
-                for (var columnIndex = 0; columnIndex < _matrix.GetLength(1); columnIndex++)
+                for (var column = 0; column < _matrix.GetLength(1); column++)
                 {
-                    sum += _matrix[rowIndex, columnIndex];
+                    sum += _matrix[row, column];
                 }
             }
             // end

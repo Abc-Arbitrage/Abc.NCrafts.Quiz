@@ -6,11 +6,16 @@ namespace Abc.NCrafts.Quizz.Performance.Questions._014
 {
     public class Answer2
     {
-        private static readonly Random _random = new Random();
+        private static readonly Random _random;
+        private static readonly List<int> _values;
 
-        private static readonly List<int> _values = Enumerable.Range(0, 200)
-                                                              .Select(_ => _random.Next(5000))
-                                                              .ToList();
+        static Answer2()
+        {
+            _random = new Random();
+            _values = Enumerable.Range(0, 200)
+                                .Select(_ => _random.Next(5000))
+                                .ToList();
+        }
 
         public static void Run()
         {

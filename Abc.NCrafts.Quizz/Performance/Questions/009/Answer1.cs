@@ -7,11 +7,16 @@ namespace Abc.NCrafts.Quizz.Performance.Questions._009
     [CorrectAnswer(Difficulty = Difficulty.Hard)]
     public class Answer1
     {
-        private static readonly Random _random = new Random();
+        private static readonly Random _random;
+        private static readonly int[] _values;
 
-        private static readonly int[] _values = Enumerable.Range(0, 500)
-                                                          .Select(x => _random.Next(5000))
-                                                          .ToArray();
+        static Answer1()
+        {
+            _random = new Random();
+            _values = Enumerable.Range(0, 500)
+                                .Select(x => _random.Next(5000))
+                                .ToArray();
+        }
 
         public static void Run()
         {

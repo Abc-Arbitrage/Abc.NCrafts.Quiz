@@ -7,8 +7,14 @@ namespace Abc.NCrafts.Quizz.Performance.Questions._007
     public class Answer1
     {
         private const int _count = 200;
-        private static readonly int[] _x = Enumerable.Range(0, _count).ToArray();
-        private static readonly int[] _result = Enumerable.Range(0, _count).ToArray();
+        private static readonly int[] _x;
+        private static readonly int[] _result;
+
+        static Answer1()
+        {
+            _x = Enumerable.Range(0, _count).ToArray();
+            _result = Enumerable.Range(0, _count).ToArray();
+        }
 
         public static void Run()
         {

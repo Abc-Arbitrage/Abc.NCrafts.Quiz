@@ -5,9 +5,14 @@ namespace Abc.NCrafts.Quizz.Performance.Questions._011
     [CorrectAnswer(Difficulty = Difficulty.Medium)]
     public class Answer1
     {
-        private static readonly Container[] _containers = Enumerable.Range(0, 500)
-                                                                    .Select(x => new Container(x))
-                                                                    .ToArray();
+        private static readonly Container[] _containers;
+
+        static Answer1()
+        {
+            _containers = Enumerable.Range(0, 500)
+                                    .Select(x => new Container(x))
+                                    .ToArray();
+        }
 
         public static void Run()
         {
@@ -23,7 +28,7 @@ namespace Abc.NCrafts.Quizz.Performance.Questions._011
 
         private struct Container
         {
-            public Entry Entry;
+            public readonly Entry Entry;
 
             public Container(int value)
             {

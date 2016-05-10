@@ -4,9 +4,14 @@ namespace Abc.NCrafts.Quizz.Performance.Questions._011
 {
     public class Answer2
     {
-        private static readonly Container[] _containers = Enumerable.Range(0, 500)
-                                                                    .Select(x => new Container(x))
-                                                                    .ToArray();
+        private static readonly Container[] _containers;
+
+        static Answer2()
+        {
+            _containers = Enumerable.Range(0, 500)
+                                    .Select(x => new Container(x))
+                                    .ToArray();
+        }
 
         public static void Run()
         {

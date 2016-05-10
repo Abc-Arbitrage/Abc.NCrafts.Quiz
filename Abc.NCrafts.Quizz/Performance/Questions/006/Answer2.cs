@@ -19,11 +19,11 @@ namespace Abc.NCrafts.Quizz.Performance.Questions._006
         {
             var sum = 0;
             // begin
-            for (var columnIndex = 0; columnIndex < _columnCount; columnIndex++)
+            for (var column = 0; column < _columnCount; column++)
             {
-                for (var rowIndex = 0; rowIndex < _rowCount; rowIndex++)
+                for (var row = 0; row < _rowCount; row++)
                 {
-                    sum += _matrix[rowIndex][columnIndex];
+                    sum += _matrix[row][column];
                 }
             }
             // end

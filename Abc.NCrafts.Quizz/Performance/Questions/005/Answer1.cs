@@ -18,11 +18,11 @@ namespace Abc.NCrafts.Quizz.Performance.Questions._005
         {
             var sum = 0;
             // begin
-            for (var rowIndex = 0; rowIndex < _matrix.Length; rowIndex++)
+            for (var row = 0; row < _matrix.Length; row++)
             {
-                for (var columnIndex = 0; columnIndex < _matrix[rowIndex].Length; columnIndex++)
+                for (var column = 0; column < _matrix[row].Length; column++)
                 {
-                    sum += _matrix[rowIndex][columnIndex];
+                    sum += _matrix[row][column];
                 }
             }
             // end

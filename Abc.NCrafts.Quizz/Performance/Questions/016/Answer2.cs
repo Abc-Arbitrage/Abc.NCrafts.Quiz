@@ -4,6 +4,25 @@ namespace Abc.NCrafts.Quizz.Performance.Questions._016
 {
     public class Answer2
     {
+        private static readonly Item[] _values;
+
+        static Answer2()
+        {
+            _values = Enumerable.Range(0, 1000 * 1000)
+                                .Select(x => new Item(x))
+                                .ToArray();
+        }
+
+        public static void Run()
+        {
+            // begin
+            for (var i = 0; i < _values.Length; i++)
+            {
+                _values[i].Product = _values[i].Left * _values[i].Right;
+            }
+            // end
+        }
+
         private struct Item
         {
             public readonly int Left;
@@ -16,23 +35,6 @@ namespace Abc.NCrafts.Quizz.Performance.Questions._016
                 Right = -value;
                 Product = 0;
             }
-        }
-
-        private static readonly Item[] _values;
-
-        static Answer2()
-        {
-            _values = Enumerable.Range(0, 1000 * 1000).Select(x => new Item(x)).ToArray();
-        }
-
-        public static void Run()
-        {
-            // begin
-            for (var i = 0; i < _values.Length; i++)
-            {
-                _values[i].Product = _values[i].Left * _values[i].Right;
-            }
-            // end
         }
     }
 }

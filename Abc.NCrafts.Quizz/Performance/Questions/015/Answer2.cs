@@ -6,13 +6,13 @@ namespace Abc.NCrafts.Quizz.Performance.Questions._015
     [CorrectAnswer(Difficulty = Difficulty.Hard)]
     public class Answer2
     {
-        private static readonly int[] _values;
         private static readonly int _threshold;
+        private static readonly int[] _values;
 
         static Answer2()
         {
-            _values = Enumerable.Range(0, 1000 * 1000).ToArray();
             _threshold = _values.Length / 2;
+            _values = Enumerable.Range(0, 1000 * 1000).ToArray();
         }
 
         public static void Run()

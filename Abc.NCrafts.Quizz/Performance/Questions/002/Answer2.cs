@@ -5,7 +5,12 @@ namespace Abc.NCrafts.Quizz.Performance.Questions._002
 {
     public class Answer2
     {
-        private static readonly List<decimal> _items = Enumerable.Repeat(42m, 50).ToList();
+        private static readonly List<decimal> _items;
+
+        static Answer2()
+        {
+            _items = Enumerable.Repeat(42m, 50).ToList();
+        }
 
         public static void Run()
         {

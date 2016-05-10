@@ -14,7 +14,7 @@ namespace Abc.NCrafts.Quizz.Performance.Questions._022
 
         public static void Run()
         {
-            var sum = 0;
+            var sum = 0L;
 
             // begin
             foreach (var value in _values)

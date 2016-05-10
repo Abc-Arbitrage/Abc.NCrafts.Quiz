@@ -6,7 +6,12 @@ namespace Abc.NCrafts.Quizz.Performance.Questions._003
     [CorrectAnswer(Difficulty = Difficulty.Easy)]
     public class Answer1
     {
-        private static readonly List<int> _items = Enumerable.Range(0, 200).ToList();
+        private static readonly List<int> _items;
+
+        static Answer1()
+        {
+            _items = Enumerable.Range(0, 200).ToList();
+        }
 
         public static void Run()
         {

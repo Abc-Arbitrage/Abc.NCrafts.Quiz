@@ -8,9 +8,14 @@ namespace Abc.NCrafts.Quizz.Performance.Questions._017
     [CorrectAnswer(Difficulty = Difficulty.Medium)]
     public class Answer1
     {
-        private static readonly List<Item> _items = Enumerable.Range(0, 200)
-                                                              .Select(x => new Item { Value2 = x })
-                                                              .ToList();
+        private static readonly List<Item> _items;
+
+        static Answer1()
+        {
+            _items = Enumerable.Range(0, 200)
+                               .Select(x => new Item { Value2 = x })
+                               .ToList();
+        }
 
         public static void Run()
         {

@@ -5,8 +5,14 @@ namespace Abc.NCrafts.Quizz.Performance.Questions._001
 {
     public class Answer1
     {
-        private static readonly int[] _items = Enumerable.Range(0, 200).ToArray();
-        private static readonly Random _random = new Random();
+        private static readonly int[] _items;
+        private static readonly Random _random;
+
+        static Answer1()
+        {
+            _items = Enumerable.Range(0, 200).ToArray();
+            _random = new Random();
+        }
 
         public static unsafe void Run()
         {

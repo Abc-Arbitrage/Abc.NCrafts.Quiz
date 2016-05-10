@@ -5,13 +5,15 @@ namespace Abc.NCrafts.Quizz.Performance.Questions._015
 {
     public class Answer1
     {
-        private static readonly int[] _values;
         private static readonly int _threshold;
+        private static readonly int[] _values;
 
         static Answer1()
         {
-            _values = Enumerable.Range(0, 1000 * 1000).OrderBy(_ => Guid.NewGuid()).ToArray();
             _threshold = _values.Length / 2;
+            _values = Enumerable.Range(0, 1000 * 1000)
+                                .OrderBy(_ => Guid.NewGuid())
+                                .ToArray();
         }
 
         public static void Run()

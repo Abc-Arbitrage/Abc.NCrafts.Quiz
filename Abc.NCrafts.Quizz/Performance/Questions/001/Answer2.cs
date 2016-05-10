@@ -7,8 +7,14 @@ namespace Abc.NCrafts.Quizz.Performance.Questions._001
     [CorrectAnswer(Difficulty = Difficulty.Easy)]
     public class Answer2
     {
-        private static readonly HashSet<int> _items = new HashSet<int>(Enumerable.Range(0, 200));
-        private static readonly Random _random = new Random();
+        private static readonly HashSet<int> _items;
+        private static readonly Random _random;
+
+        static Answer2()
+        {
+            _items = new HashSet<int>(Enumerable.Range(0, 200));
+            _random = new Random();
+        }
 
         public static void Run()
         {
