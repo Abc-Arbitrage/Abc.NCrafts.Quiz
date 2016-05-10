@@ -43,7 +43,7 @@
                 <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center"
                            FontSize="60" FontFamily="Segoe UI Light" Margin="10">
                     <Run Text="{Binding Path=QuestionNumber, Mode=OneWay}" />
-                    <Run>. Which code runs the fastest?</Run>
+                    <Run>. Which code is more likely to run faster?</Run>
                 </TextBlock>
             </StackPanel>
         </Border>
