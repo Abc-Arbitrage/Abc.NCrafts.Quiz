@@ -1,7 +1,7 @@
 ﻿using System.Windows.Input;
 using PropertyChanged;
 
-namespace Abc.NCrafts.App
+namespace Abc.NCrafts.App.ViewModels
 {
     [ImplementPropertyChanged]
     public abstract class ViewModel

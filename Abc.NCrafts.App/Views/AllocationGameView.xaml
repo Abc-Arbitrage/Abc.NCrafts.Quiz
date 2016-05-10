@@ -54,9 +54,7 @@
                 <ColumnDefinition />
             </Grid.ColumnDefinitions>
 
-            <Button Grid.Column="0" Style="{StaticResource codeButtonStyle}" Command="{Binding Answer1Click}"
-                    Background="{Binding Answer1Background}" Margin="10">
-
+            <Button Grid.Column="0" Style="{StaticResource codeButtonStyle}" Command="{Binding Answer1Click}" Margin="10">
                 <Viewbox Stretch="Uniform">
                     <Grid>
                         <Grid.ColumnDefinitions>
@@ -67,13 +65,12 @@
                         </Grid.RowDefinitions>
                         <avalonEdit:TextEditor views:AvalonEditExtensions.Text="{Binding Answer1Text}"
                                                SyntaxHighlighting="{Binding SyntaxHighlighting}"
-                                               views:AvalonEditExtensions.HighlightedLines="{Binding Answer1HighlightedLines}" />
+                                               views:AvalonEditExtensions.HighlightedLines="{Binding Answer1HighlightedLines}" Focusable="False"/>
                     </Grid>
                 </Viewbox>
 
             </Button>
-            <Button Grid.Column="1" Style="{StaticResource codeButtonStyle}" Command="{Binding Answer2Click}"
-                    Background="{Binding Answer2Background}" Margin="10">
+            <Button Grid.Column="1" Style="{StaticResource codeButtonStyle}" Command="{Binding Answer2Click}" Margin="10">
                 <Viewbox Stretch="Uniform">
                     <Grid>
                         <Grid.ColumnDefinitions>
@@ -84,12 +81,11 @@
                         </Grid.RowDefinitions>
                         <avalonEdit:TextEditor views:AvalonEditExtensions.Text="{Binding Answer2Text}"
                                                SyntaxHighlighting="{Binding SyntaxHighlighting}"
-                                               views:AvalonEditExtensions.HighlightedLines="{Binding Answer2HighlightedLines}" />
+                                               views:AvalonEditExtensions.HighlightedLines="{Binding Answer2HighlightedLines}" Focusable="False" />
                     </Grid>
                 </Viewbox>
             </Button>
-            <Button Grid.Column="2" Style="{StaticResource codeButtonStyle}" Command="{Binding Answer3Click}"
-                    Background="{Binding Answer3Background}" Margin="10">
+            <Button Grid.Column="2" Style="{StaticResource codeButtonStyle}" Command="{Binding Answer3Click}" Margin="10">
                 <Viewbox Stretch="Uniform">
                     <Grid>
                         <Grid.ColumnDefinitions>
@@ -100,7 +96,7 @@
                         </Grid.RowDefinitions>
                         <avalonEdit:TextEditor views:AvalonEditExtensions.Text="{Binding Answer3Text}"
                                                SyntaxHighlighting="{Binding SyntaxHighlighting}"
-                                               views:AvalonEditExtensions.HighlightedLines="{Binding Answer3HighlightedLines}" />
+                                               views:AvalonEditExtensions.HighlightedLines="{Binding Answer3HighlightedLines}" Focusable="False" />
                     </Grid>
                 </Viewbox>
             </Button >

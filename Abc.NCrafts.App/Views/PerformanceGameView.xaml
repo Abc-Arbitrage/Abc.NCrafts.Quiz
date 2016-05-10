@@ -53,9 +53,7 @@
                 <ColumnDefinition />
             </Grid.ColumnDefinitions>
 
-            <Button Grid.Column="0" Style="{StaticResource codeButtonStyle}" Command="{Binding Answer1Click}"
-                    Background="{Binding Answer1Background}" Margin="10">
-
+            <Button Grid.Column="0" Style="{StaticResource codeButtonStyle}" Command="{Binding Answer1Click}" Margin="10">
                 <Viewbox Stretch="Uniform">
                     <Grid>
                         <Grid.ColumnDefinitions>
@@ -71,8 +69,7 @@
                 </Viewbox>
 
             </Button>
-            <Button Grid.Column="1" Style="{StaticResource codeButtonStyle}" Command="{Binding Answer2Click}"
-                    Background="{Binding Answer2Background}" Margin="10">
+            <Button Grid.Column="1" Style="{StaticResource codeButtonStyle}" Command="{Binding Answer2Click}" Margin="10">
                 <Viewbox Stretch="Uniform">
                     <Grid>
                         <Grid.ColumnDefinitions>

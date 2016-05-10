@@ -13,13 +13,11 @@ namespace Abc.NCrafts.App
         private readonly WelcomePage _welcomePage;
         private readonly AllocationGamePage _allocationGamePage;
         private readonly PerformanceGamePage _performanceGamePage;
-        private EndPage _endPage;
+        private readonly EndPage _endPage;
 
         public MainViewModel()
         {
-            // useless LoadQuiz to make sure we fail fast if the question files are invalid
-            LoadQuiz(QuizzType.Allocation);
-            LoadQuiz(QuizzType.Performance);
+            EnsureQuizCanBeLoaded();
 
             _welcomePage = new WelcomePage(this);
             _allocationGamePage = new AllocationGamePage(this);
@@ -28,7 +26,6 @@ namespace Abc.NCrafts.App
 
             _allocationGamePage.NextPage = _endPage;
             _performanceGamePage.NextPage = _endPage;
-
             _endPage.NextPage = _welcomePage;
 
             CurrentPage = _welcomePage;
@@ -54,6 +51,12 @@ namespace Abc.NCrafts.App
                 default:
                     throw new ArgumentOutOfRangeException(nameof(quizzType), quizzType, null);
             }
+        }
+
+        private static void EnsureQuizCanBeLoaded()
+        {
+            LoadQuiz(QuizzType.Allocation);
+            LoadQuiz(QuizzType.Performance);
         }
 
         private static Quiz LoadQuiz(QuizzType quizzType)

@@ -1,5 +1,4 @@
 ﻿using System.Windows.Input;
-using Abc.NCrafts.App.ViewModels.Questions;
 
 namespace Abc.NCrafts.App.ViewModels
 {

@@ -42,12 +42,6 @@ namespace Abc.NCrafts.App.ViewModels
 
         public ICommand Answer3Click { get { return new ActionCommand(() => SelectAnswer(Quiz.CurrentQuestion.Answer3)); } }
 
-        public Brush Answer1Background => GetBackground(Quiz.CurrentQuestion.Answer1);
-
-        public Brush Answer2Background => GetBackground(Quiz.CurrentQuestion.Answer2);
-
-        public Brush Answer3Background => GetBackground(Quiz.CurrentQuestion.Answer3);
-
         private void SelectAnswer(Answer answer)
         {
             _selectedAnswer = answer;
@@ -62,11 +56,6 @@ namespace Abc.NCrafts.App.ViewModels
             }
 
             OnPropertyChanged();
-        }
-
-        private SolidColorBrush GetBackground(Answer answer)
-        {
-            return new SolidColorBrush(_selectedAnswer == answer ? Colors.PaleGreen : Colors.White);
         }
 
         private static int[] GetHighlightedLines(Answer answer)
