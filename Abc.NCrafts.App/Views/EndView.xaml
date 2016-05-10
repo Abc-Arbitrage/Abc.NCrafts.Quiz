@@ -13,7 +13,6 @@
                 <ResourceDictionary Source="../SharedResources.xaml" />
             </ResourceDictionary.MergedDictionaries>
             <BooleanToVisibilityConverter x:Key="VisibilityConverter"></BooleanToVisibilityConverter>
-            <Storyboard x:Key="Storyboard1"/>
         </ResourceDictionary>
     </UserControl.Resources>
 
@@ -29,7 +28,7 @@
                 <DropShadowEffect Direction="270" Opacity="0.3" ShadowDepth="3" />
             </Border.Effect>
             <StackPanel Orientation="Horizontal" Margin="20" HorizontalAlignment="Center">
-                <Label Content="Well done!" HorizontalAlignment="Center" VerticalAlignment="Center"
+                <Label Content="Thanks for having played!" HorizontalAlignment="Center" VerticalAlignment="Center"
                        FontSize="60" FontFamily="Segoe UI Light" Margin="10" />
             </StackPanel>
         </Border>

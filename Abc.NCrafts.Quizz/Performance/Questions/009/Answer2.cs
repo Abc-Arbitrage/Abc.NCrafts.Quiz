@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 
 namespace Abc.NCrafts.Quizz.Performance.Questions._009
 {
+    [CorrectAnswer(Difficulty = Difficulty.Hard)]
     public class Answer2
     {
         private static readonly Random _random;
@@ -32,13 +33,14 @@ namespace Abc.NCrafts.Quizz.Performance.Questions._009
                 {
                     localResult += _values[index];
                 }
+
                 lock (results)
                 {
                     results.Add(localResult);
                 }
             });
 
-            var max = results.Max();
+            var max = results.Sum();
             // end
 
             Logger.Log("Max: {0}", max);

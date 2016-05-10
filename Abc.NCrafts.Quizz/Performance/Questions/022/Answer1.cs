@@ -20,7 +20,7 @@ namespace Abc.NCrafts.Quizz.Performance.Questions._022
             // begin
             for (var i = 0; i < _values.Count; i++)
             {
-                sum += i;
+                sum += _values[i];
             }
             // end
 

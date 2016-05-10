@@ -2,7 +2,6 @@
 
 namespace Abc.NCrafts.Quizz.Performance.Questions._016
 {
-    [CorrectAnswer(Difficulty = Difficulty.Hard)]
     public class Answer1
     {
         private static readonly Item[] _values;
