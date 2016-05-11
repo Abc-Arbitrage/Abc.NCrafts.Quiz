@@ -15,15 +15,16 @@ namespace Abc.NCrafts.Quizz.Performance.Questions._023
         public static unsafe void Run()
         {
             var sum = 0L;
+
+            // begin
             fixed (int* values = _values)
             {
-                // begin
                 for (var i = 0; i < _values.Length; i++)
                 {
                     sum += values[i];
                 }
-                // end
             }
+            // end
             Logger.Log($"Sum: {sum}");
         }
     }
