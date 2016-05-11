@@ -7,19 +7,16 @@ namespace Abc.NCrafts.App.ViewModels.Questions
     public class Question
     {
         private static readonly Random _random = new Random();
-        private static readonly Dictionary<int, int> _scoresByDifficulty = new Dictionary<int, int> { { 1, 50 }, { 2, 100 }, { 3, 200 } };
         private readonly Markdown _markdown = new Markdown();
         private string _htmlHelpContent;
 
         public List<Answer> Answers { get; }= new List<Answer>();
-        public int Difficulty { get; set; }
+        public QuestionDifficulty Difficulty { get; set; }
         public Answer SelectedAnswer { get; set; }
 
         public Answer Answer1 => Answers[0];
         public Answer Answer2 => Answers[1];
         public Answer Answer3 => Answers.Count >= 3 ? Answers[2] : new Answer();
-
-        public int Score => _scoresByDifficulty[Difficulty];
 
         public string MarkdownHelpContent { get; set; }
 

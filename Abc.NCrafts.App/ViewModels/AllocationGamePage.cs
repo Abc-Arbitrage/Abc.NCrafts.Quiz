@@ -86,6 +86,10 @@ namespace Abc.NCrafts.App.ViewModels
 
         public ICommand CloseHelp { get { return new ActionCommand(() => IsHelpVisible = false); } }
 
+        public bool IsEasyQuestion => MainViewModel.Quiz.CurrentQuestion.Difficulty >= QuestionDifficulty.Easy;
+        public bool IsMediumQuestion => MainViewModel.Quiz.CurrentQuestion.Difficulty >= QuestionDifficulty.Medium;
+        public bool IsHardQuestion => MainViewModel.Quiz.CurrentQuestion.Difficulty >= QuestionDifficulty.Hard;
+
         private void ShowHelpContent()
         {
             IsHelpVisible = true;

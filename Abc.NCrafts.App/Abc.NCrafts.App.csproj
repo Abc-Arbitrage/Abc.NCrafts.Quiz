@@ -106,11 +106,13 @@
     </ApplicationDefinition>
     <Compile Include="MainViewModel.cs" />
     <Compile Include="RelayCommand.cs" />
+    <Compile Include="ReverseBooleanToVisibilityConverter.cs" />
     <Compile Include="ViewModels\ActionCommand.cs" />
     <Compile Include="ViewModels\PerformanceGamePage.cs" />
     <Compile Include="ViewModels\EndPage.cs" />
     <Compile Include="ViewModels\AllocationGamePage.cs" />
     <Compile Include="ViewModels\HelpPage.cs" />
+    <Compile Include="ViewModels\QuestionDifficulty.cs" />
     <Compile Include="ViewModels\Questions\Answer.cs" />
     <Compile Include="ViewModels\Questions\Question.cs" />
     <Compile Include="ViewModels\Questions\Quiz.cs" />

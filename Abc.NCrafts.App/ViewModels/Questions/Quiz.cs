@@ -30,14 +30,10 @@ namespace Abc.NCrafts.App.ViewModels.Questions
         public bool MoveToNextQuestion()
         {
             var currentQuestion = Questions[CurrentQuestionIndex];
-            if (currentQuestion == null)
-                return false;
 
-            var answer = currentQuestion.SelectedAnswer;
+            var answer = currentQuestion?.SelectedAnswer;
             if (answer == null || !answer.IsCorrect)
                 return false;
-
-            CurrentScore += currentQuestion.Score;
 
             CurrentQuestionIndex++;
             if (CurrentQuestionIndex < Questions.Count)

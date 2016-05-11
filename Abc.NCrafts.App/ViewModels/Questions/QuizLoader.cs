@@ -15,10 +15,10 @@ namespace Abc.NCrafts.App.ViewModels.Questions
             {
                 var question = LoadQuestion(questionDirectoryPath);
                 List<Question> questions;
-                if (!questionsByDifficulty.TryGetValue(question.Difficulty, out questions))
+                if (!questionsByDifficulty.TryGetValue((int)question.Difficulty, out questions))
                 {
                     questions = new List<Question>();
-                    questionsByDifficulty.Add(question.Difficulty, questions);
+                    questionsByDifficulty.Add((int)question.Difficulty, questions);
                 }
                 questions.Add(question);
             }
@@ -93,15 +93,19 @@ namespace Abc.NCrafts.App.ViewModels.Questions
             answerLines.RemoveAt(answer.HighlightedSectionEndIndex + 1);
         }
 
-        private static int ParseDifficulty(string s)
+        private static QuestionDifficulty ParseDifficulty(string s)
         {
-            if (s.Contains("Easy"))
-                return 1;
-            if (s.Contains("Medium"))
-                return 2;
-            if (s.Contains("Hard"))
-                return 3;
-            return 0;
+            // lol
+            if(s.Contains(QuestionDifficulty.Easy.ToString()))
+                return QuestionDifficulty.Easy;
+
+            if(s.Contains(QuestionDifficulty.Medium.ToString()))
+                return QuestionDifficulty.Medium;
+
+            if(s.Contains(QuestionDifficulty.Hard.ToString()))
+                return QuestionDifficulty.Hard;
+
+            return QuestionDifficulty.Undefined;
         }
     }
 }
