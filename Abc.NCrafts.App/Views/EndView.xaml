@@ -91,12 +91,12 @@
 
             <Grid>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto" />
                     <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
                     <ColumnDefinition Width="Auto" />
                 </Grid.ColumnDefinitions>
 
-                <Button Grid.Column="0"
+                <Button Grid.Column="1"
                         Command="{Binding GoToPreviousCommand}"
                         Content="Please let me continue!" Height="50"
                         VerticalAlignment="Center"
