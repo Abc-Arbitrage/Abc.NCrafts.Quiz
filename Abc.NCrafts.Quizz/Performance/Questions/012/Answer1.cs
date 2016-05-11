@@ -10,7 +10,9 @@ namespace Abc.NCrafts.Quizz.Performance.Questions._012
 
         static Answer1()
         {
-            _values = Enumerable.Range(0, 100 * 1000).Select(x => (long)x).ToList();
+            _values = Enumerable.Range(0, 100 * 1000)
+                                .Select(x => (long)x)
+                                .ToList();
         }
 
         public static void Run()

@@ -60,11 +60,11 @@
                                 </TextBlock>
                                 <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
                                     <TextBlock FontSize="25" HorizontalAlignment="Left" Margin="0,0,10,0">Difficulty:</TextBlock>
-                                    <svgc:SvgViewbox Stretch="Uniform" Source="../Images/BlackStar.svg" Height="30"/>
-                                    <svgc:SvgViewbox Stretch="Uniform" Source="../Images/BlackStar.svg" Height="30"/>
-                                    <svgc:SvgViewbox Stretch="Uniform" Source="../Images/BlackStar.svg" Height="30"/>
-                                    <svgc:SvgViewbox Stretch="Uniform" Source="../Images/WhiteStar.svg" Height="30"/>
-                                    <svgc:SvgViewbox Stretch="Uniform" Source="../Images/WhiteStar.svg" Height="30"/>
+                                    <svgc:SvgViewbox Stretch="Uniform" Source="../Images/BlackFilledStar.svg" Height="30" Margin="2"/>
+                                    <svgc:SvgViewbox Stretch="Uniform" Source="../Images/BlackFilledStar.svg" Height="30" Margin="2"/>
+                                    <svgc:SvgViewbox Stretch="Uniform" Source="../Images/BlackFilledStar.svg" Height="30" Margin="2"/>
+                                    <svgc:SvgViewbox Stretch="Uniform" Source="../Images/BlackEmptyStar.svg" Height="30"  Margin="2"/>
+                                    <svgc:SvgViewbox Stretch="Uniform" Source="../Images/BlackEmptyStar.svg" Height="30"/>
                                 </StackPanel>
                             </StackPanel>
                         </Grid>
@@ -90,11 +90,11 @@
                                 </TextBlock>
                                 <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
                                     <TextBlock FontSize="25" HorizontalAlignment="Left" Margin="0,0,10,0">Difficulty: </TextBlock>
-                                    <svgc:SvgViewbox Stretch="Uniform" Source="../Images/BlackStar.svg" Height="30"/>
-                                    <svgc:SvgViewbox Stretch="Uniform" Source="../Images/BlackStar.svg" Height="30"/>
-                                    <svgc:SvgViewbox Stretch="Uniform" Source="../Images/BlackStar.svg" Height="30"/>
-                                    <svgc:SvgViewbox Stretch="Uniform" Source="../Images/BlackStar.svg" Height="30"/>
-                                    <svgc:SvgViewbox Stretch="Uniform" Source="../Images/WhiteStar.svg" Height="30"/>
+                                    <svgc:SvgViewbox Stretch="Uniform" Source="../Images/BlackFilledStar.svg" Height="30" Margin="2"/>
+                                    <svgc:SvgViewbox Stretch="Uniform" Source="../Images/BlackFilledStar.svg" Height="30" Margin="2"/>
+                                    <svgc:SvgViewbox Stretch="Uniform" Source="../Images/BlackFilledStar.svg" Height="30" Margin="2"/>
+                                    <svgc:SvgViewbox Stretch="Uniform" Source="../Images/BlackFilledStar.svg" Height="30" Margin="2"/>
+                                    <svgc:SvgViewbox Stretch="Uniform" Source="../Images/BlackEmptyStar.svg" Height="30"/>
                                 </StackPanel>
                             </StackPanel>
                         </Grid>

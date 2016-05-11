@@ -216,8 +216,17 @@
     <Resource Include="Images\Raspberry.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\BlackStar.svg" />
-    <Resource Include="Images\WhiteStar.svg" />
+    <Resource Include="Images\WhiteFilledStar.svg" />
+    <Resource Include="Images\WhiteEmptyStar.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\BlackEmptyStar.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\BlackFilledStar.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\AbamLogo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Fody.1.28.3\build\Fody.targets" Condition="Exists('..\packages\Fody.1.28.3\build\Fody.targets')" />

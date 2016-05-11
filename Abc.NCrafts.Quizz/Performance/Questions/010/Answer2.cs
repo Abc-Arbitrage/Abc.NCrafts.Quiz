@@ -10,9 +10,14 @@ namespace Abc.NCrafts.Quizz.Performance.Questions._010
 
         static Answer2()
         {
+            var stringComparer = StringComparer.InvariantCultureIgnoreCase;
+
             var random = new Random();
-            _values = new Dictionary<string, int>(StringComparer.InvariantCultureIgnoreCase);
-            foreach (var value in Enumerable.Range(0, 500).Select(_ => random.Next(5000)))
+            var values = Enumerable.Range(0, 500)
+                                   .Select(_ => random.Next(5000));
+
+            _values = new Dictionary<string, int>(stringComparer);
+            foreach (var value in values)
             {
                 _values[value.ToString()] = value;
             }

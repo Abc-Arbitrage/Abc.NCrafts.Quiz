@@ -99,6 +99,7 @@
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="Auto" />
                 </Grid.ColumnDefinitions>
@@ -112,17 +113,19 @@
                         Background="#626262"
                         ToolTip="Show help content. It will give you the solution." />
 
-                <StackPanel Grid.Column="1" Orientation="Horizontal" Margin="0,0,0,0" VerticalAlignment="Center">
-                    <TextBlock FontSize="25" FontFamily="Segoe UI Light" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,0,10,0">Difficulty:</TextBlock>
-                    <svgc:SvgViewbox Stretch="Uniform" Source="../Images/BlackStar.svg" Height="30" Visibility="{Binding IsEasyQuestion, Converter={StaticResource VisibilityConverter}}"/>
-                    <svgc:SvgViewbox Stretch="Uniform" Source="../Images/WhiteStar.svg" Height="30" Visibility="{Binding IsEasyQuestion, Converter={StaticResource ReverseVisibilityConverter}}"/>
-                    <svgc:SvgViewbox Stretch="Uniform" Source="../Images/BlackStar.svg" Height="30" Visibility="{Binding IsMediumQuestion, Converter={StaticResource VisibilityConverter}}"/>
-                    <svgc:SvgViewbox Stretch="Uniform" Source="../Images/WhiteStar.svg" Height="30" Visibility="{Binding IsMediumQuestion, Converter={StaticResource ReverseVisibilityConverter}}"/>
-                    <svgc:SvgViewbox Stretch="Uniform" Source="../Images/BlackStar.svg" Height="30" Visibility="{Binding IsHardQuestion, Converter={StaticResource VisibilityConverter}}"/>
-                    <svgc:SvgViewbox Stretch="Uniform" Source="../Images/WhiteStar.svg" Height="30" Visibility="{Binding IsHardQuestion, Converter={StaticResource ReverseVisibilityConverter}}"/>
+                <Image Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" Source="../Images/AbamLogo.png" RenderOptions.BitmapScalingMode="HighQuality" Width="256"/>
+
+                <StackPanel Grid.Column="0" Grid.ColumnSpan="4" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Center">
+                    <TextBlock FontSize="25" FontFamily="Segoe UI Light" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,0,10,0">Difficulty:</TextBlock>
+                    <svgc:SvgViewbox Stretch="Uniform" Source="../Images/WhiteFilledStar.svg" Height="30" Visibility="{Binding IsEasyQuestion, Converter={StaticResource VisibilityConverter}}" Margin="2"/>
+                    <svgc:SvgViewbox Stretch="Uniform" Source="../Images/WhiteEmptyStar.svg" Height="30" Visibility="{Binding IsEasyQuestion, Converter={StaticResource ReverseVisibilityConverter}}" Margin="2"/>
+                    <svgc:SvgViewbox Stretch="Uniform" Source="../Images/WhiteFilledStar.svg" Height="30" Visibility="{Binding IsMediumQuestion, Converter={StaticResource VisibilityConverter}}" Margin="2"/>
+                    <svgc:SvgViewbox Stretch="Uniform" Source="../Images/WhiteEmptyStar.svg" Height="30" Visibility="{Binding IsMediumQuestion, Converter={StaticResource ReverseVisibilityConverter}}" Margin="2"/>
+                    <svgc:SvgViewbox Stretch="Uniform" Source="../Images/WhiteFilledStar.svg" Height="30" Visibility="{Binding IsHardQuestion, Converter={StaticResource VisibilityConverter}}" Margin="2"/>
+                    <svgc:SvgViewbox Stretch="Uniform" Source="../Images/WhiteEmptyStar.svg" Height="30" Visibility="{Binding IsHardQuestion, Converter={StaticResource ReverseVisibilityConverter}}"/>
                 </StackPanel>
                 
-                <Button Grid.Column="2"
+                <Button Grid.Column="3"
                         Command="{Binding GoToNextCommand}"
                         Content="Stop this madness" Width="224" Height="50"
                         VerticalAlignment="Center"
