@@ -15,9 +15,9 @@ namespace Abc.NCrafts.Quizz.Performance.Questions._003
         public static void Run()
         {
             // begin
-            var sum = _items.Max();
+            var max = _items.Max();
             // end
-            Logger.Log("Sum: {0}", sum);
+            Logger.Log("Max: {0}", max);
         }
     }
 }

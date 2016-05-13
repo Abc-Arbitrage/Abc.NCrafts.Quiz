@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace Abc.NCrafts.Quizz.Questions._009
 {
@@ -9,7 +10,8 @@ namespace Abc.NCrafts.Quizz.Questions._009
         public static void Run()
         {
             // begin
-            var sum = Sum() + _random.Next();
+            var sum = Sum(Array.Empty<int>().ToArray());
+            sum += _random.Next();
             // end
 
             Logger.Log("Sum: {0}", sum);

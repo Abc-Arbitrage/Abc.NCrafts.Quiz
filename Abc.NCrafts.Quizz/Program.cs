@@ -8,9 +8,10 @@ namespace Abc.NCrafts.Quizz
     {
         private static void Main(string[] args)
         {
-            RunPerformanceQuestion("028", 1000);
+            RunPerformanceQuestion("021", 1000);
             //RunPerformanceQuestion("010", 100 * 1000);
             //RunPerformanceQuestion("006", 100);
+            //RunAllocationQuestion("009");
 
             Console.ReadLine();
         }
@@ -56,7 +57,7 @@ namespace Abc.NCrafts.Quizz
             Console.WriteLine("Running " + number);
             Console.WriteLine();
 
-            var types = typeof(Program).Assembly.GetTypes().Where(x => x.Namespace != null && x.Namespace.Contains("Allocation") && x.Namespace.EndsWith(number) && !x.IsNested);
+            var types = typeof(Program).Assembly.GetTypes().Where(x => x.Namespace != null && !x.Namespace.Contains("Performance") && x.Namespace.EndsWith(number) && !x.IsNested);
 
             foreach (var type in types)
             {
