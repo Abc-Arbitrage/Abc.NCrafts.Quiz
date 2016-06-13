@@ -1,13 +1,21 @@
-# ABC Arbitrage allocation quiz for NCrafts 2015
+# ABC Arbitrage quiz for NCrafts 2015 & 2016
 
-This project is a small quiz application we let people play with on our ABC Arbitrage booth at the [NCrafts 2015 conference](http://ncrafts.io/) in Paris.
+## Two different quiz in one app
 
-The rules are simple: from 3 code samples, pick the one which doesn't allocate anything on the heap:
+This project is a small quiz application we let people play with on our ABC Arbitrage booth at the two last [NCrafts conference editions](http://ncrafts.io/) in Paris.
 
+You can chose from two different C# quiz :
+
+* A general performance quiz : _Which code is more likely to run faster?_
+* A more specific one : _Which code doesn't allocate on heap?_
+
+## Welcome screen
 ![Play screen](./Images/screenshot1.png "Play screen")
 
-If you get stuck, you can get some help:
+## Chose the good answer
 
-![Help screen](./Images/screenshot2.png "Help screen")
+![Play screen](./Images/screenshot2.png "Play screen")
 
-Enjoy.
+## Get some help
+
+![Help screen](./Images/screenshot3.png "Help screen")
