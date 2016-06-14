@@ -12,7 +12,7 @@ You can chose from two different C# quizzes:
 ## Welcome screen
 ![Play screen](./Images/screenshot1.png "Play screen")
 
-## Chose the good answer
+## Pick the good answer
 
 ![Play screen](./Images/screenshot2.png "Play screen")
 
