@@ -1,2 +1,2 @@
-﻿Even though Answer 1 will allocate objects on the heap it will be still be more efficient than copying the fat Item struct on each call to GetValue2.
-Note that if GetValue2 had been inlined the copy would have been avoided and Answer 2 would have performed better, hence the JIT compiler hint.
+﻿Even though the faster answer will allocate objects on the heap it will be still be more efficient than copying the fat Item struct on each call to GetValue2.
+Note that if GetValue2 had been inlined the copy would have been avoided and the slower answer would have performed better, hence the JIT compiler hint.
