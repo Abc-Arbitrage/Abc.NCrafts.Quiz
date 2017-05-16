@@ -1,1 +1,1 @@
-﻿TODO:
+﻿The logical && operator will short circuit as opposed to the bitwise & operator and given that the probability that random.Next() will be less than 100 is very low the IsValid2 and IsValid3 methods will rarely be called in Answer 1

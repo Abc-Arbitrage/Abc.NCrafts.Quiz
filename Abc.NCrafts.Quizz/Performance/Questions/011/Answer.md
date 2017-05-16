@@ -1,1 +1,2 @@
-﻿TODO:
+﻿Tail recursion.  In Answer 2 the last statement of the Factorial function is a multiplication whereas in Answer 1 it is a recursive call.
+The JIT will be able to optimise tail recursive functions into simple loops instead of recursive calls.  This has the added benefit of not being prone to stack overflows.

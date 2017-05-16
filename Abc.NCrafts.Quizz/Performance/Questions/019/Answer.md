@@ -1,1 +1,1 @@
-﻿TODO:
+﻿Removing from the end of a List<T> is an O(1) operation whereas removing from the beginning is O(N) as the whole array needs to be shifted to plug the gap.

@@ -1,1 +1,1 @@
-﻿TODO:
+﻿As _values is not readonly it can change halfway through the loop and therefore the Length property will not need to be evaluated for each iteration of the loop.

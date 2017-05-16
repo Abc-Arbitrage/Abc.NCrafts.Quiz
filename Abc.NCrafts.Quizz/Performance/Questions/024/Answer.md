@@ -1,1 +1,1 @@
-﻿TODO:
+﻿DateTime.Now does a whole lot of extra work to convert the date into the current timezone

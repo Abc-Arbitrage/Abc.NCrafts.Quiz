@@ -1,1 +1,2 @@
-﻿TODO
+﻿Each row will be represented as a contiguous block of memory (an array of ints) therefore it is much more effecient to process all items from one array than to process one item from many arrays.
+The CPU will be able to pre-fetch the following memory to be read as you will present it a predictable access pattern.
