@@ -56,7 +56,7 @@
                         </EventTrigger>
                     </Image.Triggers>
                 </Image>
-                <Image VerticalAlignment="Center" Source="../Images/ProPerformance.png" RenderOptions.BitmapScalingMode="HighQuality" >
+                <Image VerticalAlignment="Center" Source="../Images/ChromeCast.png" RenderOptions.BitmapScalingMode="HighQuality" Width="350" Height="350" Stretch="UniformToFill" >
                     <Image.RenderTransform>
                         <TranslateTransform x:Name="rightImageTransform" X="0" Y="0"/>
                     </Image.RenderTransform>
