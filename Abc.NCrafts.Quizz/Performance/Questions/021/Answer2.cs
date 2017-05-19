@@ -9,14 +9,14 @@ namespace Abc.NCrafts.Quizz.Performance.Questions._021
     {
         public static void Run()
         {
-            var queue = new ConcurrentStack<int>();
+            var stack = new ConcurrentStack<int>();
 
             // begin
             var producer = Task.Run(() =>
             {
                 foreach (var value in Enumerable.Range(1, 10000))
                 {
-                    queue.Push(value);
+                    stack.Push(value);
                 }
             });
 
@@ -26,7 +26,7 @@ namespace Abc.NCrafts.Quizz.Performance.Questions._021
                 var value = 0;
                 while (value != 10000)
                 {
-                    if (!queue.TryPop(out value))
+                    if (!stack.TryPop(out value))
                     {
                         spinWait.SpinOnce();
                         continue;
