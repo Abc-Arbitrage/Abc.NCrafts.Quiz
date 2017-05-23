@@ -1,8 +1,8 @@
-# ABC Arbitrage quiz for NCrafts 2015 & 2016
+# ABC Arbitrage quiz for NCrafts 2015-2017
 
 ## Two different quizzes in one app
 
-This project is a small quiz application we let people play with on our ABC Arbitrage booth at the last two [NCrafts conference editions](http://ncrafts.io/) in Paris.
+This project is a small quiz application we let people play with on our ABC Arbitrage booth at the last three [NCrafts conference editions](http://ncrafts.io/) in Paris.
 
 You can chose from two different C# quizzes:
 
