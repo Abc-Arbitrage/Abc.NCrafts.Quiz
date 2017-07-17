@@ -21,7 +21,7 @@ namespace Abc.NCrafts.Quizz.Performance.Questions._028
             if (number == 0 || number == 1) return false;
             if (number == 2) return true;
 
-            for (var divisor = 2; divisor < (int)Math.Sqrt(number); divisor++)
+            for (var divisor = 2; divisor <= (int)Math.Sqrt(number); divisor++)
             {
                 if (number % divisor == 0) return false;
             }
