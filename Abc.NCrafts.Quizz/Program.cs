@@ -1,40 +1,44 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Linq;
+using System.Reflection;
 
 namespace Abc.NCrafts.Quizz
 {
     internal class Program
     {
-        private static void Main(string[] args)
+        private static void Main()
         {
-            RunPerformanceQuestion("021", 1000);
-            //RunPerformanceQuestion("010", 100 * 1000);
-            //RunPerformanceQuestion("006", 100);
-            //RunAllocationQuestion("009");
+            RunPerformanceQuestion("Performance2018", 0, 500_000_000);
 
-            Console.ReadLine();
+            Console.WriteLine();
         }
 
-        private static void RunPerformanceQuestion(string number, int iterationCount = 2 * 1000 * 1000)
+        private static void RunPerformanceQuestion(string ns, int number, long iterationCount = 2_000_000)
         {
-            Console.WriteLine("Running " + number);
+            Console.WriteLine($"Running {ns}: {number}");
             Console.WriteLine();
 
-            var types = typeof(Program).Assembly.GetTypes().Where(x => x.Namespace != null && x.Namespace.Contains("Performance") && x.Namespace.EndsWith(number) && !x.IsNested);
+            var types = typeof(Program).Assembly.GetTypes().Where(x => x.Namespace != null && x.Namespace == $"Abc.NCrafts.Quizz.{ns}.Questions._{number:000}" && !x.IsNested);
             var durationOfFirstAnswer = (TimeSpan?)null;
 
             foreach (var type in types)
             {
-                var runDelegate = (Action)type.GetMethod("Run").CreateDelegate(typeof(Action));
+                var instance = Activator.CreateInstance(type);
+                var runMethod = type.GetMethod("Run", BindingFlags.Public | BindingFlags.Instance | BindingFlags.Static) ?? throw new InvalidOperationException();
+
+                var runDelegate = runMethod.IsStatic
+                    ? (Action)runMethod.CreateDelegate(typeof(Action))
+                    : (Action)runMethod.CreateDelegate(typeof(Action), instance);
+
+                for (var i = 0; i < 10; i++)
+                    runDelegate();
 
                 var stopwatch = Stopwatch.StartNew();
 
                 for (var i = 0; i < iterationCount; i++)
-                {
                     runDelegate();
-                }
-                
+
                 stopwatch.Stop();
 
                 if (durationOfFirstAnswer == null)
@@ -54,14 +58,14 @@ namespace Abc.NCrafts.Quizz
 
         private static void RunAllocationQuestion(string number)
         {
-            Console.WriteLine("Running " + number);
+            Console.WriteLine($"Running {number}");
             Console.WriteLine();
 
             var types = typeof(Program).Assembly.GetTypes().Where(x => x.Namespace != null && !x.Namespace.Contains("Performance") && x.Namespace.EndsWith(number) && !x.IsNested);
 
             foreach (var type in types)
             {
-                var runDelegate = (Action)type.GetMethod("Run").CreateDelegate(typeof(Action));
+                var runDelegate = (Action)type.GetMethod("Run")?.CreateDelegate(typeof(Action)) ?? throw new InvalidOperationException();
 
                 GC.Collect();
                 GC.WaitForPendingFinalizers();
@@ -69,9 +73,8 @@ namespace Abc.NCrafts.Quizz
 
                 var gcCount = GC.CollectionCount(0);
                 for (var i = 0; i < 10 * 1000 * 1000; i++)
-                {
                     runDelegate();
-                }
+
                 gcCount = GC.CollectionCount(0) - gcCount;
 
                 Console.WriteLine($"{number}/{type.Name}: {gcCount,5:N0} gen 0 collection(s).");

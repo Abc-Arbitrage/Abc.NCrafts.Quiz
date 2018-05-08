@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Abc.NCrafts.Quizz</RootNamespace>
     <AssemblyName>Abc.NCrafts.Quizz</AssemblyName>
-    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
   </PropertyGroup>
@@ -24,6 +24,8 @@
     <WarningLevel>4</WarningLevel>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <UseVSHostingProcess>true</UseVSHostingProcess>
+    <LangVersion>latest</LangVersion>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -34,10 +36,15 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <LangVersion>latest</LangVersion>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.ValueTuple, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.4.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -48,6 +55,8 @@
     <Compile Include="CorrectAnswerAttribute.cs" />
     <Compile Include="Difficulty.cs" />
     <Compile Include="Logger.cs" />
+    <Compile Include="Performance2018\Questions\000\Answer1.cs" />
+    <Compile Include="Performance2018\Questions\000\Answer2.cs" />
     <Compile Include="Performance\Questions\003\Answer1.cs" />
     <Compile Include="Performance\Questions\003\Answer2.cs" />
     <Compile Include="Performance\Questions\004\Answer1.cs" />
@@ -214,6 +223,8 @@
     <None Include="Allocation\Questions\025\Answer.md" />
     <None Include="Allocation\Questions\026\Answer.md" />
     <None Include="Allocation\Questions\027\Answer.md" />
+    <None Include="packages.config" />
+    <None Include="Performance2018\Questions\000\Answer.md" />
     <None Include="Performance\Questions\003\Answer.md" />
     <None Include="Performance\Questions\004\Answer.md" />
     <None Include="Performance\Questions\002\Answer.md" />
