@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Reflection;
+using System.Runtime.InteropServices;
 
 namespace Abc.NCrafts.Quizz
 {
@@ -9,8 +11,18 @@ namespace Abc.NCrafts.Quizz
     {
         private static void Main()
         {
+            LogInfo();
+
             RunPerformanceQuestion("Performance2018", 0, 500_000_000);
 
+            Console.WriteLine();
+        }
+
+        private static unsafe void LogInfo()
+        {
+            Console.WriteLine(RuntimeInformation.FrameworkDescription);
+            Console.WriteLine(Path.GetFileName(RuntimeEnvironment.GetRuntimeDirectory().TrimEnd(Path.DirectorySeparatorChar, Path.AltDirectorySeparatorChar)));
+            Console.WriteLine($"{sizeof(IntPtr) * 8}-bit");
             Console.WriteLine();
         }
 
