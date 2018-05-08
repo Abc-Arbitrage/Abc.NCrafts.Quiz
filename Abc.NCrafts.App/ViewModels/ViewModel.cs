@@ -3,7 +3,7 @@ using PropertyChanged;
 
 namespace Abc.NCrafts.App.ViewModels
 {
-    [ImplementPropertyChanged]
+    [AddINotifyPropertyChangedInterface]
     public abstract class ViewModel
     {
         public MainViewModel MainViewModel { get; private set; }

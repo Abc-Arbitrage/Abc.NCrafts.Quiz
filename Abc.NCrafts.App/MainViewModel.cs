@@ -7,7 +7,7 @@ using PropertyChanged;
 
 namespace Abc.NCrafts.App
 {
-    [ImplementPropertyChanged]
+    [AddINotifyPropertyChangedInterface]
     public class MainViewModel
     {
         private readonly WelcomePage _welcomePage;

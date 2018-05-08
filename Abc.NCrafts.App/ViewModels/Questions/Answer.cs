@@ -2,7 +2,7 @@
 
 namespace Abc.NCrafts.App.ViewModels.Questions
 {
-    [ImplementPropertyChanged]
+    [AddINotifyPropertyChangedInterface]
     public class Answer
     {
         public bool IsCorrect { get; set; }
