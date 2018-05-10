@@ -4,6 +4,8 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Runtime.InteropServices;
+using BenchmarkDotNet.Attributes;
+using BenchmarkDotNet.Running;
 
 namespace Abc.NCrafts.Quizz
 {
@@ -13,7 +15,8 @@ namespace Abc.NCrafts.Quizz
         {
             LogInfo();
 
-            RunPerformanceQuestion("Performance2018", 1, 50_000);
+            //RunPerformanceQuestion("Performance2018", 1, 50_000);
+            RunPerformance2018Benchmarks();
 
             Console.WriteLine();
         }
@@ -24,6 +27,20 @@ namespace Abc.NCrafts.Quizz
             Console.WriteLine(Path.GetFileName(RuntimeEnvironment.GetRuntimeDirectory().TrimEnd(Path.DirectorySeparatorChar, Path.AltDirectorySeparatorChar)));
             Console.WriteLine($"{sizeof(IntPtr) * 8}-bit");
             Console.WriteLine();
+        }
+
+        private static void RunPerformance2018Benchmarks()
+        {
+            var types = typeof(Program).Assembly
+                                       .GetTypes()
+                                       .Where(type => type.IsPublic
+                                                      && type.Namespace != null
+                                                      && type.Namespace.StartsWith("Abc.NCrafts.Quizz.Performance2018")
+                                                      && type.GetMethods().Any(m => m.IsDefined(typeof(BenchmarkAttribute))))
+                                       .OrderBy(t => t.Namespace)
+                                       .ToArray();
+
+            BenchmarkSwitcher.FromTypes(types).Run();
         }
 
         private static void RunPerformanceQuestion(string ns, int number, long iterationCount = 2_000_000)
