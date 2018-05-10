@@ -13,7 +13,7 @@ namespace Abc.NCrafts.Quizz
         {
             LogInfo();
 
-            RunPerformanceQuestion("Performance2018", 0, 500_000_000);
+            RunPerformanceQuestion("Performance2018", 1, 50_000);
 
             Console.WriteLine();
         }
@@ -43,6 +43,11 @@ namespace Abc.NCrafts.Quizz
                     ? (Action)runMethod.CreateDelegate(typeof(Action))
                     : (Action)runMethod.CreateDelegate(typeof(Action), instance);
 
+                Console.WriteLine($"{number:000}/{type.Name}:");
+                Logger.Enabled = true;
+                runDelegate();
+                Logger.Enabled = false;
+
                 for (var i = 0; i < 10; i++)
                     runDelegate();
 
@@ -56,15 +61,17 @@ namespace Abc.NCrafts.Quizz
                 if (durationOfFirstAnswer == null)
                 {
                     durationOfFirstAnswer = stopwatch.Elapsed;
-                    Console.WriteLine($"{number}/{type.Name}: {stopwatch.Elapsed}");
+                    Console.WriteLine($"=> {stopwatch.Elapsed}");
                 }
                 else
                 {
                     var previousTicks = durationOfFirstAnswer.Value.Ticks;
                     var newTicks = stopwatch.Elapsed.Ticks;
                     var increase = (newTicks - previousTicks) / (double)previousTicks;
-                    Console.WriteLine($"{number}/{type.Name}: {stopwatch.Elapsed} ({increase:P0})");
+                    Console.WriteLine($"=> {stopwatch.Elapsed} ({increase:P0})");
                 }
+
+                Console.WriteLine();
             }
         }
 

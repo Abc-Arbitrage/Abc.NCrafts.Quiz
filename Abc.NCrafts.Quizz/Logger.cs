@@ -9,10 +9,10 @@ namespace Abc.NCrafts.Quizz
         public static bool Enabled { get; set; }
 
         [Conditional("DEBUG")]
-        public static void Log(string s)
+        public static void Log<T>(T value)
         {
             if (Enabled)
-                Console.WriteLine(s);
+                Console.WriteLine(value?.ToString());
         }
 
         [Conditional("DEBUG")]
