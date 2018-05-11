@@ -1,10 +1,10 @@
 ﻿using BenchmarkDotNet.Attributes;
 using BenchmarkDotNet.Attributes.Validators;
 
-namespace Abc.NCrafts.Quizz.Performance2018.Questions._001
+namespace Abc.NCrafts.Quizz.Performance2018.Questions._004
 {
     [ReturnValueValidator]
-    public class Bench001
+    public class Bench004
     {
         private readonly Answer1 _answer1 = new Answer1();
         private readonly Answer2 _answer2 = new Answer2();
