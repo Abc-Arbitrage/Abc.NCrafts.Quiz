@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Numerics;
 
-namespace Abc.NCrafts.Quizz.Performance2018.Questions._006
+namespace Abc.NCrafts.Quizz.Performance2018.Questions._008
 {
-    [CorrectAnswer(Difficulty = Difficulty.Medium)]
-    public class Answer2
+    public class Answer1
     {
         private readonly byte[] _buffer = GetBytes();
 

@@ -1,10 +1,10 @@
-﻿using System.Linq;
+﻿using System;
 
 namespace Abc.NCrafts.Quizz.Performance2018.Questions._006
 {
     public class Answer1
     {
-        private readonly byte[] _buffer = Enumerable.Range(0, 16 * 1024 + 7).Select(i => unchecked((byte)i)).ToArray();
+        private readonly byte[] _buffer = GetBytes();
 
         public byte Run()
         {
@@ -17,6 +17,13 @@ namespace Abc.NCrafts.Quizz.Performance2018.Questions._006
             // end
 
             return value;
+        }
+
+        private static byte[] GetBytes()
+        {
+            var bytes = new byte[16 * 1024 + 7];
+            new Random(42).NextBytes(bytes);
+            return bytes;
         }
     }
 }
