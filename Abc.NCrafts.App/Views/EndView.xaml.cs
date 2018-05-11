@@ -1,4 +1,5 @@
-﻿using System.Windows.Controls;
+﻿using System.Windows;
+using System.Windows.Controls;
 
 namespace Abc.NCrafts.App.Views
 {
@@ -10,6 +11,12 @@ namespace Abc.NCrafts.App.Views
         public EndView()
         {
             InitializeComponent();
+        }
+
+        private void EndViewOnLoaded(object sender, RoutedEventArgs e)
+        {
+            EmailTextBox.Focus();
+            EmailTextBox.SelectAll();
         }
     }
 }

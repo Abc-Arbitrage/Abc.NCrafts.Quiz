@@ -1,7 +1,6 @@
 ﻿using System.ComponentModel;
 using System.Linq;
 using System.Windows.Input;
-using System.Windows.Media;
 using System.Xml;
 using Abc.NCrafts.App.ViewModels.Questions;
 using Abc.NCrafts.App.Views;
@@ -12,7 +11,6 @@ namespace Abc.NCrafts.App.ViewModels
 {
     public class PerformanceGamePage : ViewModel, INotifyPropertyChanged
     {
-        private Answer _selectedAnswer;
         private IHighlightingDefinition _syntaxHighlighting;
 
         public PerformanceGamePage(MainViewModel mainViewModel)
@@ -32,13 +30,18 @@ namespace Abc.NCrafts.App.ViewModels
 
         public int[] Answer2HighlightedLines => GetHighlightedLines(Quiz.CurrentQuestion.Answer2);
 
-        public ICommand Answer1Click { get { return new ActionCommand(() => SelectAnswer(Quiz.CurrentQuestion.Answer1)); } }
+        public ICommand Answer1Click
+        {
+            get { return new ActionCommand(() => SelectAnswer(Quiz.CurrentQuestion.Answer1)); }
+        }
 
-        public ICommand Answer2Click { get { return new ActionCommand(() => SelectAnswer(Quiz.CurrentQuestion.Answer2)); } }
+        public ICommand Answer2Click
+        {
+            get { return new ActionCommand(() => SelectAnswer(Quiz.CurrentQuestion.Answer2)); }
+        }
 
         private void SelectAnswer(Answer answer)
         {
-            _selectedAnswer = answer;
             Quiz.CurrentQuestion.SelectedAnswer = answer;
 
             var canContinue = Quiz.MoveToNextQuestion();
@@ -78,7 +81,10 @@ namespace Abc.NCrafts.App.ViewModels
 
         public string HtmlHelpContent => MainViewModel.Quiz.CurrentQuestion.HtmlHelpContent;
 
-        public ICommand CloseHelp { get { return new ActionCommand(() => IsHelpVisible = false); } }
+        public ICommand CloseHelp
+        {
+            get { return new ActionCommand(() => IsHelpVisible = false); }
+        }
 
         public bool IsEasyQuestion => MainViewModel.Quiz.CurrentQuestion.Difficulty >= QuestionDifficulty.Easy;
         public bool IsMediumQuestion => MainViewModel.Quiz.CurrentQuestion.Difficulty >= QuestionDifficulty.Medium;

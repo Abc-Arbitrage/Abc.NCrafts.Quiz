@@ -5,7 +5,8 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:viewModels="clr-namespace:Abc.NCrafts.App.ViewModels"
              mc:Ignorable="d" 
-             d:DesignHeight="914.037" d:DesignWidth="1241.326" d:DataContext="{d:DesignInstance viewModels:EndPage}">
+             d:DesignHeight="1024" d:DesignWidth="1280" d:DataContext="{d:DesignInstance viewModels:EndPage}"
+             Loaded="EndViewOnLoaded">
 
     <UserControl.Resources>
         <ResourceDictionary>
@@ -33,12 +34,13 @@
             </StackPanel>
         </Border>
 
-        <StackPanel Grid.Row="1" VerticalAlignment="Center">
-            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="40" FontFamily="Segoe UI Light">
+        <DockPanel Grid.Row="1" VerticalAlignment="Center">
+            <TextBlock DockPanel.Dock="Top" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="40" FontFamily="Segoe UI Light">
                    <Run>You answered&#160;</Run><Run Text="{Binding Path=AnsweredQuestionCount, Mode=OneWay}"/><Run>&#160;question(s) correctly</Run>
             </TextBlock>
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                <Image VerticalAlignment="Center" Source="../Images/Raspberry.png" RenderOptions.BitmapScalingMode="HighQuality">
+
+            <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" HorizontalAlignment="Center">
+                <Image VerticalAlignment="Center" Source="../Images/Raspberry.png" RenderOptions.BitmapScalingMode="HighQuality" Width="350" Height="350" >
                     <Image.RenderTransform>
                         <TranslateTransform x:Name="leftImageTransform" X="0" Y="0"/>
                     </Image.RenderTransform>
@@ -76,13 +78,16 @@
                 </Image>
             </StackPanel>
 
-            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center" FontSize="60" FontFamily="Segoe UI Light">
+            <TextBlock DockPanel.Dock="Top" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center" FontSize="60" FontFamily="Segoe UI Light">
                 <Run Text="Leave us your email address for a"/>
                 <LineBreak/>
                 <Run>chance to win one of our prizes!</Run>
             </TextBlock>
 
-        </StackPanel>
+            <TextBox x:Name="EmailTextBox" HorizontalAlignment="Center" DockPanel.Dock="Top" FontSize="60" Text="{Binding Emails, Mode=TwoWay}" BorderThickness="0" Margin="20"/>
+            
+
+        </DockPanel>
 
         <Border Grid.ColumnSpan="4" Grid.Row="2" Background="#565656" Margin="0 0 0 0">
             <Border.Effect>
