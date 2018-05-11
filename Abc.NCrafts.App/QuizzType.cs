@@ -4,5 +4,6 @@
     {
         Performance,
         Allocation,
+        Performance2018,
     }
 }

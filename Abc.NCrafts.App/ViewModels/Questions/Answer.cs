@@ -9,5 +9,6 @@ namespace Abc.NCrafts.App.ViewModels.Questions
         public string Text { get; set; }
         public int HighlightedSectionBeginIndex { get; set; }
         public int HighlightedSectionEndIndex { get; set; }
+        public bool HasCode { get; set; }
     }
 }

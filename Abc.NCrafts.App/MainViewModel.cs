@@ -13,6 +13,7 @@ namespace Abc.NCrafts.App
         private readonly WelcomePage _welcomePage;
         private readonly AllocationGamePage _allocationGamePage;
         private readonly PerformanceGamePage _performanceGamePage;
+        private readonly Performance2018GamePage _performance2018GamePage;
         private readonly EndPage _endPage;
 
         public MainViewModel()
@@ -22,10 +23,13 @@ namespace Abc.NCrafts.App
             _welcomePage = new WelcomePage(this);
             _allocationGamePage = new AllocationGamePage(this);
             _performanceGamePage = new PerformanceGamePage(this);
+            _performance2018GamePage = new Performance2018GamePage(this);
             _endPage = new EndPage(this);
 
             _allocationGamePage.NextPage = _endPage;
             _performanceGamePage.NextPage = _endPage;
+            _performance2018GamePage.NextPage = _endPage;
+
             _endPage.NextPage = _welcomePage;
 
             CurrentPage = _welcomePage;
@@ -48,6 +52,10 @@ namespace Abc.NCrafts.App
                     _welcomePage.NextPage = _allocationGamePage;
                     _endPage.PreviousPage = _allocationGamePage;
                     break;
+                case QuizzType.Performance2018:
+                    _welcomePage.NextPage = _performance2018GamePage;
+                    _endPage.PreviousPage = _performance2018GamePage;
+                    break;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(quizzType), quizzType, null);
             }
@@ -57,12 +65,10 @@ namespace Abc.NCrafts.App
         {
             LoadQuiz(QuizzType.Allocation);
             LoadQuiz(QuizzType.Performance);
+            LoadQuiz(QuizzType.Performance2018);
         }
 
-        private static Quiz LoadQuiz(QuizzType quizzType)
-        {
-            return QuizLoader.LoadFrom(GetQuizPath(quizzType));
-        }
+        private static Quiz LoadQuiz(QuizzType quizzType) => QuizLoader.LoadFrom(GetQuizPath(quizzType));
 
         private static string GetQuizPath(QuizzType quizzType)
         {
@@ -90,6 +96,7 @@ namespace Abc.NCrafts.App
 
                 baseDirectory = parentDirectory;
             }
+
             return AppDomain.CurrentDomain.BaseDirectory;
         }
     }

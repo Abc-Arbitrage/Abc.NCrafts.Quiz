@@ -110,6 +110,7 @@
     <Compile Include="RelayCommand.cs" />
     <Compile Include="ReverseBooleanToVisibilityConverter.cs" />
     <Compile Include="ViewModels\ActionCommand.cs" />
+    <Compile Include="ViewModels\Performance2018GamePage.cs" />
     <Compile Include="ViewModels\PerformanceGamePage.cs" />
     <Compile Include="ViewModels\EndPage.cs" />
     <Compile Include="ViewModels\AllocationGamePage.cs" />
@@ -123,6 +124,9 @@
     <Compile Include="ViewModels\ViewModel.cs" />
     <Compile Include="QuizzType.cs" />
     <Compile Include="ViewModels\WelcomePage.cs" />
+    <Compile Include="Views\Performance2018GameView.xaml.cs">
+      <DependentUpon>Performance2018GameView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\PerformanceGameView.xaml.cs">
       <DependentUpon>PerformanceGameView.xaml</DependentUpon>
     </Compile>
@@ -153,6 +157,10 @@
     <Page Include="SharedResources.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Performance2018GameView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\PerformanceGameView.xaml">
       <Generator>MSBuild:Compile</Generator>

@@ -14,8 +14,7 @@ namespace Abc.NCrafts.App.ViewModels.Questions
             foreach (var questionDirectoryPath in Directory.GetDirectories(quizDirectoryPath))
             {
                 var question = LoadQuestion(questionDirectoryPath);
-                List<Question> questions;
-                if (!questionsByDifficulty.TryGetValue((int)question.Difficulty, out questions))
+                if (!questionsByDifficulty.TryGetValue((int)question.Difficulty, out var questions))
                 {
                     questions = new List<Question>();
                     questionsByDifficulty.Add((int)question.Difficulty, questions);
@@ -36,6 +35,9 @@ namespace Abc.NCrafts.App.ViewModels.Questions
             {
                 var answerLines = File.ReadLines(answerFilePath).ToList();
                 var answer = new Answer();
+
+                var nonCodeAnswer = answerLines.FirstOrDefault(x => x.Contains("[NonCodeAnswer"));
+                answer.HasCode = nonCodeAnswer == null;
 
                 var correctAnswerLine = answerLines.FirstOrDefault(x => x.Contains("[CorrectAnswer"));
                 if (correctAnswerLine != null)

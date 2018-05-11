@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using MarkdownSharp;
 
 namespace Abc.NCrafts.App.ViewModels.Questions
@@ -14,9 +15,13 @@ namespace Abc.NCrafts.App.ViewModels.Questions
         public QuestionDifficulty Difficulty { get; set; }
         public Answer SelectedAnswer { get; set; }
 
-        public Answer Answer1 => Answers[0];
-        public Answer Answer2 => Answers[1];
-        public Answer Answer3 => Answers.Count >= 3 ? Answers[2] : new Answer();
+        private IEnumerable<Answer> CodeAnswers => Answers.Where(x => x.HasCode);
+        private IEnumerable<Answer> NonCodeAnswers => Answers.Where(x => !x.HasCode);
+
+        public Answer Answer1 => CodeAnswers.First();
+        public Answer Answer2 => CodeAnswers.Skip(1).First();
+        public Answer Answer3 => CodeAnswers.Skip(2).FirstOrDefault() ?? new Answer();
+        public Answer NonCodeAnswer => NonCodeAnswers.FirstOrDefault() ?? new Answer();
 
         public string MarkdownHelpContent { get; set; }
 

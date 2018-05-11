@@ -20,6 +20,9 @@
         <DataTemplate DataType="{x:Type viewModels:PerformanceGamePage}">
             <views:PerformanceGameView></views:PerformanceGameView>
         </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModels:Performance2018GamePage}">
+            <views:Performance2018GameView></views:Performance2018GameView>
+        </DataTemplate>
         <DataTemplate DataType="{x:Type viewModels:EndPage}">
             <views:EndView></views:EndView>
         </DataTemplate>
