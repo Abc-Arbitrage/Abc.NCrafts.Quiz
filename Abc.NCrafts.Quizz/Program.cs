@@ -28,8 +28,26 @@ namespace Abc.NCrafts.Quizz
             Console.WriteLine(RuntimeInformation.FrameworkDescription);
             Console.WriteLine(Path.GetFileName(RuntimeEnvironment.GetRuntimeDirectory().TrimEnd(Path.DirectorySeparatorChar, Path.AltDirectorySeparatorChar)));
             Console.WriteLine($"{sizeof(IntPtr) * 8}-bit");
-            Console.WriteLine($"Vector size: {Vector<byte>.Count} bytes");
-            Console.WriteLine($"Intrinsics: SSE: {Sse.IsSupported}, SSE2: {Sse2.IsSupported}, SSE3: {Sse3.IsSupported}, SSSE3: {Ssse3.IsSupported}, SEE4.1: {Sse41.IsSupported}, SSE4.2: {Sse42.IsSupported}, AVX: {Avx.IsSupported}, AVX2: {Avx2.IsSupported}, LZCNT: {Lzcnt.IsSupported}, POPCNT: {Popcnt.IsSupported}");
+            Console.WriteLine($"Vector size: {Vector<byte>.Count * 8}-bit");
+
+            var intrinsics = new (string name, bool supported)[]
+            {
+                ("SSE", Sse.IsSupported),
+                ("SSE2", Sse2.IsSupported),
+                ("SSE3", Sse3.IsSupported),
+                ("SSSE3", Ssse3.IsSupported),
+                ("SEE4.1", Sse41.IsSupported),
+                ("SSE4.2", Sse42.IsSupported),
+                ("AVX", Avx2.IsSupported),
+                ("AVX2", Avx2.IsSupported),
+                ("LZCNT", Lzcnt.IsSupported),
+                ("POPCNT", Popcnt.IsSupported)
+            };
+
+            Console.WriteLine($"Intrinsics: {string.Join(", ", intrinsics.Where(i => i.supported).Select(i => i.name))}");
+            if (intrinsics.Any(i => !i.supported))
+                Console.WriteLine($"Not supported: {string.Join(", ", intrinsics.Where(i => !i.supported).Select(i => i.name))}");
+
             Console.WriteLine();
         }
 
