@@ -119,6 +119,7 @@
     <Compile Include="ViewModels\Questions\Question.cs" />
     <Compile Include="ViewModels\Questions\Quiz.cs" />
     <Compile Include="ViewModels\Questions\QuizLoader.cs" />
+    <Compile Include="ViewModels\SyntaxHighLightingLoader.cs" />
     <Compile Include="ViewModels\ViewModel.cs" />
     <Compile Include="QuizzType.cs" />
     <Compile Include="ViewModels\WelcomePage.cs" />
