@@ -6,7 +6,7 @@ namespace Abc.NCrafts.Quizz.Performance2018.Questions._001
     {
         private readonly int[] _buffer = Enumerable.Range(0, 16 * 1024).ToArray();
 
-        public unsafe void Run()
+        public unsafe int Run()
         {
             var sum = 0;
 
@@ -21,7 +21,7 @@ namespace Abc.NCrafts.Quizz.Performance2018.Questions._001
             }
             // end
 
-            Logger.Log(sum);
+            return sum;
         }
     }
 }

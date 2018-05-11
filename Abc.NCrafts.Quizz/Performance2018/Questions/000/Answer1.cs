@@ -6,12 +6,11 @@ namespace Abc.NCrafts.Quizz.Performance2018.Questions._000
     {
         public readonly SomeGuids Guids = new SomeGuids(Guid.NewGuid(), Guid.NewGuid(), Guid.NewGuid(), Guid.NewGuid());
 
-        public void Run()
+        public Guid Run()
         {
             // begin
-            var result = Guids.GetC();
+            return Guids.GetC();
             // end
-            Logger.Log(result.ToString());
         }
 
         public struct SomeGuids

@@ -4,13 +4,11 @@
     {
         private const string _str = "Foo Bar Baz 123456";
 
-        public void Run()
+        public int Run()
         {
             // begin
-            var result = int.Parse(_str.Substring(12));
+            return int.Parse(_str.Substring(12));
             // end
-
-            Logger.Log(result);
         }
     }
 }
