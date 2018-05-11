@@ -1,9 +1,9 @@
 ﻿using BenchmarkDotNet.Attributes;
-using BenchmarkDotNet.Attributes.Jobs;
+using BenchmarkDotNet.Attributes.Validators;
 
 namespace Abc.NCrafts.Quizz.Performance2018.Questions._001
 {
-    [ShortRunJob]
+    [ReturnValueValidator]
     public class Bench001
     {
         private readonly Answer1 _answer1 = new Answer1();
