@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Runtime.CompilerServices;
 
 namespace Abc.NCrafts.Quizz.Performance2018.Questions._009
 {
