@@ -17,6 +17,7 @@ namespace Abc.NCrafts.App.ViewModels.Questions
                 if (!questionsByDifficulty.TryGetValue((int)question.Difficulty, out var questions))
                 {
                     questions = new List<Question>();
+
                     questionsByDifficulty.Add((int)question.Difficulty, questions);
                 }
                 questions.Add(question);

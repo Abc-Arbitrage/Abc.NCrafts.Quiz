@@ -5,7 +5,10 @@ namespace Abc.NCrafts.Quizz.Performance2018.Questions._000
     [CorrectAnswer(Difficulty = Difficulty.Easy)]
     public class Answer2
     {
-        public readonly SomeGuids Guids = new SomeGuids(Guid.NewGuid(), Guid.NewGuid(), Guid.NewGuid(), Guid.NewGuid());
+        public readonly SomeGuids Guids = new SomeGuids(Guid.NewGuid(), 
+                                                        Guid.NewGuid(), 
+                                                        Guid.NewGuid(), 
+                                                        Guid.NewGuid());
 
         public Guid Run()
         {

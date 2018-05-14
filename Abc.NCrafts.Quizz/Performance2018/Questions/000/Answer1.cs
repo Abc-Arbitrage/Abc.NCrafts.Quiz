@@ -4,7 +4,10 @@ namespace Abc.NCrafts.Quizz.Performance2018.Questions._000
 {
     public class Answer1
     {
-        public readonly SomeGuids Guids = new SomeGuids(Guid.NewGuid(), Guid.NewGuid(), Guid.NewGuid(), Guid.NewGuid());
+        public readonly SomeGuids Guids = new SomeGuids(Guid.NewGuid(), 
+                                                        Guid.NewGuid(), 
+                                                        Guid.NewGuid(), 
+                                                        Guid.NewGuid());
 
         public Guid Run()
         {

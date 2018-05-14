@@ -4,7 +4,8 @@ namespace Abc.NCrafts.Quizz.Performance2018.Questions._004
 {
     public class Answer2
     {
-        private readonly int[] _buffer = Enumerable.Range(0, 16 * 1024).ToArray();
+        private readonly int[] _buffer = Enumerable.Range(0, 16 * 1024)
+                                                   .ToArray();
 
         public unsafe int Run()
         {

@@ -4,7 +4,9 @@ namespace Abc.NCrafts.Quizz.Performance2018.Questions._003
 {
     public class Answer1
     {
-        private readonly string[] _strings = Enumerable.Range(0, 16 * 1024).Select(i => new string(' ', i)).ToArray();
+        private readonly string[] _strings = Enumerable.Range(0, 16 * 1024)
+                                                       .Select(i => new string(' ', i))
+                                                       .ToArray();
 
         public int Run()
         {
