@@ -1,9 +1,7 @@
 ﻿using BenchmarkDotNet.Attributes;
-using BenchmarkDotNet.Attributes.Validators;
 
 namespace Abc.NCrafts.Quizz.Performance2018.Questions._009
 {
-    [ReturnValueValidator, DisassemblyDiagnoser]
     public class Bench009
     {
         private readonly Answer1 _answer1 = new Answer1();

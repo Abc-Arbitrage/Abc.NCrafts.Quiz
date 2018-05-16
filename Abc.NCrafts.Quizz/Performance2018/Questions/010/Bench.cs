@@ -2,7 +2,6 @@
 
 namespace Abc.NCrafts.Quizz.Performance2018.Questions._010
 {
-    [DisassemblyDiagnoser, MemoryDiagnoser]
     public class Bench010
     {
         private readonly Answer1 _answer1 = new Answer1();
