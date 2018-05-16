@@ -21,6 +21,7 @@ namespace Abc.NCrafts.Quizz
             RunPerformance2018Benchmarks();
 
             Console.WriteLine();
+            Console.ReadLine();
         }
 
         private static unsafe void LogInfo()
