@@ -85,6 +85,12 @@
       <HintPath>..\packages\SharpVectors.1.0\lib\net20\SharpVectors.Runtime.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="SStuff.FlowControls, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FlowControls-wpf.1.0.0\lib\SStuff.FlowControls.dll</HintPath>
+    </Reference>
+    <Reference Include="SStuff.WpfEffects, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FlowControls-wpf.1.0.0\lib\SStuff.WpfEffects.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />

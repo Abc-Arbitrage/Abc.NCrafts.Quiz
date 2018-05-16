@@ -5,8 +5,9 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:viewModels="clr-namespace:Abc.NCrafts.App.ViewModels"
              xmlns:svgc="http://sharpvectors.codeplex.com/svgc/"
+             xmlns:flowControls="clr-namespace:SStuff.FlowControls;assembly=SStuff.FlowControls"
              mc:Ignorable="d"
-             d:DesignHeight="703.048" d:DesignWidth="1272.612"
+             d:DesignHeight="1200" d:DesignWidth="1900"
              d:DataContext="{d:DesignInstance viewModels:WelcomePage}">
 
     <UserControl.Resources>
@@ -34,108 +35,100 @@
             </StackPanel>
         </Border>
 
-        <Border Grid.Row="1" VerticalAlignment="Center" Padding="10">
-            <Grid >
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
-                </Grid.ColumnDefinitions>
+        <flowControls:FlowItemsControl2D  Grid.Row="1" VerticalAlignment="Center" >
 
-                <Button Grid.Column="0" Grid.Row="0" Command="{Binding StartPerformanceQuizzCommand}" VerticalAlignment="Stretch" Margin="0 0 5 0" Padding="0 20 0 20">
-                    <Viewbox Stretch="Uniform">
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="Auto"/>
-                                <ColumnDefinition Width="*" />
-                            </Grid.ColumnDefinitions>
-                            <Border Grid.Column="0" Margin="20 20 10 20" Width="150" Height="150">
-                                <svgc:SvgViewbox Stretch="Uniform" Source="../Images/Performance.svg" />
-                            </Border>
-                            <StackPanel Grid.Column="1" Margin="10 15 20 20">
-                                <TextBlock FontSize="50" HorizontalAlignment="Left">Performance</TextBlock>
-                                <TextBlock FontSize="25" Foreground="White" TextWrapping="Wrap">
-                                    <Run>Find the code that is most likely</Run>
-                                    <LineBreak />
-                                    <Run>to perform better</Run>
-                                </TextBlock>
-                                <StackPanel Orientation="Horizontal" Margin="0,30,0,0">
-                                    <TextBlock FontSize="25" HorizontalAlignment="Left" Margin="0,0,10,0">Difficulty:</TextBlock>
-                                    <svgc:SvgViewbox Stretch="Uniform" Source="../Images/BlackFilledStar.svg" Height="30" Margin="2"/>
-                                    <svgc:SvgViewbox Stretch="Uniform" Source="../Images/BlackFilledStar.svg" Height="30" Margin="2"/>
-                                    <svgc:SvgViewbox Stretch="Uniform" Source="../Images/BlackFilledStar.svg" Height="30" Margin="2"/>
-                                    <svgc:SvgViewbox Stretch="Uniform" Source="../Images/BlackEmptyStar.svg" Height="30"  Margin="2"/>
-                                    <svgc:SvgViewbox Stretch="Uniform" Source="../Images/BlackEmptyStar.svg" Height="30"/>
-                                </StackPanel>
-                            </StackPanel>
-                        </Grid>
-                    </Viewbox>
-                </Button>
-
-                <Button Grid.Column="1" Grid.Row="0" Command="{Binding StartAllocationQuizzCommand}" VerticalAlignment="Stretch" Margin="5 0 0 0" Padding="0">
-                    <Viewbox Stretch="Uniform">
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="Auto"/>
-                                <ColumnDefinition Width="*" />
-                            </Grid.ColumnDefinitions>
-                            <Border Grid.Column="0" Margin="20 20 10 20" Width="150" Height="150">
-                                <svgc:SvgViewbox Stretch="Uniform" Source="../Images/Allocations.svg" />
-                            </Border>
-                            <StackPanel Grid.Column="1" Margin="10 15 20 20">
-                                <TextBlock FontSize="50" HorizontalAlignment="Left">Zero Alloc</TextBlock>
-                                <TextBlock FontSize="25" Foreground="White" TextWrapping="Wrap">
-                                    <Run>Chase heap allocations to prevent</Run>
-                                    <LineBreak />
-                                    <Run>the GC from killing your latency</Run>
-                                </TextBlock>
-                                <StackPanel Orientation="Horizontal" Margin="0,30,0,0">
-                                    <TextBlock FontSize="25" HorizontalAlignment="Left" Margin="0,0,10,0">Difficulty: </TextBlock>
-                                    <svgc:SvgViewbox Stretch="Uniform" Source="../Images/BlackFilledStar.svg" Height="30" Margin="2"/>
-                                    <svgc:SvgViewbox Stretch="Uniform" Source="../Images/BlackFilledStar.svg" Height="30" Margin="2"/>
-                                    <svgc:SvgViewbox Stretch="Uniform" Source="../Images/BlackFilledStar.svg" Height="30" Margin="2"/>
-                                    <svgc:SvgViewbox Stretch="Uniform" Source="../Images/BlackFilledStar.svg" Height="30" Margin="2"/>
-                                    <svgc:SvgViewbox Stretch="Uniform" Source="../Images/BlackEmptyStar.svg" Height="30"/>
-                                </StackPanel>
-                            </StackPanel>
-                        </Grid>
-                    </Viewbox>
-                </Button>
-
-                <Button Grid.Column="2" Grid.Row="0" Command="{Binding StartPerformance2018QuizzCommand}" VerticalAlignment="Stretch" Margin="10 0 0 0" Padding="0 20 0 20">
-                    <Viewbox Stretch="Uniform">
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="Auto"/>
-                                <ColumnDefinition Width="*" />
-                            </Grid.ColumnDefinitions>
-                            <Border Grid.Column="0" Margin="20 20 10 20" Width="150" Height="150">
-                                <svgc:SvgViewbox Stretch="Uniform" Source="../Images/Performance.svg" />
-                            </Border>
-                            <StackPanel Grid.Column="1" Margin="10 15 20 20">
-                                <TextBlock FontSize="50" HorizontalAlignment="Left">Performance C# 7</TextBlock>
-                                <TextBlock FontSize="25" Foreground="White" TextWrapping="Wrap">
+            <Button Command="{Binding StartPerformance2018QuizzCommand}" VerticalAlignment="Stretch" Margin="0" Padding="0 20 0 20" Height="800" >
+                <Viewbox Stretch="Uniform">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Border Grid.Column="0" Margin="20 20 10 20" Width="150" Height="150">
+                            <svgc:SvgViewbox Stretch="Uniform" Source="../Images/Performance.svg" />
+                        </Border>
+                        <StackPanel Grid.Column="1" Margin="10 15 20 20">
+                            <TextBlock FontSize="50" HorizontalAlignment="Left">Performance 2018</TextBlock>
+                            <TextBlock FontSize="25" Foreground="White" TextWrapping="Wrap">
                                     <Run>Find the code that is most likely</Run>
                                     <LineBreak />
                                     <Run>to perform better in C# 7.*</Run>
-                                </TextBlock>
-                                <StackPanel Orientation="Horizontal" Margin="0,30,0,0">
-                                    <TextBlock FontSize="25" HorizontalAlignment="Left" Margin="0,0,10,0">Difficulty:</TextBlock>
-                                    <svgc:SvgViewbox Stretch="Uniform" Source="../Images/BlackFilledStar.svg" Height="30" Margin="2"/>
-                                    <svgc:SvgViewbox Stretch="Uniform" Source="../Images/BlackFilledStar.svg" Height="30" Margin="2"/>
-                                    <svgc:SvgViewbox Stretch="Uniform" Source="../Images/BlackFilledStar.svg" Height="30" Margin="2"/>
-                                    <svgc:SvgViewbox Stretch="Uniform" Source="../Images/BlackEmptyStar.svg" Height="30"  Margin="2"/>
-                                    <svgc:SvgViewbox Stretch="Uniform" Source="../Images/BlackEmptyStar.svg" Height="30"/>
-                                </StackPanel>
+                            </TextBlock>
+                            <StackPanel Orientation="Horizontal" Margin="0,30,0,0">
+                                <TextBlock FontSize="25" HorizontalAlignment="Left" Margin="0,0,10,0">Difficulty:</TextBlock>
+                                <svgc:SvgViewbox Stretch="Uniform" Source="../Images/BlackFilledStar.svg" Height="30" Margin="2"/>
+                                <svgc:SvgViewbox Stretch="Uniform" Source="../Images/BlackFilledStar.svg" Height="30" Margin="2"/>
+                                <svgc:SvgViewbox Stretch="Uniform" Source="../Images/BlackFilledStar.svg" Height="30" Margin="2"/>
+                                <svgc:SvgViewbox Stretch="Uniform" Source="../Images/BlackFilledStar.svg" Height="30" Margin="2"/>
+                                <svgc:SvgViewbox Stretch="Uniform" Source="../Images/BlackEmptyStar.svg" Height="30"/>
                             </StackPanel>
-                        </Grid>
-                    </Viewbox>
-                </Button>
+                        </StackPanel>
+                    </Grid>
+                </Viewbox>
+            </Button>
 
-            </Grid>
-        </Border>
+            <Button Command="{Binding StartAllocationQuizzCommand}" VerticalAlignment="Stretch" Margin="0" Padding="0" Height="800" >
+                <Viewbox Stretch="Uniform">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Border Grid.Column="0" Margin="20 20 10 20" Width="150" Height="150">
+                            <svgc:SvgViewbox Stretch="Uniform" Source="../Images/Allocations.svg" />
+                        </Border>
+                        <StackPanel Grid.Column="1" Margin="10 15 20 20">
+                            <TextBlock FontSize="50" HorizontalAlignment="Left">Zero Alloc</TextBlock>
+                            <TextBlock FontSize="25" Foreground="White" TextWrapping="Wrap">
+                                <Run>Chase heap allocations to prevent</Run>
+                                <LineBreak />
+                                <Run>the GC from killing your latency</Run>
+                            </TextBlock>
+                            <StackPanel Orientation="Horizontal" Margin="0,30,0,0">
+                                <TextBlock FontSize="25" HorizontalAlignment="Left" Margin="0,0,10,0">Difficulty:</TextBlock>
+                                <svgc:SvgViewbox Stretch="Uniform" Source="../Images/BlackFilledStar.svg" Height="30" Margin="2"/>
+                                <svgc:SvgViewbox Stretch="Uniform" Source="../Images/BlackFilledStar.svg" Height="30" Margin="2"/>
+                                <svgc:SvgViewbox Stretch="Uniform" Source="../Images/BlackFilledStar.svg" Height="30" Margin="2"/>
+                                <svgc:SvgViewbox Stretch="Uniform" Source="../Images/BlackFilledStar.svg" Height="30" Margin="2"/>
+                                <svgc:SvgViewbox Stretch="Uniform" Source="../Images/BlackEmptyStar.svg" Height="30"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </Grid>
+                </Viewbox>
+            </Button>
+            <Button Command="{Binding StartPerformanceQuizzCommand}" VerticalAlignment="Stretch" Margin="0" Padding="0 20 0 20" Height="800" >
+                <Viewbox Stretch="Uniform">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Border Grid.Column="0" Margin="20 20 10 20" Width="150" Height="150">
+                            <svgc:SvgViewbox Stretch="Uniform" Source="../Images/Performance.svg" />
+                        </Border>
+                        <StackPanel Grid.Column="1" Margin="10 15 20 20">
+                            <TextBlock FontSize="50" HorizontalAlignment="Left">Performance 2015</TextBlock>
+                            <TextBlock FontSize="25" Foreground="White" TextWrapping="Wrap">
+                                    <Run>Find the code that is most likely</Run>
+                                    <LineBreak />
+                                    <Run>to perform better</Run>
+                            </TextBlock>
+                            <StackPanel Orientation="Horizontal" Margin="0,30,0,0">
+                                <TextBlock FontSize="25" HorizontalAlignment="Left" Margin="0,0,10,0">Difficulty:</TextBlock>
+                                <svgc:SvgViewbox Stretch="Uniform" Source="../Images/BlackFilledStar.svg" Height="30" Margin="2"/>
+                                <svgc:SvgViewbox Stretch="Uniform" Source="../Images/BlackFilledStar.svg" Height="30" Margin="2"/>
+                                <svgc:SvgViewbox Stretch="Uniform" Source="../Images/BlackFilledStar.svg" Height="30" Margin="2"/>
+                                <svgc:SvgViewbox Stretch="Uniform" Source="../Images/BlackEmptyStar.svg" Height="30"  Margin="2"/>
+                                <svgc:SvgViewbox Stretch="Uniform" Source="../Images/BlackEmptyStar.svg" Height="30"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </Grid>
+                </Viewbox>
+            </Button>
 
-        <Border Grid.ColumnSpan="4" Grid.Row="2" Background="#565656" Margin="0 0 0 0">
+        </flowControls:FlowItemsControl2D>
+
+        <Border Grid.ColumnSpan="2" Grid.Row="4" Background="#565656" Margin="0 0 0 0">
             <Border.Effect>
                 <DropShadowEffect Direction="90" Opacity="0.3" ShadowDepth="3" />
             </Border.Effect>
