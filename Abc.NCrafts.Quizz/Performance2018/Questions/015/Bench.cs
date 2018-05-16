@@ -1,8 +1,8 @@
 ﻿using BenchmarkDotNet.Attributes;
 
-namespace Abc.NCrafts.Quizz.Performance2018.Questions._012
+namespace Abc.NCrafts.Quizz.Performance2018.Questions._015
 {
-    public class Bench012
+    public class Bench015
     {
         private readonly Answer1 _answer1 = new Answer1();
         private readonly Answer2 _answer2 = new Answer2();

@@ -2,7 +2,7 @@
 
 namespace Abc.NCrafts.Quizz.Performance2018.Questions._013
 {
-    public class Bench011
+    public class Bench013
     {
         private readonly Answer1 _answer1 = new Answer1();
         private readonly Answer2 _answer2 = new Answer2();
