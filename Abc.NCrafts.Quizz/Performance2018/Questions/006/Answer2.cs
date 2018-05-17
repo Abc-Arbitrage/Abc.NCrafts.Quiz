@@ -16,7 +16,7 @@ namespace Abc.NCrafts.Quizz.Performance2018.Questions._006
             // begin
             var i = 0;
 
-            if (Vector.IsHardwareAccelerated)
+            if (Vector.IsHardwareAccelerated) // assume is true
             {
                 var tmp = Vector<byte>.Zero;
 

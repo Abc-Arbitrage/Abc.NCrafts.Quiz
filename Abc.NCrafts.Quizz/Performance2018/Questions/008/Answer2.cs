@@ -15,7 +15,7 @@ namespace Abc.NCrafts.Quizz.Performance2018.Questions._008
             // begin
             var i = 0;
 
-            if (Avx2.IsSupported)
+            if (Avx2.IsSupported) // assume is true
             {
                 const int vectorSize = 256 / 8;
 

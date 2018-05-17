@@ -12,12 +12,13 @@ namespace Abc.NCrafts.Quizz.Performance2018.Questions._007
             var value = _value;
 
             // begin
-            if (Popcnt.IsSupported)
+            if (Popcnt.IsSupported) // assume is true
                 return (int)Popcnt.PopCount(value);
 
             int count;
             for (count = 0; value != 0; count++)
                 value &= value - 1;
+
             return count;
             // end
         }
