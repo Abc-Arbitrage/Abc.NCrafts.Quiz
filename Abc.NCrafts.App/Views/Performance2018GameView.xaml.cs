@@ -31,7 +31,7 @@ namespace Abc.NCrafts.App.Views
 
         private void HtmlHelpClick(object sender, MouseButtonEventArgs e)
         {
-            var pagePage = (PerformanceGamePage)DataContext;
+            var pagePage = (Performance2018GamePage)DataContext;
             pagePage.IsHelpVisible = false;
         }
 
