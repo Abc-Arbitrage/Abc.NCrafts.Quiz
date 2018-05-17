@@ -16,8 +16,8 @@ namespace Abc.NCrafts.Quizz.Performance2018.Questions._003
             // begin
             unchecked
             {
-                foreach (var value in _strings.AsSpan())
-                    sum += value.Length;
+                foreach (var item in _strings.AsSpan())
+                    sum += item.Length;
             }
             // end
 
