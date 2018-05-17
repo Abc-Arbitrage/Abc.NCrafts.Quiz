@@ -39,8 +39,8 @@
                    <Run>You answered&#160;</Run><Run Text="{Binding Path=AnsweredQuestionCount, Mode=OneWay}"/><Run>&#160;question(s) correctly</Run>
             </TextBlock>
 
-            <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" HorizontalAlignment="Center">
-                <Image VerticalAlignment="Center" Source="../Images/Raspberry.png" RenderOptions.BitmapScalingMode="HighQuality" Width="350" Height="350" >
+            <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" HorizontalAlignment="Center" Margin="20">
+                <Image VerticalAlignment="Center" Source="../Images/NokiaSteel.png" RenderOptions.BitmapScalingMode="HighQuality" Width="350" Height="350" >
                     <Image.RenderTransform>
                         <TranslateTransform x:Name="leftImageTransform" X="0" Y="0"/>
                     </Image.RenderTransform>
@@ -57,6 +57,8 @@
                             </BeginStoryboard>
                         </EventTrigger>
                     </Image.Triggers>
+                </Image>
+                <Image VerticalAlignment="Center" Source="../Images/MiBox.png" RenderOptions.BitmapScalingMode="HighQuality" Width="350" Height="350" >
                 </Image>
                 <Image VerticalAlignment="Center" Source="../Images/ChromeCast.png" RenderOptions.BitmapScalingMode="HighQuality" Width="350" Height="350" Stretch="UniformToFill" >
                     <Image.RenderTransform>

@@ -37,7 +37,7 @@
 
         <flowControls:FlowItemsControl2D  Grid.Row="1" VerticalAlignment="Center" >
 
-            <Button Command="{Binding StartPerformance2018QuizzCommand}" VerticalAlignment="Stretch" Margin="0" Padding="0 20 0 20" Height="800" >
+            <Button Command="{Binding StartPerformance2018QuizzCommand}" VerticalAlignment="Stretch" Margin="0" Padding="0 20 0 20" Height="700" >
                 <Viewbox Stretch="Uniform">
                     <Grid>
                         <Grid.ColumnDefinitions>
@@ -67,7 +67,7 @@
                 </Viewbox>
             </Button>
 
-            <Button Command="{Binding StartAllocationQuizzCommand}" VerticalAlignment="Stretch" Margin="0" Padding="0" Height="800" >
+            <Button Command="{Binding StartAllocationQuizzCommand}" VerticalAlignment="Stretch" Margin="0" Padding="0" Height="700" >
                 <Viewbox Stretch="Uniform">
                     <Grid>
                         <Grid.ColumnDefinitions>
@@ -96,7 +96,7 @@
                     </Grid>
                 </Viewbox>
             </Button>
-            <Button Command="{Binding StartPerformanceQuizzCommand}" VerticalAlignment="Stretch" Margin="0" Padding="0 20 0 20" Height="800" >
+            <Button Command="{Binding StartPerformanceQuizzCommand}" VerticalAlignment="Stretch" Margin="0" Padding="0 20 0 20" Height="700" >
                 <Viewbox Stretch="Uniform">
                     <Grid>
                         <Grid.ColumnDefinitions>

@@ -229,10 +229,6 @@
     <Resource Include="Images\Performance.svg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\ProPerformance.png" />
-    <Resource Include="Images\Raspberry.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Images\WhiteFilledStar.svg" />
     <Resource Include="Images\WhiteEmptyStar.svg" />
   </ItemGroup>
@@ -247,6 +243,10 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\ChromeCast.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\MiBox.png" />
+    <Resource Include="Images\NokiaSteel.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Fody.3.0.3\build\Fody.targets" Condition="Exists('..\packages\Fody.3.0.3\build\Fody.targets')" />
