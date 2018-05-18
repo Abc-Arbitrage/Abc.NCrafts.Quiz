@@ -1,1 +1,1 @@
-﻿The `Span` and the array perfrom the same here.
+﻿The `Span` and the array perform the same here.
