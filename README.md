@@ -1,13 +1,14 @@
-# ABC Arbitrage quiz for NCrafts 2015-2017
+# ABC Arbitrage quiz for NCrafts 2015-2018
 
-## Two different quizzes in one app
+## Three different quizzes in one app
 
-This project is a small quiz application we let people play with on our ABC Arbitrage booth at the last three [NCrafts conference editions](http://ncrafts.io/) in Paris.
+This project is a small quiz application we let people play with on our ABC Arbitrage booth at the last four [NewCrafts conference editions](http://ncrafts.io/) in Paris.
 
-You can chose from two different C# quizzes:
+You can choose from three different C# quizzes:
 
-* A general performance quiz: _Which code is more likely to run faster?_
-* A more specific one: _Which code doesn't allocate on heap?_
+* A general performance quiz: _Which code is more likely to run faster?_ (2016 edition)
+* A more specific one: _Which code doesn't allocate on the heap?_ (2015 edition)
+* A performance quiz centered on new features in C# 7.2 and .Net Core 2.1 (2018 edition)
 
 ## Welcome screen
 ![Play screen](./Images/screenshot1.png "Play screen")
