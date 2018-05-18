@@ -20,7 +20,7 @@
             // end
         }
 
-        private object GetInstance() => "lol";
+        private object GetInstance() => "Some long string";
 
         private void UseShortString(string s)
         {
