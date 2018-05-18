@@ -1,10 +1,13 @@
 ﻿using System;
+using System.Configuration;
 using System.IO;
 
 namespace Abc.NCrafts.App.ViewModels
 {
     public class EndPage : ViewModel
     {
+        private static readonly string DefaultMailText = "you@email.com";
+
         public EndPage(MainViewModel mainViewModel) : base(mainViewModel)
         {
         }
@@ -15,12 +18,14 @@ namespace Abc.NCrafts.App.ViewModels
 
         public bool CanContinue => MainViewModel.Quiz.CurrentQuestion != null;
 
-        public string Emails { get; set; } = "you@email.com";
+        public string Emails { get; set; } = DefaultMailText;
 
         public override void GoToNext()
         {
             if(!string.IsNullOrWhiteSpace(Emails))
-                File.AppendAllText("players.txt", Emails + Environment.NewLine);
+                File.AppendAllText(Path.Combine(ConfigurationManager.AppSettings["PlayerNamePath"], "players.txt"), Emails + Environment.NewLine);
+
+             Emails = DefaultMailText;
 
             base.GoToNext();
         }

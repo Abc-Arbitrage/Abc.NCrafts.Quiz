@@ -30,7 +30,7 @@ namespace Abc.NCrafts.Quizz
             Console.WriteLine(Path.GetFileName(RuntimeEnvironment.GetRuntimeDirectory().TrimEnd(Path.DirectorySeparatorChar, Path.AltDirectorySeparatorChar)));
             Console.WriteLine($"{sizeof(IntPtr) * 8}-bit");
             Console.WriteLine($"Vector size: {Vector<byte>.Count * 8}-bit");
-
+            
             var intrinsics = new (string name, bool supported)[]
             {
                 ("SSE", Sse.IsSupported),
