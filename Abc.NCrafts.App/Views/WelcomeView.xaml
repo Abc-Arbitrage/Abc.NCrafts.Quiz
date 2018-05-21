@@ -107,7 +107,7 @@
                             <svgc:SvgViewbox Stretch="Uniform" Source="../Images/Performance.svg" />
                         </Border>
                         <StackPanel Grid.Column="1" Margin="10 15 20 20">
-                            <TextBlock FontSize="50" HorizontalAlignment="Left">Performance 2015</TextBlock>
+                            <TextBlock FontSize="50" HorizontalAlignment="Left">Performance 2016</TextBlock>
                             <TextBlock FontSize="25" Foreground="White" TextWrapping="Wrap">
                                     <Run>Find the code that is most likely</Run>
                                     <LineBreak />
