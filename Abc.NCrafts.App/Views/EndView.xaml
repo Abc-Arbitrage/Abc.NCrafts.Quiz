@@ -40,7 +40,7 @@
             </TextBlock>
 
             <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" HorizontalAlignment="Center" Margin="20">
-                <Image VerticalAlignment="Center" Source="../Images/NokiaSteel.png" RenderOptions.BitmapScalingMode="HighQuality" Width="350" Height="350" >
+                <Image VerticalAlignment="Center" Source="../Images/WithingsMove.png" RenderOptions.BitmapScalingMode="HighQuality" Width="350" Height="350" >
                     <Image.RenderTransform>
                         <TranslateTransform x:Name="leftImageTransform" X="0" Y="0"/>
                     </Image.RenderTransform>
@@ -60,7 +60,7 @@
                 </Image>
                 <Image VerticalAlignment="Center" Source="../Images/MiBox.png" RenderOptions.BitmapScalingMode="HighQuality" Width="350" Height="350" >
                 </Image>
-                <Image VerticalAlignment="Center" Source="../Images/ChromeCast.png" RenderOptions.BitmapScalingMode="HighQuality" Width="350" Height="350" Stretch="UniformToFill" >
+                <Image VerticalAlignment="Center" Source="../Images/ProNetMemory.png" RenderOptions.BitmapScalingMode="HighQuality" Width="350" Height="350" Stretch="Uniform" >
                     <Image.RenderTransform>
                         <TranslateTransform x:Name="rightImageTransform" X="0" Y="0"/>
                     </Image.RenderTransform>

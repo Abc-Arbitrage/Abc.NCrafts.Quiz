@@ -41,4 +41,9 @@
     <Page Include="**\*.xaml" Exclude="App.xaml" Generator="MSBuild:Compile" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Remove="Images\ProNetMemory.png" />
+    <None Remove="Images\WithingsMove.png" />
+  </ItemGroup>
+
 </Project>
