@@ -10,7 +10,7 @@ namespace Abc.NCrafts.Quizz.Questions._021
 
         public static void Run()
         {
-            var stream = new MemoryStream(0x1000);
+            var stream = new MemoryStream(1000);
             var messageBytes = Encoding.ASCII.GetBytes(_text);
 
             // begin
@@ -19,15 +19,11 @@ namespace Abc.NCrafts.Quizz.Questions._021
             var bytes = stream.GetBuffer();
             for (var i = 0; i < stream.Length; i++)
             {
-                bytes[i] = (byte)char.ToUpper(((char)bytes[i]));
+                bytes[i] = (byte)char.ToUpper((char)bytes[i]);
             }
             // end
 
-            var upperMessage 
-                = Encoding.ASCII.GetString(bytes, 
-                                           0, 
-                                           (int)stream.Length);
-            Logger.Log(upperMessage);
+            Logger.LogAscii(bytes, stream.Length);
         }
     }
 }

@@ -7,16 +7,16 @@ namespace Abc.NCrafts.Quizz.Questions._006
     {
         public static void Run()
         {
-            var action = (Action)(() => { });
+            var action = (Action)delegate { };
 
             // begin
             Execute(action);
             // end
         }
 
-        private static void Execute(Action action)
+        private static void Execute(object action)
         {
-            action();
+            ((Action)action)();
         }
     }
 }

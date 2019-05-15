@@ -7,10 +7,10 @@
             var s = "ncrafts";
 
             // begin
-            s.ToUpper();
+            var upper = s.ToUpper();
             // end
 
-            Logger.Log(s);
+            Logger.Log(upper);
         }
     }
 }

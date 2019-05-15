@@ -7,7 +7,7 @@ namespace Abc.NCrafts.Quizz.Questions._008
         public static void Run()
         {
             // begin
-            var status = (Status)64;
+            var status = Status.S3;
             var defined = Enum.IsDefined(typeof(Status), status);
             if (defined)
                 Console.WriteLine("Allocation!");

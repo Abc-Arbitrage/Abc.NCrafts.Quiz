@@ -9,7 +9,7 @@ namespace Abc.NCrafts.Quizz.Questions._008
         {
             // begin
             var status = Status.S2 | Status.S3;
-            var hasFlag = status.HasFlag(Status.S1);
+            var hasFlag = ((Enum)status).HasFlag(Status.S1);
             if (hasFlag)
                 Console.WriteLine("Allocation!");
             // end

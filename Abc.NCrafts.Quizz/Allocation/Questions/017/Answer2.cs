@@ -6,32 +6,31 @@ namespace Abc.NCrafts.Quizz.Questions._017
     {
         public static void Run()
         {
+            Create(0);
+
             // begin
-            var item = CreateAndSet(() =>
-            {
-                return Activator.CreateInstance<Item>();
-            }, 42);
+            var item = Create(1);
             // end
 
             Logger.Log("Value: {0}", item.Value);
         }
 
-        private static T CreateAndSet<T>(Func<T> builder, int i)
-            where T : ISettable
+        private static Item Create(int value)
         {
-            var item = builder.Invoke();
+            return Create(() => new Item(), value);
+        }
+
+        private static Item Create(Func<ValueType> builder, int i)
+        {
+            var item = (Item)builder.Invoke();
             item.Value = i;
+
             return item;
         }
 
-        private interface ISettable
+        public struct Item
         {
-            int Value { set; }
-        }
-
-        private struct Item : ISettable
-        {
-            public int Value { get; set; }
+            public int Value;
         }
     }
 }

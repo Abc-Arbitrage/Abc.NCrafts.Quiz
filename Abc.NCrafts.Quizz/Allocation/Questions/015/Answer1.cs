@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace Abc.NCrafts.Quizz.Questions._015
 {
@@ -10,9 +11,16 @@ namespace Abc.NCrafts.Quizz.Questions._015
             var values = new List<int>(10);
             for (var i = 0; i < 10; i++)
             {
-                values.Add(i);
+                values[i] = i;
             }
             // end
+
+            Use(values.ToArray());
+        }
+
+        private static void Use(Span<int> span)
+        {
+            Logger.Log(span.Length);
         }
     }
 }

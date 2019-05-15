@@ -12,7 +12,7 @@ namespace Abc.NCrafts.Quizz.Questions._005
             // begin
             for (var i = 0; i < 100; i++)
             {
-                var key = new Key(i);
+                var key = new Key { Value = i };
                 _items[key] = i;
             }
             // end
@@ -20,16 +20,18 @@ namespace Abc.NCrafts.Quizz.Questions._005
 
         private struct Key
         {
-            public readonly int Value;
-            public Key(int value) { Value = value; }
+            public int Value;
+
             public override bool Equals(object other)
             {
                 return Equals((Key)other);
             }
+
             public bool Equals(Key other)
             {
                 return Value == other.Value;
             }
+
             public override int GetHashCode() { return Value; }
         }
     }

@@ -6,13 +6,11 @@ namespace Abc.NCrafts.Quizz.Questions._006
     {
         public static void Run()
         {
-            // begin
-            Execute(DoSomething);
-            // end
-        }
+            var obj = new object();
 
-        private static void DoSomething()
-        {    
+            // begin
+            Execute(() => GC.KeepAlive(obj));
+            // end
         }
 
         private static void Execute(Action action)

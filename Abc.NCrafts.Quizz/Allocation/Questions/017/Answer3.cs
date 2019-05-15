@@ -1,33 +1,35 @@
-﻿using System;
-
-namespace Abc.NCrafts.Quizz.Questions._017
+﻿namespace Abc.NCrafts.Quizz.Questions._017
 {
     public class Answer3
     {
         public static void Run()
         {
+            Create(0);
+
             // begin
-            var item = CreateAndSet<Item>(() => new Item(), 42);
+            var item = Create(1);
             // end
 
             Logger.Log("Value: {0}", item.Value);
         }
 
-        private static T CreateAndSet<T>(Func<ISettable> builder,
-                                         int i)
-            where T : ISettable
+        private static Item Create(int value)
         {
-            var item = builder.Invoke();
-            item.Value = i;
-            return (T)item;
+            return Create<Item>(value);
         }
 
-        private interface ISettable
+        private static T Create<T>(int i)
+            where T : IHasValue, new()
         {
-            int Value { set; }
+            return new T { Value = i };
         }
 
-        private struct Item : ISettable
+        public interface IHasValue
+        {
+            int Value { get; set; }
+        }
+
+        public struct Item : IHasValue
         {
             public int Value { get; set; }
         }

@@ -9,11 +9,15 @@
             // end
         }
 
-        private struct NCrafts : IHashable<NCrafts>
+        public struct NCrafts : IHashable
         {
+            int IHashable.GetHashCode()
+            {
+                return 42;
+            }
         }
 
-        public interface IHashable<T>
+        public interface IHashable
         {
             int GetHashCode();
         }

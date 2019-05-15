@@ -1,2 +1,0 @@
-﻿When a lambda is used to create a delegate, a new delegate instance is always created, generating an allocation.
-However there is one case where the delegate instance will be cached in a static field: when the lambda does not capture any variable or member (including this). In this case the delegate instance will only be created once and reused in future calls, thus avoiding allocations.

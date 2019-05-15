@@ -5,17 +5,24 @@
     {
         public static unsafe void Run()
         {
+            var array = new NCrafts[10];
+
             // begin
-            var nCrafts = new NCrafts();
-            *nCrafts.Array = 42;
+            for (var i = 0; i < array.Length; i++)
+            {
+                var value = new NCrafts();
+                value.Array[0] = 1;
+
+                array[i] = value;
+            }
             // end
 
-            Logger.Log("Value: ", *nCrafts.Array);
+            Logger.Log("Value: ", array.Length);
         }
 
-        private struct NCrafts
+        private unsafe struct NCrafts
         {
-            public unsafe fixed int Array [3];
+            public fixed int Array[3];
         }
     }
 }

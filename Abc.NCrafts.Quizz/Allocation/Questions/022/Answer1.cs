@@ -2,14 +2,21 @@
 {
     public class Answer1
     {
-        public static void Run()
+        public static unsafe void Run()
         {
+            var array = new NCrafts[10];
+
             // begin
-            var nCrafts = new NCrafts(3);
-            nCrafts.Array[0] = 42;
+            for (var i = 0; i < array.Length; i++)
+            {
+                var value = new NCrafts(3);
+                value.Array[0] = 1;
+
+                array[i] = value;
+            }
             // end
 
-            Logger.Log("Value: ", nCrafts.Array[0]);
+            Logger.Log("Value: ", array.Length);
         }
 
         private struct NCrafts

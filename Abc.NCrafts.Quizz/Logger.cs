@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Text;
 
 namespace Abc.NCrafts.Quizz
 {
@@ -13,6 +14,13 @@ namespace Abc.NCrafts.Quizz
         {
             if (Enabled)
                 Console.WriteLine(value?.ToString());
+        }
+
+        [Conditional("DEBUG")]
+        public static void LogAscii(byte[] bytes, long length)
+        {
+            if (Enabled)
+                Console.WriteLine(Encoding.ASCII.GetString(bytes, 0, (int)length));
         }
 
         [Conditional("DEBUG")]

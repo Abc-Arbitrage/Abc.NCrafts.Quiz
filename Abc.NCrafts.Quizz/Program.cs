@@ -17,8 +17,9 @@ namespace Abc.NCrafts.Quizz
         {
             LogInfo();
 
+            BenchmarkSwitcher.FromAssembly(typeof(Program).Assembly).Run();
             //RunPerformanceQuestion("Performance2018", 1, 50_000);
-            RunPerformance2018Benchmarks();
+            //RunPerformance2018Benchmarks();
 
             Console.WriteLine();
             Console.ReadLine();
