@@ -8,7 +8,7 @@ namespace Abc.NCrafts.Quizz.Questions._019
         public static void Run()
         {
             // begin
-            using (var ressource = new NCrafts())
+            using (var resource = new NCrafts())
             {
             }
             // end

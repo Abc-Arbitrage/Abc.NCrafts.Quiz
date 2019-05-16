@@ -7,14 +7,14 @@ namespace Abc.NCrafts.Quizz.Questions._019
         public static void Run()
         {
             // begin
-            IDisposable ressource = new NCrafts();
+            IDisposable resource = new NCrafts();
             try
             {
 
             }
             finally
             {
-                ressource.Dispose();
+                resource.Dispose();
             }
             // end
         }

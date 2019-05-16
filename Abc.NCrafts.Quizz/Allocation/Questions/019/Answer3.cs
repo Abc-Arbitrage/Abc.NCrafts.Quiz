@@ -7,13 +7,13 @@ namespace Abc.NCrafts.Quizz.Questions._019
         public static void Run()
         {
             // begin
-            var ressource = new NCrafts();
+            var resource = new NCrafts();
             try
             {
             }
             finally
             {
-                var disposableResource = ressource as IDisposable;
+                var disposableResource = resource as IDisposable;
                 if (disposableResource != null)
                     disposableResource.Dispose();
             }
