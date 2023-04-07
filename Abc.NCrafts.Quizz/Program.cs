@@ -7,17 +7,20 @@ using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Runtime.Intrinsics.X86;
 using BenchmarkDotNet.Attributes;
+using BenchmarkDotNet.Configs;
 using BenchmarkDotNet.Running;
 
 namespace Abc.NCrafts.Quizz
 {
     internal class Program
     {
-        private static void Main()
+        private static void Main(string[] args)
         {
             LogInfo();
 
-            BenchmarkSwitcher.FromAssembly(typeof(Program).Assembly).Run();
+            var benchmarkSwitcher = BenchmarkSwitcher.FromAssembly(typeof(Program).Assembly);
+            benchmarkSwitcher.Run(args);
+            
             //RunPerformanceQuestion("Performance2018", 1, 50_000);
             //RunPerformance2018Benchmarks();
 

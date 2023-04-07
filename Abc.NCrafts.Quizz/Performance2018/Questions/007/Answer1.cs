@@ -9,7 +9,7 @@ namespace Abc.NCrafts.Quizz.Performance2018.Questions._007
 
         public int Run()
         {
-            var value = _value;
+            var value = (uint)_value;
 
             // begin
             if (Popcnt.IsSupported) // assume is true

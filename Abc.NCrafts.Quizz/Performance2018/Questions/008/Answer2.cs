@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.Intrinsics;
 using System.Runtime.Intrinsics.X86;
 
 namespace Abc.NCrafts.Quizz.Performance2018.Questions._008
@@ -18,8 +19,8 @@ namespace Abc.NCrafts.Quizz.Performance2018.Questions._008
             if (Avx2.IsSupported) // assume is true
             {
                 const int vectorSize = 256 / 8;
-
-                var tmp = Avx.SetZeroVector256<byte>();
+                
+                var tmp = Vector256<byte>.Zero;
 
                 fixed (byte* pBuf = &buffer[0])
                 {
