@@ -1,7 +1,11 @@
 *.suo
 *.user
+*.orig
 
 .vs/
+.vscode/
+.idea/
+
 packages/
 obj/
 bin/
