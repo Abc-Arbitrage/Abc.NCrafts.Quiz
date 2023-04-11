@@ -13,7 +13,7 @@ namespace Abc.NCrafts.Quizz.Performance.Questions._020
             // begin
             Parallel.For(0, 20, _ =>
             {
-                for (var i = 0; i < 1000; i++)
+                for (var i = 0; i < 1_000; i++)
                 {
                     Interlocked.Increment(ref _counter);
                 }

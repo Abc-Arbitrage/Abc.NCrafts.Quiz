@@ -9,7 +9,7 @@ namespace Abc.NCrafts.Quizz.Performance.Questions._028
         public static void Run()
         {
             // begin
-            var primes = Enumerable.Range(0, 10 * 1000)
+            var primes = Enumerable.Range(0, 10_000)
                                    .Where(IsPrime)
                                    .ToList();
             // end

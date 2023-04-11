@@ -2,7 +2,7 @@
 {
     public class Answer
     {
-        private static readonly string _s1 = "Ncrafts";
+        private static readonly string _s1 = "NewCrafts";
         private static readonly char[] _trimedChars = { 's' };
 
         public static void Run()

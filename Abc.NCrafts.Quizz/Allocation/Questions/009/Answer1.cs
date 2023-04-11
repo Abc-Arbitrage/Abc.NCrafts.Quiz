@@ -5,13 +5,14 @@ namespace Abc.NCrafts.Quizz.Questions._009
     [CorrectAnswer(Difficulty = Difficulty.Medium)]
     public class Answer1
     {
-        private static Random _random = new Random();
         private static int[] _values = { 1, 2, 3 };
 
         public static void Run()
         {
+            var random = Random.Shared;
+            
             // begin
-            _values[0] = _random.Next();
+            _values[0] = random.Next();
             var sum = Sum(_values);
             // end
 

@@ -9,7 +9,8 @@ namespace Abc.NCrafts.Quizz.Performance.Questions._023
 
         static Answer1()
         {
-            _values = Enumerable.Range(0, 1000 * 1000).ToArray();
+            _values = Enumerable.Range(0, 1_000_000)
+                                .ToArray();
         }
 
         public static unsafe void Run()

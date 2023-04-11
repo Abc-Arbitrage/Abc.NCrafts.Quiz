@@ -4,7 +4,7 @@
     {
         public static void Run()
         {
-            var s = "ncrafts";
+            var s = "NewCrafts";
             var upper = string.Empty;
 
             // begin

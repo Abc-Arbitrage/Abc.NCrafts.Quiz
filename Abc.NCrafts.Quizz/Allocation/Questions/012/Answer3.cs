@@ -5,10 +5,8 @@
     {
         public static void Run()
         {
-            var service = new Service();
-
             // begin
-            UseService(service);
+            UseService(new Service());
             // end
         }
 

@@ -5,7 +5,7 @@
     {
         public static void Run()
         {
-            var s = "ncrafts";
+            var s = "NewCrafts";
 
             // begin
             unsafe

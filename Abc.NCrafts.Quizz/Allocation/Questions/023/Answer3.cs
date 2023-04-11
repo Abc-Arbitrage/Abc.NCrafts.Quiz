@@ -2,7 +2,7 @@
 {
     public class Answer3
     {
-        private static readonly string _s1 = "Ncrafts";
+        private static readonly string _s1 = "NewCrafts";
 
         public static void Run()
         {

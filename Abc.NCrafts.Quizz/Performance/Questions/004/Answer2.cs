@@ -8,17 +8,15 @@ namespace Abc.NCrafts.Quizz.Performance.Questions._004
     public class Answer2
     {
         private static readonly LinkedList<int> _items;
-        private static readonly Random _random;
 
         static Answer2()
         {
             _items = new LinkedList<int>(Enumerable.Range(0, 20));
-            _random = new Random();
         }
 
         public static void Run()
         {
-            var value = _random.Next(0, _items.Count);
+            var value = Random.Shared.Next(0, _items.Count);
             // begin
             MoveToFirst(value);
             // end

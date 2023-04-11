@@ -14,7 +14,7 @@ namespace Abc.NCrafts.Quizz.Performance.Questions._021
             // begin
             var producer = Task.Run(() =>
             {
-                foreach (var value in Enumerable.Range(1, 10000))
+                foreach (var value in Enumerable.Range(1, 10_000))
                 {
                     stack.Push(value);
                 }
@@ -24,7 +24,7 @@ namespace Abc.NCrafts.Quizz.Performance.Questions._021
             {
                 var spinWait = new SpinWait();
                 var value = 0;
-                while (value != 10000)
+                while (value != 10_000)
                 {
                     if (!stack.TryPop(out value))
                     {

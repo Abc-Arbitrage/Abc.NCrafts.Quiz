@@ -6,16 +6,9 @@ namespace Abc.NCrafts.Quizz.Performance.Questions._027
     [CorrectAnswer(Difficulty = Difficulty.Easy)]
     public class Answer1
     {
-        private static readonly Random _random;
-
-        static Answer1()
-        {
-            _random = new Random();
-        }
-
         public static void Run()
         {
-            var value = _random.Next();
+            var value = Random.Shared.Next();
             // begin
             var isValid = IsValid1(value) && IsValid2(value) && IsValid3(value);
             // end

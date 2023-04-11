@@ -10,7 +10,7 @@ namespace Abc.NCrafts.Quizz.Questions._025
             var networkStream = new NetworkStream(socket);
 
             // begin
-            var b = networkStream.ReadByte();
+            var b = networkStream.ReadByte(); // TODO CAO (it no longer allocates)
             if (b == -1)
                 return;
             // end

@@ -10,7 +10,8 @@ namespace Abc.NCrafts.Quizz.Performance.Questions._002
 
         static Answer1()
         {
-            _items = Enumerable.Repeat(42.0, 50).ToList();
+            _items = Enumerable.Repeat(42.0, 50)
+                               .ToList();
         }
 
         public static void Run()

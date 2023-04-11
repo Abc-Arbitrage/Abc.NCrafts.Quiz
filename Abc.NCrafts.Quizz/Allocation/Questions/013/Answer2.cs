@@ -5,7 +5,7 @@
         public static void Run()
         {
             // begin
-            var areEqual = AreEqual("NCrafts", "ncrafts");
+            var areEqual = AreEqual("NewCrafts", "newcrafts");
             // end
 
             Logger.Log("AreEqual: {0}", areEqual);

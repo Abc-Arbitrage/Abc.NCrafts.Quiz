@@ -5,13 +5,13 @@ namespace Abc.NCrafts.Quizz.Questions._009
 {
     public class Answer3
     {
-        private static Random _random = new Random();
-
         public static void Run()
         {
+            var random = Random.Shared;
+            
             // begin
-            var sum = Sum(Array.Empty<int>().ToArray());
-            sum += _random.Next();
+            var sum = Sum();
+            sum += random.Next();
             // end
 
             Logger.Log("Sum: {0}", sum);
@@ -20,7 +20,7 @@ namespace Abc.NCrafts.Quizz.Questions._009
         private static int Sum(params int[] values)
         {
             var sum = 0;
-            foreach (var value in values)
+            foreach (var value in values.AsEnumerable())
                 sum += value;
             return sum;
         }

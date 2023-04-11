@@ -7,17 +7,15 @@ namespace Abc.NCrafts.Quizz.Performance.Questions._004
     public class Answer1
     {
         private static readonly List<int> _items;
-        private static readonly Random _random;
 
         static Answer1()
         {
-            _items = Enumerable.Range(0, 20).ToList();
-            _random = new Random();
+            _items = new List<int>(Enumerable.Range(0, 20));
         }
 
         public static void Run()
         {
-            var value = _random.Next(0, _items.Count);
+            var value = Random.Shared.Next(0, _items.Count);
             // begin
             MoveToFirst(value);
             // end

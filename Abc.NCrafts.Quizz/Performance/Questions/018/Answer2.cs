@@ -9,7 +9,7 @@ namespace Abc.NCrafts.Quizz.Performance.Questions._018
 
         static Answer2()
         {
-            _values = new ArrayList(100 * 1000);
+            _values = new ArrayList(100_000);
         }
 
         public static void Run()

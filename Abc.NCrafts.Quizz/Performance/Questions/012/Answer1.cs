@@ -10,7 +10,7 @@ namespace Abc.NCrafts.Quizz.Performance.Questions._012
 
         static Answer1()
         {
-            _values = Enumerable.Range(0, 100 * 1000)
+            _values = Enumerable.Range(0, 100_000)
                                 .Select(x => (long)x)
                                 .ToList();
         }

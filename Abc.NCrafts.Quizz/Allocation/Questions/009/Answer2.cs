@@ -4,13 +4,13 @@ namespace Abc.NCrafts.Quizz.Questions._009
 {
     public class Answer2
     {
-        private static Random _random = new Random();
-
         public static void Run()
         {
+            var random = Random.Shared;
+            
             // begin
-            var random = _random.Next();
-            var sum = Sum(random, 2, 3);
+            var value = random.Next();
+            var sum = Sum(value, 2, 3);
             // end
 
             Logger.Log("Sum: {0}", sum);

@@ -13,9 +13,8 @@ namespace Abc.NCrafts.Quizz.Questions._019
             }
             finally
             {
-                var disposableResource = resource as IDisposable;
-                if (disposableResource != null)
-                    disposableResource.Dispose();
+                if (resource is IDisposable disposable)
+                    disposable.Dispose();
             }
             // end
         }
