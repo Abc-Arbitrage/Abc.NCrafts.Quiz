@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.30723.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Abc.NCrafts.Quizz", "Abc.NCrafts.Quizz\Abc.NCrafts.Quizz.csproj", "{F51CD239-9DB6-4C7A-AFC5-49693456DEFE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Abc.NCrafts.Quiz", "Abc.NCrafts.Quiz\Abc.NCrafts.Quiz.csproj", "{F51CD239-9DB6-4C7A-AFC5-49693456DEFE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Abc.NCrafts.App", "Abc.NCrafts.App\Abc.NCrafts.App.csproj", "{47CB1646-3236-41DE-8B6C-61713D54852E}"
 EndProject
