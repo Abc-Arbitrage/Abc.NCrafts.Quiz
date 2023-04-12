@@ -23,31 +23,16 @@ namespace Abc.NCrafts.App.ViewModels
         private Quiz Quiz => MainViewModel.Quiz;
 
         public string Answer1Text => Quiz.CurrentQuestion.Answer1.Text;
-
         public string Answer2Text => Quiz.CurrentQuestion.Answer2.Text;
-
         public string Answer3Text => Quiz.CurrentQuestion.Answer3.Text;
 
         public int[] Answer1HighlightedLines => GetHighlightedLines(Quiz.CurrentQuestion.Answer1);
-
         public int[] Answer2HighlightedLines => GetHighlightedLines(Quiz.CurrentQuestion.Answer2);
-
         public int[] Answer3HighlightedLines => GetHighlightedLines(Quiz.CurrentQuestion.Answer3);
 
-        public ICommand Answer1Click
-        {
-            get { return new ActionCommand(() => SelectAnswer(Quiz.CurrentQuestion.Answer1)); }
-        }
-
-        public ICommand Answer2Click
-        {
-            get { return new ActionCommand(() => SelectAnswer(Quiz.CurrentQuestion.Answer2)); }
-        }
-
-        public ICommand Answer3Click
-        {
-            get { return new ActionCommand(() => SelectAnswer(Quiz.CurrentQuestion.Answer3)); }
-        }
+        public ICommand Answer1Click => new ActionCommand(() => SelectAnswer(Quiz.CurrentQuestion.Answer1));
+        public ICommand Answer2Click => new ActionCommand(() => SelectAnswer(Quiz.CurrentQuestion.Answer2));
+        public ICommand Answer3Click => new ActionCommand(() => SelectAnswer(Quiz.CurrentQuestion.Answer3));
 
         private void SelectAnswer(Answer answer)
         {

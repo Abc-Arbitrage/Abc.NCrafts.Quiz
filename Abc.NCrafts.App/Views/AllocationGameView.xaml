@@ -53,9 +53,9 @@
         <Grid Grid.ColumnSpan="3" Grid.Row="1" VerticalAlignment="Stretch" IsSharedSizeScope="True">
 
             <Grid.ColumnDefinitions>
-                <ColumnDefinition />
-                <ColumnDefinition />
-                <ColumnDefinition />
+                <ColumnDefinition Width="{Binding Answer1Text, Converter={x:Static views:AnswerTextToWidthConverter.Instance}}" />
+                <ColumnDefinition Width="{Binding Answer2Text, Converter={x:Static views:AnswerTextToWidthConverter.Instance}}" />
+                <ColumnDefinition Width="{Binding Answer3Text, Converter={x:Static views:AnswerTextToWidthConverter.Instance}}" />
             </Grid.ColumnDefinitions>
 
             <Button Grid.Column="0" Style="{StaticResource codeButtonStyle}" Command="{Binding Answer1Click}" Margin="10">
