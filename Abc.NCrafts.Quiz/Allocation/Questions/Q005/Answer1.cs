@@ -24,17 +24,15 @@ namespace Abc.NCrafts.Quiz.Allocation.Questions.Q005
         {
             public int Value;
 
-            public override bool Equals(object other)
-            {
-                return Equals((Key)other);
-            }
-
             public bool Equals(Key other)
             {
                 return Value == other.Value;
             }
 
-            public override int GetHashCode() { return Value; }
+            public override int GetHashCode()
+            {
+                return HashCode.Combine(Value);
+            }
         }
     }
 }

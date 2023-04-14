@@ -1,28 +1,25 @@
-﻿using System.IO;
-using System.Text;
+﻿using System.Threading.Tasks;
 
 namespace Abc.NCrafts.Quiz.Allocation.Questions.Q021
 {
+    [CorrectAnswer(Difficulty = Difficulty.Hard)]
     public class Answer1
     {
-        private const string _text = "Am I allocating?";
-
         public static void Run()
         {
-            var stream = new MemoryStream(1000);
-            var messageBytes = Encoding.ASCII.GetBytes(_text);
-
             // begin
-            stream.Write(messageBytes, 0, messageBytes.Length);
-
-            var bytes = stream.ToArray();
-            for (var i = 0; i < stream.Length; i++)
+            var task = LoadValue();
+            if (task.IsCompleted)
             {
-                bytes[i] = (byte)char.ToUpper((char)bytes[i]);
+                var result = task.GetAwaiter().GetResult();
+                Logger.Log("Task completed, Result: {0}", result);
             }
             // end
+        }
 
-            Logger.LogAscii(bytes, stream.Length);
+        private static Task<int> LoadValue()
+        {
+            return Task.FromResult(1);
         }
     }
 }

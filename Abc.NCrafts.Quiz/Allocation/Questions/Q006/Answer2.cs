@@ -1,20 +1,16 @@
 ﻿using System;
 
-namespace Abc.NCrafts.Quiz.Allocation.Questions.Q06
+namespace Abc.NCrafts.Quiz.Allocation.Questions.Q006
 {
-    public class Answer3
+    public class Answer2
     {
         public static void Run()
         {
-            var answer3 = new Answer3();
+            var obj = new object();
 
             // begin
-            Execute(answer3.DoSomething);
+            Execute(() => GC.KeepAlive(obj));
             // end
-        }
-
-        private void DoSomething()
-        {
         }
 
         private static void Execute(Action action)

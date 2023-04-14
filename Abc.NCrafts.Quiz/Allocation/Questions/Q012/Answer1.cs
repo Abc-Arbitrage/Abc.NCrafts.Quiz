@@ -11,17 +11,17 @@
 
         private static void UseService(IService service)
         {
-            service.Do();
+            Logger.Log("Value: {0}", service.GetValue());
         }
 
         private interface IService
         {
-            void Do();
+            int GetValue();
         }
 
         private struct Service : IService
         {
-            public void Do(){}
+            public int GetValue() => 0;
         }
     }
 }

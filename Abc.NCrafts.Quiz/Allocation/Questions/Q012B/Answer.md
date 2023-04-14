@@ -1,0 +1,3 @@
+﻿Whenever a value type value is assigned to a reference, the value is boxed. But there is one exception to this rule: generics.
+
+In the case of the generic method `UseService<T>(T service) where T : IService`, the just-in-time compiler will generate a dedicated class for each value type. This generated code uses constrained calls to invoke the interface methods. This means the interface can be used without boxing.

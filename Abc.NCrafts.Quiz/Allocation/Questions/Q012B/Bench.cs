@@ -1,9 +1,9 @@
 ﻿using BenchmarkDotNet.Attributes;
 
-namespace Abc.NCrafts.Quiz.Allocation.Questions.Q013
+namespace Abc.NCrafts.Quiz.Allocation.Questions.Q012B
 {
-    [MemoryDiagnoser]
-    public class Allocation_Bench013
+    [MemoryDiagnoser, ShortRunJob]
+    public class Allocation_Bench012B
     {
         [Benchmark]
         public void RunAnswer1() => Answer1.Run();

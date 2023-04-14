@@ -3,7 +3,7 @@
     [CorrectAnswer(Difficulty = Difficulty.Medium)]
     public class Answer1
     {
-        private static readonly string _s1 = "NCrafts";
+        private static readonly string _s1 = "NewCrafts";
         private static readonly string _s2 = string.Empty;
         private static readonly char[] _trimedChars = { 'z' };
 

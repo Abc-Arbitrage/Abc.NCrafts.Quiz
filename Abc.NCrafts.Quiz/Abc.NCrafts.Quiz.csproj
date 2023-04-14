@@ -6,7 +6,6 @@
     <WarningLevel>4</WarningLevel>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    <LangVersion>latest</LangVersion>
     <Prefer32Bit>false</Prefer32Bit>
     <DefaultItemExcludes>$(DefaultItemExcludes);*.DotSettings</DefaultItemExcludes>
   </PropertyGroup>

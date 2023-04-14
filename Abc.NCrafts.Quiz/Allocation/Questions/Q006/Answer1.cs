@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Abc.NCrafts.Quiz.Allocation.Questions.Q06
+namespace Abc.NCrafts.Quiz.Allocation.Questions.Q006
 {
     [CorrectAnswer(Difficulty = Difficulty.Medium)]
     public class Answer1

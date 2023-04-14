@@ -1,4 +1,5 @@
-﻿namespace Abc.NCrafts.Quiz.Allocation.Questions.Q022
+﻿#pragma warning disable CS0649
+namespace Abc.NCrafts.Quiz.Allocation.Questions.Q022
 {
     [CorrectAnswer(Difficulty = Difficulty.Easy)]
     public class Answer2

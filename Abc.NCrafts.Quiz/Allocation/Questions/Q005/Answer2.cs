@@ -24,7 +24,7 @@ namespace Abc.NCrafts.Quiz.Allocation.Questions.Q005
 
             public override bool Equals(object other)
             {
-                return Equals((Key)other);
+                return other is Key key && Equals(key);
             }
 
             public bool Equals(Key other)
