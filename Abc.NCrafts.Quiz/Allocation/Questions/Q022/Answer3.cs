@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace Abc.NCrafts.Quiz.Allocation.Questions.Q022
+﻿namespace Abc.NCrafts.Quiz.Allocation.Questions.Q022
 {
     public class Answer3
     {
@@ -16,11 +14,11 @@ namespace Abc.NCrafts.Quiz.Allocation.Questions.Q022
 
         private struct Data
         {
-            public List<int> Ids;
+            public int[] Ids;
 
             public Data()
             {
-                Ids = new();
+                Ids = new int[3];
             }
         }
     }
