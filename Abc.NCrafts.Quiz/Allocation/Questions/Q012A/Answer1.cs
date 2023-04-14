@@ -1,11 +1,15 @@
-﻿namespace Abc.NCrafts.Quiz.Allocation.Questions.Q012
+﻿using System;
+
+namespace Abc.NCrafts.Quiz.Allocation.Questions.Q012A
 {
     public class Answer1
     {
+        private static Service _service = new();
+
         public static void Run()
         {
             // begin
-            UseService(new Service());
+            UseService(_service);
             // end
         }
 

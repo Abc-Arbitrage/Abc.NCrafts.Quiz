@@ -1,11 +1,15 @@
-﻿namespace Abc.NCrafts.Quiz.Allocation.Questions.Q012
+﻿using System;
+
+namespace Abc.NCrafts.Quiz.Allocation.Questions.Q012A
 {
     public class Answer2
     {
+        private static Service _service = new();
+
         public static void Run()
         {
             // begin
-            UseService(new Service());
+            UseService(_service);
             // end
         }
 
@@ -19,7 +23,7 @@
             int GetValue();
         }
 
-        private struct Service : IService
+        private class Service : IService
         {
             public int GetValue() => 0;
         }

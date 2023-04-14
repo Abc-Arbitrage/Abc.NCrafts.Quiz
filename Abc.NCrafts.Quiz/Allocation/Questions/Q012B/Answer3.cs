@@ -1,30 +1,29 @@
-﻿using System;
-
-namespace Abc.NCrafts.Quiz.Allocation.Questions.Q012B
+﻿namespace Abc.NCrafts.Quiz.Allocation.Questions.Q012B
 {
     [CorrectAnswer(Difficulty = Difficulty.Medium)]
     public class Answer3
     {
-        private static Service _service = new(0);
-
         public static void Run()
         {
             // begin
-            UseService(_service with { Id = 5 });
+            UseService(new Service());
             // end
         }
 
-        private static void UseService(IProgress<int> service)
+        private static void UseService<T>(T service) 
+            where T : IService
         {
-            service.Report(0);
-            service.Report(100);
+            Logger.Log("Value: {0}", service.GetValue());
         }
 
-        private record Service(int Id) : IProgress<int>
+        private interface IService
         {
-            public void Report(int value)
-            {
-            }
+            int GetValue();
+        }
+
+        private struct Service : IService
+        {
+            public int GetValue() => 0;
         }
     }
 }

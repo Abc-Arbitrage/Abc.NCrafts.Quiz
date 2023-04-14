@@ -6,8 +6,7 @@ namespace Abc.NCrafts.Quiz.Allocation.Questions.Q011
     [CorrectAnswer(Difficulty = Difficulty.Hard)]
     public class Answer2
     {
-        private static Queue<int> _values 
-            = new Queue<int>(new[] { 1, 2, 3 });
+        private static Queue<int> _values = new(new[] { 1, 2, 3 });
 
         public static void Run()
         {

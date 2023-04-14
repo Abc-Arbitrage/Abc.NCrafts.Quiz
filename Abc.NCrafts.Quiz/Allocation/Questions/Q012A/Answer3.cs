@@ -1,11 +1,14 @@
-﻿namespace Abc.NCrafts.Quiz.Allocation.Questions.Q012B
+﻿namespace Abc.NCrafts.Quiz.Allocation.Questions.Q012A
 {
-    public class Answer2
+    [CorrectAnswer(Difficulty = Difficulty.Medium)]
+    public class Answer3
     {
+        private static Service _service = new(0);
+
         public static void Run()
         {
             // begin
-            UseService(new Service());
+            UseService(_service with { Id = 5 });
             // end
         }
 
@@ -19,9 +22,9 @@
             int GetValue();
         }
 
-        private class Service : IService
+        private record Service(int Id) : IService
         {
-            public int GetValue() => 0;
+            public int GetValue() => Id;
         }
     }
 }

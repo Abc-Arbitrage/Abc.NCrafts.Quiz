@@ -6,11 +6,12 @@ namespace Abc.NCrafts.Quiz.Allocation.Questions.Q005
     [CorrectAnswer(Difficulty = Difficulty.Hard)]
     public class Answer1
     {
-        private static Dictionary<Key, int> _items 
-            = new Dictionary<Key, int>(99);
+        private static Dictionary<Key, int> _items = new(100);
 
         public static void Run()
         {
+            _items.Clear();
+            
             // begin
             for (var i = 1; i < 100; i++)
             {
@@ -25,14 +26,10 @@ namespace Abc.NCrafts.Quiz.Allocation.Questions.Q005
             public int Value;
 
             public bool Equals(Key other)
-            {
-                return Value == other.Value;
-            }
+                => Value == other.Value;
 
-            public override int GetHashCode()
-            {
-                return HashCode.Combine(Value);
-            }
+            public override int GetHashCode() 
+                => HashCode.Combine(Value);
         }
     }
 }
