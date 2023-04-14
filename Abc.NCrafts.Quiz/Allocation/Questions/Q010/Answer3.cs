@@ -1,7 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-
-namespace Abc.NCrafts.Quiz.Allocation.Questions.Q010
+﻿namespace Abc.NCrafts.Quiz.Allocation.Questions.Q010
 {
     public class Answer3
     {

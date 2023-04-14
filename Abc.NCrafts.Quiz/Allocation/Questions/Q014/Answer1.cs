@@ -1,4 +1,6 @@
-﻿namespace Abc.NCrafts.Quiz.Allocation.Questions.Q014
+﻿using System;
+
+namespace Abc.NCrafts.Quiz.Allocation.Questions.Q014
 {
     [CorrectAnswer(Difficulty = Difficulty.Easy)]
     public class Answer1
@@ -8,19 +10,14 @@
             var s = "NewCrafts";
 
             // begin
-            unsafe
+            Span<char> upper = stackalloc char[s.Length];
+            for (var index = 0; index < s.Length; index++)
             {
-                fixed (char* p = s)
-                {
-                    for (var i = 0; i < s.Length; i++)
-                    {
-                        *(p + i) = char.ToUpper((*p));
-                    }
-                }
+                upper[index] = char.ToUpper(s[index]);
             }
             // end
 
-            Logger.Log(s);
+            Logger.Log(upper);
         }
     }
 }

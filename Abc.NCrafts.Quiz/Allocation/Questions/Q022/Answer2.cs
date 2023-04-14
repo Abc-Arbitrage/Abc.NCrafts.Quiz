@@ -1,4 +1,6 @@
-﻿#pragma warning disable CS0649
+﻿using System.Collections.Generic;
+
+#pragma warning disable CS0649
 namespace Abc.NCrafts.Quiz.Allocation.Questions.Q022
 {
     [CorrectAnswer(Difficulty = Difficulty.Easy)]
@@ -6,24 +8,17 @@ namespace Abc.NCrafts.Quiz.Allocation.Questions.Q022
     {
         public static unsafe void Run()
         {
-            var array = new NCrafts[10];
-
             // begin
-            for (var i = 0; i < array.Length; i++)
-            {
-                var value = new NCrafts();
-                value.Array[0] = 1;
-
-                array[i] = value;
-            }
+            var data = new Data();
+            data.Ids[0] = 999;
             // end
 
-            Logger.Log("Value: ", array.Length);
+            Logger.Log("Value: ", data.Ids[0]);
         }
 
-        private unsafe struct NCrafts
+        private unsafe struct Data
         {
-            public fixed int Array[3];
+            public fixed int Ids[3];
         }
     }
 }

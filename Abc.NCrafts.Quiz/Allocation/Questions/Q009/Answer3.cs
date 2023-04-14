@@ -10,8 +10,10 @@ namespace Abc.NCrafts.Quiz.Allocation.Questions.Q009
             var random = Random.Shared;
             
             // begin
-            var sum = Sum();
-            sum += random.Next();
+            var value1 = random.Next();
+            var value2 = random.Next();
+            var value3 = random.Next();
+            var sum = Sum(new int[] { value1, value2, value3 });
             // end
 
             Logger.Log("Sum: {0}", sum);
@@ -20,7 +22,7 @@ namespace Abc.NCrafts.Quiz.Allocation.Questions.Q009
         private static int Sum(params int[] values)
         {
             var sum = 0;
-            foreach (var value in values.AsEnumerable())
+            foreach (var value in values)
                 sum += value;
             return sum;
         }

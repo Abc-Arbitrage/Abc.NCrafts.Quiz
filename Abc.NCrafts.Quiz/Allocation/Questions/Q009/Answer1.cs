@@ -1,19 +1,31 @@
 ﻿using System;
+using System.Buffers;
 
 namespace Abc.NCrafts.Quiz.Allocation.Questions.Q009
 {
     [CorrectAnswer(Difficulty = Difficulty.Medium)]
     public class Answer1
     {
-        private static int[] _values = { 1, 2, 3 };
-
         public static void Run()
         {
             var random = Random.Shared;
-            
+            int sum;
+
             // begin
-            _values[0] = random.Next();
-            var sum = Sum(_values);
+            var values = ArrayPool<int>.Shared.Rent(3);
+            values.AsSpan().Clear();
+            try
+            {
+                values[0] = random.Next();
+                values[1] = random.Next();
+                values[2] = random.Next();
+
+                sum = Sum(values);
+            }
+            finally
+            {
+                ArrayPool<int>.Shared.Return(values);
+            }
             // end
 
             Logger.Log("Sum: {0}", sum);

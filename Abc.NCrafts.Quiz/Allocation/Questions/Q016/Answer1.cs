@@ -6,8 +6,10 @@
         public static void Run()
         {
             // begin
-            new NCrafts().GetHashCode();
+            var code = new NCrafts().GetHashCode();
             // end
+            
+            Logger.Log(code);
         }
 
         public struct NCrafts

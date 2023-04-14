@@ -11,20 +11,14 @@ namespace Abc.NCrafts.Quiz.Allocation.Questions.Q003
         public static void Run()
         {
             // begin
-            var sum = Sum(_values);
-            // end
-
-            Logger.Log("Sum: {0}", sum);
-        }
-
-        private static int Sum(IList<int> items)
-        {
             var sum = 0;
-            foreach (var item in items)
+            foreach (var item in _values)
             {
                 sum += item;
             }
-            return sum;
+            // end
+
+            Logger.Log("Sum: {0}", sum);
         }
     }
 }

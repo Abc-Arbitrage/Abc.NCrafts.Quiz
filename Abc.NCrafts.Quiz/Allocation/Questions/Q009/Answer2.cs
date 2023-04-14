@@ -9,8 +9,10 @@ namespace Abc.NCrafts.Quiz.Allocation.Questions.Q009
             var random = Random.Shared;
             
             // begin
-            var value = random.Next();
-            var sum = Sum(value, 2, 3);
+            var value1 = random.Next();
+            var value2 = random.Next();
+            var value3 = random.Next();
+            var sum = Sum(value1, value2, value3);
             // end
 
             Logger.Log("Sum: {0}", sum);

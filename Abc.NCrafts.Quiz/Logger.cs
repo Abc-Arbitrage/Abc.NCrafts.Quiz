@@ -22,6 +22,13 @@ namespace Abc.NCrafts.Quiz
             if (Enabled)
                 Console.WriteLine(Encoding.ASCII.GetString(bytes, 0, (int)length));
         }
+        
+        [Conditional("DEBUG")]
+        public static void Log(ReadOnlySpan<char> text)
+        {
+            if (Enabled)
+                Console.WriteLine(text.ToString());
+        }
 
         [Conditional("DEBUG")]
         public static void Log<T>(string format, T arg0)

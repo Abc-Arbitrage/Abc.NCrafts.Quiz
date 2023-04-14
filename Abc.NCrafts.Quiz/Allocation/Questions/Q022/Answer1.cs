@@ -1,31 +1,26 @@
-﻿namespace Abc.NCrafts.Quiz.Allocation.Questions.Q022
+﻿using System;
+
+namespace Abc.NCrafts.Quiz.Allocation.Questions.Q022
 {
     public class Answer1
     {
-        public static unsafe void Run()
+        public static void Run()
         {
-            var array = new NCrafts[10];
-
             // begin
-            for (var i = 0; i < array.Length; i++)
-            {
-                var value = new NCrafts(3);
-                value.Array[0] = 1;
-
-                array[i] = value;
-            }
+            var data = new Data();
+            data.Ids[0] = 999;
             // end
 
-            Logger.Log("Value: ", array.Length);
+            Logger.Log("Value: ", data.Ids[0]);
         }
 
-        private struct NCrafts
+        private ref struct Data
         {
-            public readonly int[] Array;
+            public Span<int> Ids;
 
-            public NCrafts(int capacity)
+            public Data()
             {
-                Array = new int[capacity];
+                Ids = new int[3];
             }
         }
     }
