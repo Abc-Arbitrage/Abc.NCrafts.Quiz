@@ -19,7 +19,7 @@ namespace Abc.NCrafts.Quiz.Allocation.Questions.Q003
             }
             // end
 
-            Logger.Log("Sum: {0}", sum);
+            Logger.Log($"Sum: {sum}");
         }
     }
 }

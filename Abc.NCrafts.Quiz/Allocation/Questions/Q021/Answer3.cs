@@ -12,7 +12,7 @@ namespace Abc.NCrafts.Quiz.Allocation.Questions.Q021
             if (task.IsCompleted)
             {
                 var result = task.Result;
-                Logger.Log("Task completed, Result: {0}", result);
+                Logger.Log($"Task completed, Result: {result}");
             }
             // end
         }

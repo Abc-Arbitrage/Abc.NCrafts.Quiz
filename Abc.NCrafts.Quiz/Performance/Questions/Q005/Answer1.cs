@@ -26,7 +26,7 @@ namespace Abc.NCrafts.Quiz.Performance.Questions.Q005
                 }
             }
             // end
-            Logger.Log("Sum: {0}", sum);
+            Logger.Log($"Sum: {sum}");
         }
     }
 }

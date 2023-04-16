@@ -15,7 +15,7 @@ namespace Abc.NCrafts.Quiz.Allocation.Questions.Q004
             }
             // end
 
-            Logger.Log("Values: {0}", values);
+            Logger.Log($"Count: {values.Count}");
         }
     }
 }

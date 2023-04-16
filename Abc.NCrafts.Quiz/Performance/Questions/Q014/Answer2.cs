@@ -36,7 +36,7 @@ namespace Abc.NCrafts.Quiz.Performance.Questions.Q014
                     sum += 1;
             }
             // end
-            Logger.Log("Sum: {0}", sum);
+            Logger.Log($"Sum: {sum}");
         }
     }
 }

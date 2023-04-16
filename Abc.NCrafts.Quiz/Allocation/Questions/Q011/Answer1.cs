@@ -13,7 +13,7 @@ namespace Abc.NCrafts.Quiz.Allocation.Questions.Q011
             var sum = _values.Sum();
             // end
 
-            Logger.Log("Sum: {0}", sum);
+            Logger.Log($"Sum: {sum}");
         }
     }
 }

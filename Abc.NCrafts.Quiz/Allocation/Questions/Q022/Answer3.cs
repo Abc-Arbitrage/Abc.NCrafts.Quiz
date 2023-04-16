@@ -9,7 +9,7 @@
             data.Ids[0] = 999;
             // end
 
-            Logger.Log("Value: ", data.Ids[0]);
+            Logger.Log($"Value: {data.Ids[0]}");
         }
 
         private struct Data

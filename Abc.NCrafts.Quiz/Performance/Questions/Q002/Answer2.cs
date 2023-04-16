@@ -18,7 +18,7 @@ namespace Abc.NCrafts.Quiz.Performance.Questions.Q002
             // begin
             var sum = _items.Sum();
             // end
-            Logger.Log("Sum: {0}", sum);
+            Logger.Log($"Sum: {sum}");
         }
     }
 }

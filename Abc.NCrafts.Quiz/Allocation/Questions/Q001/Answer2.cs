@@ -11,6 +11,8 @@ namespace Abc.NCrafts.Quiz.Allocation.Questions.Q001
             var i = 42;
             Nullable<double> nullable = i;
             // end
+            
+            Logger.Log($"Value: {nullable}");
         }
     }
 }

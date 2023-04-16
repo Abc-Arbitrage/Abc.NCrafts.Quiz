@@ -7,7 +7,7 @@
             // begin
             var result = GreatestCommonDivisor(1245654, 45621);
             // end
-            Logger.Log("GCD: {0}", result);
+            Logger.Log($"GCD: {result}");
         }
 
         private static int GreatestCommonDivisor(int a, int b)

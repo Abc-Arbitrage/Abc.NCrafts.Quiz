@@ -10,7 +10,7 @@
             var value = int.Parse(_text.Substring(3, 3));
             // end
             
-            Logger.Log("Value: {0}", value);
+            Logger.Log($"Value: {value}");
         }
     }
 }

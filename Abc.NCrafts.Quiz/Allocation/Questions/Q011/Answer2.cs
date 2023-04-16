@@ -14,7 +14,7 @@ namespace Abc.NCrafts.Quiz.Allocation.Questions.Q011
             var count = _values.Count();
             // end
 
-            Logger.Log("Count: {0}", count);
+            Logger.Log($"Count: {count}");
         }
     }
 }

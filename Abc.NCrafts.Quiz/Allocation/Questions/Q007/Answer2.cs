@@ -13,7 +13,7 @@ namespace Abc.NCrafts.Quiz.Allocation.Questions.Q007
             var value = int.Parse(_text.AsSpan().Slice(3, 3));
             // end
             
-            Logger.Log("Value: {0}", value);
+            Logger.Log($"Value: {value}");
         }
     }
 }

@@ -13,7 +13,7 @@ namespace Abc.NCrafts.Quiz.Performance.Questions.Q028
                                    .Where(IsPrime)
                                    .ToList();
             // end
-            Logger.Log("Primes: {0}", primes.Count);
+            Logger.Log($"PrimesCount: {primes.Count}");
         }
 
         private static bool IsPrime(int number)

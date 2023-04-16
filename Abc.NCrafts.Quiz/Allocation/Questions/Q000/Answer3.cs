@@ -9,6 +9,8 @@ namespace Abc.NCrafts.Quiz.Allocation.Questions.Q000
             // begin
             var action = new Action(Run);
             // end
+            
+            Logger.Log($"Action: {action}");
         }
     }
 }

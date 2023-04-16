@@ -7,7 +7,7 @@
             // begin
             var result = Factorial(1234);
             // end
-            Logger.Log("Factorial: {0}", result);
+            Logger.Log($"Factorial: {result}");
         }
 
         private static long Factorial(long n)

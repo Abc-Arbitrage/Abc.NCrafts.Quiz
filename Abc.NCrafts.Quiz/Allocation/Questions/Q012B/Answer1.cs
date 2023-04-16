@@ -11,7 +11,7 @@
 
         private static void UseService(IService service)
         {
-            Logger.Log("Value: {0}", service.GetValue());
+            Logger.Log($"Value: {service.GetValue()}");
         }
 
         private interface IService

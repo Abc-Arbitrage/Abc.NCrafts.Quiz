@@ -13,7 +13,7 @@ namespace Abc.NCrafts.Quiz.Allocation.Questions.Q011
             var first = _values.First();
             // end
 
-            Logger.Log("Sum: {0}", first);
+            Logger.Log($"First: {first}");
         }
     }
 }

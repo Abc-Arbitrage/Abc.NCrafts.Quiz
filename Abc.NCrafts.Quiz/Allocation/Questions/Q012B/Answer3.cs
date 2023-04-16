@@ -13,7 +13,7 @@
         private static void UseService<T>(T service) 
             where T : IService
         {
-            Logger.Log("Value: {0}", service.GetValue());
+            Logger.Log($"Value: {service.GetValue()}");
         }
 
         private interface IService

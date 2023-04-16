@@ -12,7 +12,7 @@ namespace Abc.NCrafts.Quiz.Allocation.Questions.Q007
             var value = int.Parse(_text.Skip(3).Take(3).ToArray());
             // end
             
-            Logger.Log("Value: {0}", value);
+            Logger.Log($"Value: {value}");
         }
     }
 }

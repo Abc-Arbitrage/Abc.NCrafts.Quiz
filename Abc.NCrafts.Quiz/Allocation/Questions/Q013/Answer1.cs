@@ -11,7 +11,7 @@ namespace Abc.NCrafts.Quiz.Allocation.Questions.Q013
             var areEqual = AreEqual("NewCrafts", "newcrafts");
             // end
 
-            Logger.Log("AreEqual: {0}", areEqual);
+            Logger.Log($"AreEqual: {areEqual}");
         }
 
         private static bool AreEqual(string value1, string value2)

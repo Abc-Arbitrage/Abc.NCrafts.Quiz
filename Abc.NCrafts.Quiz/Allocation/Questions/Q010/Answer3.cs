@@ -9,7 +9,7 @@
             var sum = values.X + values.Y;
             // end
 
-            Logger.Log("Sum: {0}", sum);
+            Logger.Log($"Sum: {sum}");
         }
 
         private static Point GetValues()

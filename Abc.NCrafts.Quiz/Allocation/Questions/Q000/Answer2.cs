@@ -10,6 +10,8 @@ namespace Abc.NCrafts.Quiz.Allocation.Questions.Q000
             // begin
             var dateTime = new DateTime(1983, 03, 02);
             // end
+            
+            Logger.Log($"DateTime: {dateTime}");
         }
     }
 }

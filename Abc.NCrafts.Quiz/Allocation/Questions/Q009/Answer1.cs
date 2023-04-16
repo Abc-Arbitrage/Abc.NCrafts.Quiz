@@ -28,7 +28,7 @@ namespace Abc.NCrafts.Quiz.Allocation.Questions.Q009
             }
             // end
 
-            Logger.Log("Sum: {0}", sum);
+            Logger.Log($"Sum: {sum}");
         }
 
         private static int Sum(params int[] values)

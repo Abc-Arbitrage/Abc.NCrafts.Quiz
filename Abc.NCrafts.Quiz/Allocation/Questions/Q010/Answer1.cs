@@ -10,7 +10,7 @@
             var sum = values.x + values.y;
             // end
 
-            Logger.Log("Sum: {0}", sum);
+            Logger.Log($"Sum: {sum}");
         }
 
         private static (int x, int y) GetValues()

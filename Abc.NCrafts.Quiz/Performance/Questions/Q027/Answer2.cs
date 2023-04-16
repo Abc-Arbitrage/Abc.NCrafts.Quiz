@@ -11,7 +11,7 @@ namespace Abc.NCrafts.Quiz.Performance.Questions.Q027
             // begin
             var isValid = IsValid1(value) & IsValid2(value) & IsValid3(value);
             // end
-            Logger.Log("IsValid: {0}", isValid);
+            Logger.Log($"IsValid: {isValid}");
         }
 
         private static bool IsValid1(int n)

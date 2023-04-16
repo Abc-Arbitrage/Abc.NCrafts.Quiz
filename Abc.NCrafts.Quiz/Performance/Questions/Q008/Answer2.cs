@@ -28,7 +28,7 @@ namespace Abc.NCrafts.Quiz.Performance.Questions.Q008
             }
             short max = Math.Max(max1, max2);
             // end
-            Logger.Log("Max: {0}", max);
+            Logger.Log($"Max: {max}");
         }
     }
 }

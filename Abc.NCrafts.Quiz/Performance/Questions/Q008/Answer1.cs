@@ -24,7 +24,7 @@ namespace Abc.NCrafts.Quiz.Performance.Questions.Q008
                 max = Math.Max(max, _values[index]);
             }
             // end
-            Logger.Log("Max: {0}", max);
+            Logger.Log($"Max: {max}");
         }
     }
 }

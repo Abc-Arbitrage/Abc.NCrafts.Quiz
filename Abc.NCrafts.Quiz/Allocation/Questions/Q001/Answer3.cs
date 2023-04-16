@@ -10,6 +10,8 @@ namespace Abc.NCrafts.Quiz.Allocation.Questions.Q001
             var i = 42;
             IEquatable<int> equatable = i;
             // end
+            
+            Logger.Log($"Value: {equatable}");
         }
     }
 }

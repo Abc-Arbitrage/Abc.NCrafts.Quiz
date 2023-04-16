@@ -8,6 +8,8 @@
             var i = 42;
             object obj = i;
             // end
+            
+            Logger.Log($"Value: {obj}");
         }
     }
 }

@@ -15,7 +15,7 @@ namespace Abc.NCrafts.Quiz.Performance.Questions.Q017
                 sum += GetValue2(item);
             }
             // end
-            Logger.Log("Sum: {0}", sum);
+            Logger.Log($"Sum: {sum}");
         }
 
         [MethodImpl(MethodImplOptions.NoInlining)]

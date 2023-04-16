@@ -24,7 +24,7 @@ namespace Abc.NCrafts.Quiz.Performance.Questions.Q007
                 _result[index] = _x[index] + _result[index - 1];
             }
             // end
-            Logger.Log("Sum: {0}", _result.Sum());
+            Logger.Log($"Sum: {_result.Sum()}");
         }
     }
 }

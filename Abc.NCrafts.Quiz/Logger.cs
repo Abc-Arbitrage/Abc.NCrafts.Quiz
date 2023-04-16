@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Runtime.CompilerServices;
 using System.Text;
 
 namespace Abc.NCrafts.Quiz
@@ -31,17 +32,36 @@ namespace Abc.NCrafts.Quiz
         }
 
         [Conditional("DEBUG")]
-        public static void Log<T>(string format, T arg0)
+        public static void Log(ref LoggerInterpolatedStringHandler handler)
         {
             if (Enabled)
-                Console.WriteLine(format, arg0);
+                Console.WriteLine(handler.ToString());
         }
-
-        [Conditional("DEBUG")]
-        public static void Log(string format, IEnumerable<int> arg0)
+        
+        [InterpolatedStringHandler]
+        public readonly ref struct LoggerInterpolatedStringHandler
         {
-            if (Enabled)
-                Console.WriteLine(format, string.Join(", ", arg0));
+            private readonly StringBuilder _stringBuilder;
+
+            public LoggerInterpolatedStringHandler(int literalLength, int formattedCount)
+            {
+                _stringBuilder = Enabled ? new StringBuilder(literalLength + formattedCount * 4) : null;
+            }
+
+            public void AppendLiteral(string value)
+                => _stringBuilder?.Append(value);
+
+            public void AppendFormatted(ReadOnlySpan<char> value)
+                => _stringBuilder?.Append(value);
+
+            public void AppendFormatted(string value)
+                => _stringBuilder?.Append(value);
+
+            public void AppendFormatted<T>(T value)
+                => _stringBuilder?.Append(value);
+
+            public override string ToString()
+                => _stringBuilder.ToString();
         }
     }
 }

@@ -32,7 +32,7 @@ namespace Abc.NCrafts.Quiz.Performance.Questions.Q021
                         spinWait.SpinOnce();
                         continue;
                     }
-                    Logger.Log("Value: {0}", value);
+                    Logger.Log($"Value: {value}");
                 }
             });
 

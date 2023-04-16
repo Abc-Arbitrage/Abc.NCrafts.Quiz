@@ -17,7 +17,7 @@ namespace Abc.NCrafts.Quiz.Performance.Questions.Q003
             // begin
             var max = _items.Max();
             // end
-            Logger.Log("Max: {0}", max);
+            Logger.Log($"Max: {max}");
         }
     }
 }

@@ -7,6 +7,8 @@
             // begin
             var obj = new object();
             // end
+            
+            Logger.Log($"Obj: {obj}");
         }
     }
 }

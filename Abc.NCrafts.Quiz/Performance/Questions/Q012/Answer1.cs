@@ -20,7 +20,7 @@ namespace Abc.NCrafts.Quiz.Performance.Questions.Q012
             // begin
             var sum = _values.Sum();
             // end
-            Logger.Log("Sum: {0}", sum);
+            Logger.Log($"Sum: {sum}");
         }
     }
 }

@@ -11,7 +11,7 @@ namespace Abc.NCrafts.Quiz.Allocation.Questions.Q022
             data.Ids[0] = 999;
             // end
 
-            Logger.Log("Value: ", data.Ids[0]);
+            Logger.Log($"Value: {data.Ids[0]}");
         }
 
         private ref struct Data
