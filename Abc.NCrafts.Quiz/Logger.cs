@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Text;
 
@@ -10,28 +8,24 @@ namespace Abc.NCrafts.Quiz
     {
         public static bool Enabled { get; set; }
 
-        [Conditional("DEBUG")]
         public static void Log<T>(T value)
         {
             if (Enabled)
                 Console.WriteLine(value?.ToString());
         }
 
-        [Conditional("DEBUG")]
         public static void LogAscii(byte[] bytes, long length)
         {
             if (Enabled)
                 Console.WriteLine(Encoding.ASCII.GetString(bytes, 0, (int)length));
         }
         
-        [Conditional("DEBUG")]
         public static void Log(ReadOnlySpan<char> text)
         {
             if (Enabled)
                 Console.WriteLine(text.ToString());
         }
 
-        [Conditional("DEBUG")]
         public static void Log(ref LoggerInterpolatedStringHandler handler)
         {
             if (Enabled)
