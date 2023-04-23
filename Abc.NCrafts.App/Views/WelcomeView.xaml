@@ -37,7 +37,7 @@
 
         <flowControls:FlowItemsControl2D  Grid.Row="1" VerticalAlignment="Center" >
 
-            <Button Command="{Binding StartPerformance2018QuizzCommand}" VerticalAlignment="Stretch" Margin="0" Padding="0 20 0 20" Height="700" >
+            <Button Command="{Binding StartPerformance2QuizCommand}" VerticalAlignment="Stretch" Margin="0" Padding="0 20 0 20" Height="700" >
                 <Viewbox Stretch="Uniform">
                     <Grid>
                         <Grid.ColumnDefinitions>
@@ -48,11 +48,11 @@
                             <svgc:SvgViewbox Stretch="Uniform" Source="../Images/Performance.svg" />
                         </Border>
                         <StackPanel Grid.Column="1" Margin="10 15 20 20">
-                            <TextBlock FontSize="50" HorizontalAlignment="Left">Performance 2018</TextBlock>
+                            <TextBlock FontSize="50" HorizontalAlignment="Left">Performance 201</TextBlock>
                             <TextBlock FontSize="25" Foreground="White" TextWrapping="Wrap">
-                                    <Run>Find the code that is most likely</Run>
-                                    <LineBreak />
-                                    <Run>to perform better in C# 7.*</Run>
+                                <Run>Find the code that is most likely</Run>
+                                <LineBreak />
+                                <Run>to perform better</Run>
                             </TextBlock>
                             <StackPanel Orientation="Horizontal" Margin="0,30,0,0">
                                 <TextBlock FontSize="25" HorizontalAlignment="Left" Margin="0,0,10,0">Difficulty:</TextBlock>
@@ -67,7 +67,7 @@
                 </Viewbox>
             </Button>
 
-            <Button Command="{Binding StartAllocationQuizzCommand}" VerticalAlignment="Stretch" Margin="0" Padding="0" Height="700" >
+            <Button Command="{Binding StartAllocationQuizCommand}" VerticalAlignment="Stretch" Margin="0" Padding="0" Height="700" >
                 <Viewbox Stretch="Uniform">
                     <Grid>
                         <Grid.ColumnDefinitions>
@@ -96,7 +96,7 @@
                     </Grid>
                 </Viewbox>
             </Button>
-            <Button Command="{Binding StartPerformanceQuizzCommand}" VerticalAlignment="Stretch" Margin="0" Padding="0 20 0 20" Height="700" >
+            <Button Command="{Binding StartPerformance1QuizCommand}" VerticalAlignment="Stretch" Margin="0" Padding="0 20 0 20" Height="700" >
                 <Viewbox Stretch="Uniform">
                     <Grid>
                         <Grid.ColumnDefinitions>
@@ -107,7 +107,7 @@
                             <svgc:SvgViewbox Stretch="Uniform" Source="../Images/Performance.svg" />
                         </Border>
                         <StackPanel Grid.Column="1" Margin="10 15 20 20">
-                            <TextBlock FontSize="50" HorizontalAlignment="Left">Performance 2016</TextBlock>
+                            <TextBlock FontSize="50" HorizontalAlignment="Left">Performance 101</TextBlock>
                             <TextBlock FontSize="25" Foreground="White" TextWrapping="Wrap">
                                     <Run>Find the code that is most likely</Run>
                                     <LineBreak />

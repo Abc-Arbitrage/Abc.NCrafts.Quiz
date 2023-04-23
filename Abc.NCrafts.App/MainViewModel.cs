@@ -12,8 +12,8 @@ namespace Abc.NCrafts.App
     {
         private readonly WelcomePage _welcomePage;
         private readonly AllocationGamePage _allocationGamePage;
-        private readonly PerformanceGamePage _performanceGamePage;
-        private readonly Performance2018GamePage _performance2018GamePage;
+        private readonly Performance1GamePage _performance1GamePage;
+        private readonly Performance2GamePage _performance2GamePage;
         private readonly EndPage _endPage;
 
         public MainViewModel()
@@ -22,13 +22,13 @@ namespace Abc.NCrafts.App
 
             _welcomePage = new WelcomePage(this);
             _allocationGamePage = new AllocationGamePage(this);
-            _performanceGamePage = new PerformanceGamePage(this);
-            _performance2018GamePage = new Performance2018GamePage(this);
+            _performance1GamePage = new Performance1GamePage(this);
+            _performance2GamePage = new Performance2GamePage(this);
             _endPage = new EndPage(this);
 
             _allocationGamePage.NextPage = _endPage;
-            _performanceGamePage.NextPage = _endPage;
-            _performance2018GamePage.NextPage = _endPage;
+            _performance1GamePage.NextPage = _endPage;
+            _performance2GamePage.NextPage = _endPage;
 
             _endPage.NextPage = _welcomePage;
 
@@ -38,45 +38,45 @@ namespace Abc.NCrafts.App
         public Quiz Quiz { get; private set; }
         public ViewModel CurrentPage { get; set; }
 
-        public void StartGame(QuizzType quizzType)
+        public void StartGame(QuizType quizType)
         {
-            Quiz = LoadQuiz(quizzType);
+            Quiz = LoadQuiz(quizType);
 
-            switch (quizzType)
+            switch (quizType)
             {
-                case QuizzType.Performance:
-                    _welcomePage.NextPage = _performanceGamePage;
-                    _endPage.PreviousPage = _performanceGamePage;
+                case QuizType.Performance1:
+                    _welcomePage.NextPage = _performance1GamePage;
+                    _endPage.PreviousPage = _performance1GamePage;
                     break;
-                case QuizzType.Allocation:
+                case QuizType.Allocation:
                     _welcomePage.NextPage = _allocationGamePage;
                     _endPage.PreviousPage = _allocationGamePage;
                     break;
-                case QuizzType.Performance2018:
-                    _welcomePage.NextPage = _performance2018GamePage;
-                    _endPage.PreviousPage = _performance2018GamePage;
+                case QuizType.Performance2:
+                    _welcomePage.NextPage = _performance2GamePage;
+                    _endPage.PreviousPage = _performance2GamePage;
                     break;
                 default:
-                    throw new ArgumentOutOfRangeException(nameof(quizzType), quizzType, null);
+                    throw new ArgumentOutOfRangeException(nameof(quizType), quizType, null);
             }
         }
 
         private static void EnsureQuizCanBeLoaded()
         {
-            LoadQuiz(QuizzType.Allocation);
-            LoadQuiz(QuizzType.Performance);
-            LoadQuiz(QuizzType.Performance2018);
+            LoadQuiz(QuizType.Allocation);
+            LoadQuiz(QuizType.Performance1);
+            LoadQuiz(QuizType.Performance2);
         }
 
-        private static Quiz LoadQuiz(QuizzType quizzType) => QuizLoader.LoadFrom(GetQuizPath(quizzType));
+        private static Quiz LoadQuiz(QuizType quizType) => QuizLoader.LoadFrom(GetQuizPath(quizType));
 
-        private static string GetQuizPath(QuizzType quizzType)
+        private static string GetQuizPath(QuizType quizType)
         {
             var quizPathRoot = GetQuizPathRoot();
             if (string.IsNullOrEmpty(quizPathRoot))
                 throw new InvalidOperationException("Unable to locate quiz path, you should set \"Quiz.Path\" setting key.");
 
-            return Path.Combine(quizPathRoot, quizzType.ToString(), "Questions");
+            return Path.Combine(quizPathRoot, quizType.ToString());
         }
 
         private static string GetQuizPathRoot()

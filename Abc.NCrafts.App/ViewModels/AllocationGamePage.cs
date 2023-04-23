@@ -80,9 +80,9 @@ namespace Abc.NCrafts.App.ViewModels
             get { return new ActionCommand(() => IsHelpVisible = false); }
         }
 
-        public bool IsEasyQuestion => MainViewModel.Quiz.CurrentQuestion.Difficulty >= QuestionDifficulty.Easy;
-        public bool IsMediumQuestion => MainViewModel.Quiz.CurrentQuestion.Difficulty >= QuestionDifficulty.Medium;
-        public bool IsHardQuestion => MainViewModel.Quiz.CurrentQuestion.Difficulty >= QuestionDifficulty.Hard;
+        public bool IsEasyQuestion => MainViewModel.Quiz.CurrentQuestion.Level >= QuestionLevel.Level1;
+        public bool IsMediumQuestion => MainViewModel.Quiz.CurrentQuestion.Level >= QuestionLevel.Level2;
+        public bool IsHardQuestion => MainViewModel.Quiz.CurrentQuestion.Level >= QuestionLevel.Level3;
 
         private void ShowHelpContent()
         {

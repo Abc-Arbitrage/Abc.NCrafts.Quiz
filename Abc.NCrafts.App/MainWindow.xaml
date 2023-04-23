@@ -17,11 +17,11 @@
         <DataTemplate DataType="{x:Type viewModels:AllocationGamePage}">
             <views:AllocationGameView></views:AllocationGameView>
         </DataTemplate>
-        <DataTemplate DataType="{x:Type viewModels:PerformanceGamePage}">
-            <views:PerformanceGameView></views:PerformanceGameView>
+        <DataTemplate DataType="{x:Type viewModels:Performance1GamePage}">
+            <views:Performance1GameView></views:Performance1GameView>
         </DataTemplate>
-        <DataTemplate DataType="{x:Type viewModels:Performance2018GamePage}">
-            <views:Performance2018GameView></views:Performance2018GameView>
+        <DataTemplate DataType="{x:Type viewModels:Performance2GamePage}">
+            <views:Performance2GameView></views:Performance2GameView>
         </DataTemplate>
         <DataTemplate DataType="{x:Type viewModels:EndPage}">
             <views:EndView></views:EndView>

@@ -12,7 +12,7 @@ namespace Abc.NCrafts.App.ViewModels.Questions
         private string _htmlHelpContent;
 
         public List<Answer> Answers { get; }= new List<Answer>();
-        public QuestionDifficulty Difficulty { get; set; }
+        public QuestionLevel Level { get; set; }
         public Answer SelectedAnswer { get; set; }
 
         private IEnumerable<Answer> CodeAnswers => Answers.Where(x => x.HasCode);

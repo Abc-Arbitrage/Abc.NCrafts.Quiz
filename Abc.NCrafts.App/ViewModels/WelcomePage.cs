@@ -13,25 +13,25 @@ namespace Abc.NCrafts.App.ViewModels
         {
         }
 
-        public ICommand StartAllocationQuizzCommand => new RelayCommand(StartAllocationCommand);
-        public ICommand StartPerformanceQuizzCommand => new RelayCommand(StartPerformanceQuizz);
-        public ICommand StartPerformance2018QuizzCommand => new RelayCommand(StartPerformance2018Quizz);
+        public ICommand StartAllocationQuizCommand => new RelayCommand(StartAllocationCommand);
+        public ICommand StartPerformance1QuizCommand => new RelayCommand(StartPerformance1Quiz);
+        public ICommand StartPerformance2QuizCommand => new RelayCommand(StartPerformance2Quiz);
 
-        private void StartPerformanceQuizz(object obj)
+        private void StartPerformance1Quiz(object obj)
         {
-            MainViewModel.StartGame(QuizzType.Performance);
+            MainViewModel.StartGame(QuizType.Performance1);
             base.GoToNext();
         }
 
-        private void StartPerformance2018Quizz(object obj)
+        private void StartPerformance2Quiz(object obj)
         {
-            MainViewModel.StartGame(QuizzType.Performance2018);
+            MainViewModel.StartGame(QuizType.Performance2);
             base.GoToNext();
         }
 
         private void StartAllocationCommand(object obj)
         {
-            MainViewModel.StartGame(QuizzType.Allocation);
+            MainViewModel.StartGame(QuizType.Allocation);
             base.GoToNext();
         }
     }

@@ -10,28 +10,24 @@ namespace Abc.NCrafts.App.ViewModels.Questions
         public static Quiz LoadFrom(string quizDirectoryPath)
         {
             var quiz = new Quiz();
-            var questionsByDifficulty = new SortedDictionary<int, List<Question>>();
-            foreach (var questionDirectoryPath in Directory.GetDirectories(quizDirectoryPath))
-            {
-                var question = LoadQuestion(questionDirectoryPath);
-                if (!questionsByDifficulty.TryGetValue((int)question.Difficulty, out var questions))
-                {
-                    questions = new List<Question>();
 
-                    questionsByDifficulty.Add((int)question.Difficulty, questions);
-                }
-                questions.Add(question);
-            }
-            foreach (var questions in questionsByDifficulty.Values)
+            foreach (var level in Enum.GetValues<QuestionLevel>())
             {
-                quiz.Questions.AddRange(questions);
+                var levelDirectoryPath = Path.Combine(quizDirectoryPath, level.ToString());
+                foreach (var questionDirectoryPath in Directory.GetDirectories(levelDirectoryPath))
+                {
+                    var question = LoadQuestion(level, questionDirectoryPath);
+                    quiz.Questions.Add(question);
+                }
             }
+            
             return quiz;
         }
 
-        private static Question LoadQuestion(string questionDirectoryPath)
+        private static Question LoadQuestion(QuestionLevel level, string questionDirectoryPath)
         {
-            var question = new Question();
+            var question = new Question { Level = level };
+            
             foreach (var answerFilePath in Directory.GetFiles(questionDirectoryPath, "Answer*.cs"))
             {
                 var answerLines = File.ReadLines(answerFilePath).ToList();
@@ -42,10 +38,7 @@ namespace Abc.NCrafts.App.ViewModels.Questions
 
                 var correctAnswerLine = answerLines.FirstOrDefault(x => x.Contains("[CorrectAnswer"));
                 if (correctAnswerLine != null)
-                {
                     answer.IsCorrect = true;
-                    question.Difficulty = ParseDifficulty(correctAnswerLine);
-                }
 
                 TrimToClass(answerLines);
                 LoadHighlightedSectionIndexes(answerLines, answer);
@@ -54,9 +47,10 @@ namespace Abc.NCrafts.App.ViewModels.Questions
 
                 question.Answers.Add(answer);
             }
+            
             question.ShuffleAnswers();
-
             question.MarkdownHelpContent = LoadHelpContent(questionDirectoryPath);
+            
             return question;
         }
 
@@ -94,21 +88,6 @@ namespace Abc.NCrafts.App.ViewModels.Questions
 
             answer.HighlightedSectionEndIndex = answerLines.FindIndex(x => x.Contains("// end")) - 1;
             answerLines.RemoveAt(answer.HighlightedSectionEndIndex + 1);
-        }
-
-        private static QuestionDifficulty ParseDifficulty(string s)
-        {
-            // lol
-            if(s.Contains(QuestionDifficulty.Easy.ToString()))
-                return QuestionDifficulty.Easy;
-
-            if(s.Contains(QuestionDifficulty.Medium.ToString()))
-                return QuestionDifficulty.Medium;
-
-            if(s.Contains(QuestionDifficulty.Hard.ToString()))
-                return QuestionDifficulty.Hard;
-
-            return QuestionDifficulty.Undefined;
         }
     }
 }

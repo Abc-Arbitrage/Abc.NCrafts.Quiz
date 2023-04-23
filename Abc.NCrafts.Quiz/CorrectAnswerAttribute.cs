@@ -5,6 +5,5 @@ namespace Abc.NCrafts.Quiz
     [AttributeUsage(AttributeTargets.Class)]
     public class CorrectAnswerAttribute : Attribute
     {
-        public Difficulty Difficulty { get; set; }
     }
 }
