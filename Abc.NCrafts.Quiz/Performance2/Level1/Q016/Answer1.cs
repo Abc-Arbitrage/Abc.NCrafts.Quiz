@@ -12,14 +12,14 @@
 
         private decimal DoSomething(Data s) => s.Sum + s.Sum;
 
-        public struct Data
+        public readonly struct Data
         {
-            public decimal Field1;
-            public decimal Field2;
-            public decimal Field3;
-            public decimal Field10;
-            public decimal Field20;
-            public decimal Field30;
+            public readonly decimal Field1;
+            public readonly decimal Field2;
+            public readonly decimal Field3;
+            public readonly decimal Field10;
+            public readonly decimal Field20;
+            public readonly decimal Field30;
 
             public decimal Sum => Field1 + Field2 + Field3;
         }

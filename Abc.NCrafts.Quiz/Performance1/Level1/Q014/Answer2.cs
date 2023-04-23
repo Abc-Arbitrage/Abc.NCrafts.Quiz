@@ -12,7 +12,7 @@ namespace Abc.NCrafts.Quiz.Performance1.Level1.Q014
         {
             var random = new Random();
             _values = Enumerable.Range(0, 200)
-                                .Select(_ => random.Next(5000))
+                                .Select(_ => random.Next(5_000))
                                 .ToList();
         }
 
@@ -23,13 +23,13 @@ namespace Abc.NCrafts.Quiz.Performance1.Level1.Q014
             foreach (var value in _values)
             {
                 if (value < 10)
-                    sum += 1000;
+                    sum += 1_000;
                 else if (value < 20)
-                    sum += 2000;
+                    sum += 2_000;
                 else if (value < 30)
-                    sum += 3000;
+                    sum += 3_000;
                 else if (value < 40)
-                    sum += 4000;
+                    sum += 4_000;
                 else if (value >= 100)
                     sum += 42;
                 else if (value % 2 == 0)

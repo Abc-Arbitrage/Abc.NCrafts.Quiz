@@ -10,7 +10,8 @@ namespace Abc.NCrafts.Quiz.Performance1.Level1.Q003
 
         static Answer1()
         {
-            _items = new List<int>(Enumerable.Range(0, 200));
+            var items = Enumerable.Range(0, 200);
+            _items = new List<int>(items);
         }
 
         public static void Run()

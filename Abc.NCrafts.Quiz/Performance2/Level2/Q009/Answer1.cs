@@ -7,7 +7,7 @@ namespace Abc.NCrafts.Quiz.Performance2.Level2.Q009
         public void Run()
         {
             var i = 42;
-            Func<int> func = () => i;
+            var func = () => i;
 
             // begin
             var sum = 0;

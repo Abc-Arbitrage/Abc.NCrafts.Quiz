@@ -9,7 +9,8 @@ namespace Abc.NCrafts.Quiz.Performance1.Level1.Q003
 
         static Answer2()
         {
-            _items = new LinkedList<int>(Enumerable.Range(0, 200));
+            var items = Enumerable.Range(0, 200);
+            _items = new LinkedList<int>(items);
         }
 
         public static void Run()

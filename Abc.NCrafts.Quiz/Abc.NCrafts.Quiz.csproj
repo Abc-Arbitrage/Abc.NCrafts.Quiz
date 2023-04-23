@@ -20,7 +20,6 @@
     <Folder Include="Allocation\Level2" />
     <Folder Include="Performance2\Level2" />
     <Folder Include="Performance2\Level3" />
-    <Folder Include="Performance2\Unknown" />
     <Folder Include="Performance1\Level1" />
     <Folder Include="Performance1\Level2" />
     <Folder Include="Performance1\Level3" />
