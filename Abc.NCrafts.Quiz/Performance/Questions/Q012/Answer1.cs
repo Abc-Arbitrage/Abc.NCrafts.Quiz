@@ -6,7 +6,7 @@ namespace Abc.NCrafts.Quiz.Performance.Questions.Q012
     [CorrectAnswer(Difficulty = Difficulty.Medium)]
     public class Answer1
     {
-        private static readonly List<long> _values;
+        private static List<long> _values;
 
         static Answer1()
         {

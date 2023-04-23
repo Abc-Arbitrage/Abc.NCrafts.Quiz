@@ -6,20 +6,23 @@ namespace Abc.NCrafts.Quiz.Performance.Questions.Q000
 {
     public class Answer1
     {
-        private static readonly List<int> _items;
+        private static List<int> _items;
 
         static Answer1()
         {
-            _items = Enumerable.Range(0, 200).ToList();
+            _items = Enumerable.Range(0, 200)
+                               .ToList();
         }
 
         public static void Run()
         {
             var value = Random.Shared.Next(0, 500);
+            
             // begin
             var hasValue = _items.Contains(value);
             // end
-            Logger.Log(hasValue ? "Found!" : "Not found :'(");
+            
+            Logger.Log($"Found: {hasValue}");
         }
     }
 }

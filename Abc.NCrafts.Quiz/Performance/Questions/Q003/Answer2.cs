@@ -5,7 +5,7 @@ namespace Abc.NCrafts.Quiz.Performance.Questions.Q003
 {
     public class Answer2
     {
-        private static readonly LinkedList<int> _items;
+        private static LinkedList<int> _items;
 
         static Answer2()
         {
@@ -17,6 +17,7 @@ namespace Abc.NCrafts.Quiz.Performance.Questions.Q003
             // begin
             var max = _items.Max();
             // end
+            
             Logger.Log($"Max: {max}");
         }
     }

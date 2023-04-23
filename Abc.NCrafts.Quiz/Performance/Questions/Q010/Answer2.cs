@@ -6,19 +6,15 @@ namespace Abc.NCrafts.Quiz.Performance.Questions.Q010
 {
     public class Answer2
     {
-        private static readonly Dictionary<string, int> _values;
+        private static Dictionary<string, int> _values;
 
         static Answer2()
         {
-            var stringComparer = StringComparer.InvariantCultureIgnoreCase;
+            _values = new(StringComparer.InvariantCultureIgnoreCase);
 
-            var random = new Random();
-            var values = Enumerable.Range(0, 500)
-                                   .Select(_ => random.Next(5000));
-
-            _values = new Dictionary<string, int>(stringComparer);
-            foreach (var value in values)
+            foreach (var _ in Enumerable.Range(0, 500))
             {
+                var value = Random.Shared.Next(5000);
                 _values[value.ToString()] = value;
             }
         }

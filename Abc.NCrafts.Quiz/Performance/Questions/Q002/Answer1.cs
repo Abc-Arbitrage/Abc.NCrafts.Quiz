@@ -6,7 +6,7 @@ namespace Abc.NCrafts.Quiz.Performance.Questions.Q002
     [CorrectAnswer(Difficulty = Difficulty.Easy)]
     public class Answer1
     {
-        private static readonly List<double> _items;
+        private static List<double> _items;
 
         static Answer1()
         {
@@ -19,6 +19,7 @@ namespace Abc.NCrafts.Quiz.Performance.Questions.Q002
             // begin
             var sum = _items.Sum();
             // end
+            
             Logger.Log($"Sum: {sum}");
         }
     }

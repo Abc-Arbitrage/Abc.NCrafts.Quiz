@@ -5,7 +5,7 @@ namespace Abc.NCrafts.Quiz.Performance.Questions.Q002
 {
     public class Answer2
     {
-        private static readonly List<decimal> _items;
+        private static List<decimal> _items;
 
         static Answer2()
         {
@@ -18,6 +18,7 @@ namespace Abc.NCrafts.Quiz.Performance.Questions.Q002
             // begin
             var sum = _items.Sum();
             // end
+            
             Logger.Log($"Sum: {sum}");
         }
     }

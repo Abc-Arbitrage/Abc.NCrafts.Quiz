@@ -6,7 +6,7 @@ namespace Abc.NCrafts.Quiz.Performance.Questions.Q004
 {
     public class Answer1
     {
-        private static readonly List<int> _items;
+        private static List<int> _items;
 
         static Answer1()
         {
@@ -16,6 +16,7 @@ namespace Abc.NCrafts.Quiz.Performance.Questions.Q004
         public static void Run()
         {
             var value = Random.Shared.Next(0, _items.Count);
+            
             // begin
             MoveToFirst(value);
             // end

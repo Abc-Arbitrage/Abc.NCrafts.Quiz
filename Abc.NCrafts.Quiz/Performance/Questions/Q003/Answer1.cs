@@ -6,7 +6,7 @@ namespace Abc.NCrafts.Quiz.Performance.Questions.Q003
     [CorrectAnswer(Difficulty = Difficulty.Easy)]
     public class Answer1
     {
-        private static readonly List<int> _items;
+        private static List<int> _items;
 
         static Answer1()
         {
@@ -18,6 +18,7 @@ namespace Abc.NCrafts.Quiz.Performance.Questions.Q003
             // begin
             var max = _items.Max();
             // end
+            
             Logger.Log($"Max: {max}");
         }
     }

@@ -3,7 +3,7 @@
 namespace Abc.NCrafts.Quiz.Performance.Questions.Q001
 {
     [MemoryDiagnoser]
-    public class PerformanceBench001
+    public class Performance_Bench001
     {
         [Benchmark]
         public void RunAnswer1() => Answer1.Run();

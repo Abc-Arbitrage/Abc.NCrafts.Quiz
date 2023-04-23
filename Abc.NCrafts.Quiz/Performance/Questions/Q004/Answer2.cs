@@ -7,7 +7,7 @@ namespace Abc.NCrafts.Quiz.Performance.Questions.Q004
     [CorrectAnswer(Difficulty = Difficulty.Easy)]
     public class Answer2
     {
-        private static readonly LinkedList<int> _items;
+        private static LinkedList<int> _items;
 
         static Answer2()
         {
@@ -17,6 +17,7 @@ namespace Abc.NCrafts.Quiz.Performance.Questions.Q004
         public static void Run()
         {
             var value = Random.Shared.Next(0, _items.Count);
+            
             // begin
             MoveToFirst(value);
             // end

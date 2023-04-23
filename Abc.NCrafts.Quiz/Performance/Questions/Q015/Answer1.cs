@@ -21,9 +21,9 @@ namespace Abc.NCrafts.Quiz.Performance.Questions.Q015
             var count = 0;
 
             // begin
-            for (var i = 0; i < _values.Length; i++)
+            foreach (var value in _values)
             {
-                if (_values[i] > _threshold)
+                if (value > _threshold)
                     count++;
             }
             // end

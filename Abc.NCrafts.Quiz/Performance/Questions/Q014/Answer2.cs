@@ -6,7 +6,7 @@ namespace Abc.NCrafts.Quiz.Performance.Questions.Q014
 {
     public class Answer2
     {
-        private static readonly List<int> _values;
+        private static List<int> _values;
 
         static Answer2()
         {
