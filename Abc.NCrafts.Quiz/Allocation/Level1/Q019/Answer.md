@@ -1,1 +1,1 @@
-﻿Here, the `NCrafts` struct instance is boxed when affected to `IDisposable` local. However, when using the `using` construct, the compiler will be able to avoid the boxing by emitting **constrained virtual calls**.
+﻿Here, the `Scope` struct instance is boxed when affected to `IDisposable` local. However, when using the `using` construct, the compiler will be able to avoid the boxing by emitting **constrained virtual calls**.

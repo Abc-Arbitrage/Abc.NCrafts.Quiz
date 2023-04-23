@@ -7,7 +7,7 @@ namespace Abc.NCrafts.Quiz.Allocation.Level1.Q019
         public static void Run()
         {
             // begin
-            var resource = new NCrafts();
+            var resource = new Scope();
             try
             {
             }
@@ -19,7 +19,7 @@ namespace Abc.NCrafts.Quiz.Allocation.Level1.Q019
             // end
         }
 
-        private struct NCrafts : IDisposable
+        private struct Scope : IDisposable
         {
             public void Dispose()
             {

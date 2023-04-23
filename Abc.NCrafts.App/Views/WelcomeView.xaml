@@ -31,7 +31,7 @@
             </Border.Effect>
             <StackPanel Orientation="Horizontal" Margin="20" HorizontalAlignment="Center">
                 <Image VerticalAlignment="Center" Source="../Images/AbcLogo.png" RenderOptions.BitmapScalingMode="HighQuality" Width="200" Height="200" />
-                <Label Content="NCrafts Quiz" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="120" FontFamily="Segoe UI Light" Margin="10" Padding="40 0 0 0" />
+                <Label Content="NewCrafts Quiz" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="120" FontFamily="Segoe UI Light" Margin="10" Padding="40 0 0 0" />
             </StackPanel>
         </Border>
 

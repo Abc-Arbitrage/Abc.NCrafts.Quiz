@@ -8,13 +8,13 @@ namespace Abc.NCrafts.Quiz.Allocation.Level1.Q019
         public static void Run()
         {
             // begin
-            using (var resource = new NCrafts())
+            using (var resource = new Scope())
             {
             }
             // end
         }
 
-        private struct NCrafts : IDisposable
+        private struct Scope : IDisposable
         {
             public void Dispose()
             {
