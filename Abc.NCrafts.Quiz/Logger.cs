@@ -14,12 +14,6 @@ namespace Abc.NCrafts.Quiz
                 Console.WriteLine(value?.ToString());
         }
 
-        public static void LogAscii(byte[] bytes, long length)
-        {
-            if (Enabled)
-                Console.WriteLine(Encoding.ASCII.GetString(bytes, 0, (int)length));
-        }
-        
         public static void Log(ReadOnlySpan<char> text)
         {
             if (Enabled)
@@ -28,8 +22,7 @@ namespace Abc.NCrafts.Quiz
 
         public static void Log(ref LoggerInterpolatedStringHandler handler)
         {
-            if (Enabled)
-                Console.WriteLine(handler.ToString());
+            handler.Log();
         }
         
         [InterpolatedStringHandler]
@@ -37,25 +30,24 @@ namespace Abc.NCrafts.Quiz
         {
             private readonly StringBuilder _stringBuilder;
 
-            public LoggerInterpolatedStringHandler(int literalLength, int formattedCount)
+            public LoggerInterpolatedStringHandler(int literalLength, int formattedCount, out bool isHandlerValid)
             {
-                _stringBuilder = Enabled ? new StringBuilder(literalLength + formattedCount * 4) : null;
+                var enabled = Enabled;
+                isHandlerValid = enabled;
+                _stringBuilder = enabled ? new StringBuilder(literalLength + formattedCount * 4) : null;
             }
 
             public void AppendLiteral(string value)
-                => _stringBuilder?.Append(value);
-
-            public void AppendFormatted(ReadOnlySpan<char> value)
-                => _stringBuilder?.Append(value);
-
-            public void AppendFormatted(string value)
-                => _stringBuilder?.Append(value);
+                => _stringBuilder.Append(value);
 
             public void AppendFormatted<T>(T value)
-                => _stringBuilder?.Append(value);
+                => _stringBuilder.Append(value);
 
-            public override string ToString()
-                => _stringBuilder.ToString();
+            public void Log()
+            {
+                if (_stringBuilder != null)
+                    Console.WriteLine(_stringBuilder.ToString());
+            }
         }
     }
 }
