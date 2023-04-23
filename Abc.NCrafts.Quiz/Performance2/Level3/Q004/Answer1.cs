@@ -4,6 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace Abc.NCrafts.Quiz.Performance2.Level3.Q004
 {
+    [CorrectAnswer]
     public class Answer1
     {
         private readonly int[] _buffer = Enumerable.Range(0, 16 * 1024)

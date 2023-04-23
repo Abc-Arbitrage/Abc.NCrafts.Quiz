@@ -4,6 +4,7 @@ using System.Runtime.Intrinsics.X86;
 
 namespace Abc.NCrafts.Quiz.Performance2.Level3.Q008
 {
+    [CorrectAnswer]
     public class Answer2
     {
         private readonly byte[] _buffer = GetBytes();

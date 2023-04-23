@@ -2,6 +2,7 @@
 
 namespace Abc.NCrafts.Quiz.Performance2.Level3.Q004
 {
+    [CorrectAnswer]
     public class Answer2
     {
         private readonly int[] _buffer = Enumerable.Range(0, 16 * 1024)

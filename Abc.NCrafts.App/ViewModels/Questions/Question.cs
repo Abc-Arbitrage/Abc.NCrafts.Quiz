@@ -7,21 +7,21 @@ namespace Abc.NCrafts.App.ViewModels.Questions
 {
     public class Question
     {
-        private static readonly Random _random = new Random();
         private readonly Markdown _markdown = new Markdown();
         private string _htmlHelpContent;
 
+        public Question(QuestionLevel level)
+        {
+            Level = level;
+        }
+
+        public QuestionLevel Level { get; }
         public List<Answer> Answers { get; }= new List<Answer>();
-        public QuestionLevel Level { get; set; }
-        public Answer SelectedAnswer { get; set; }
+        public IReadOnlyCollection<Answer> SelectedAnswers { get; set; } = Array.Empty<Answer>();
 
-        private IEnumerable<Answer> CodeAnswers => Answers.Where(x => x.HasCode);
-        private IEnumerable<Answer> NonCodeAnswers => Answers.Where(x => !x.HasCode);
-
-        public Answer Answer1 => CodeAnswers.First();
-        public Answer Answer2 => CodeAnswers.Skip(1).First();
-        public Answer Answer3 => CodeAnswers.Skip(2).FirstOrDefault() ?? new Answer();
-        public Answer NonCodeAnswer => NonCodeAnswers.FirstOrDefault() ?? new Answer();
+        public Answer Answer1 => Answers.FirstOrDefault();
+        public Answer Answer2 => Answers.Skip(1).FirstOrDefault();
+        public Answer Answer3 => Answers.Skip(2).FirstOrDefault();
 
         public string MarkdownHelpContent { get; set; }
 
@@ -38,11 +38,16 @@ namespace Abc.NCrafts.App.ViewModels.Questions
         {
             for (var index = 0; index < Answers.Count - 1; index++)
             {
-                var randomIndex = _random.Next(index, Answers.Count);
+                var randomIndex = Random.Shared.Next(index, Answers.Count);
                 var tmp = Answers[index];
                 Answers[index] = Answers[randomIndex];
                 Answers[randomIndex] = tmp;
             }
+        }
+
+        public bool IsSelectedAnswerValid()
+        {
+            return Answers.Where(x => x.IsCorrect).All(x => SelectedAnswers.Contains(x));
         }
     }
 }

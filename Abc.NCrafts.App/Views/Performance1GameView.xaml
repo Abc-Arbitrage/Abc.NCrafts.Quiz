@@ -56,6 +56,10 @@
                 <ColumnDefinition />
                 <ColumnDefinition />
             </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
 
             <Button Grid.Column="0" Style="{StaticResource codeButtonStyle}" Command="{Binding Answer1Click}" Margin="10">
                 <Viewbox Stretch="Uniform">
@@ -73,7 +77,8 @@
                 </Viewbox>
 
             </Button>
-            <Button Grid.Column="1" Style="{StaticResource codeButtonStyle}" Command="{Binding Answer2Click}" Margin="10">
+            
+            <Button Grid.Row="0" Grid.Column="1" Style="{StaticResource codeButtonStyle}" Command="{Binding Answer2Click}" Margin="10">
                 <Viewbox Stretch="Uniform">
                     <Grid>
                         <Grid.ColumnDefinitions>
@@ -89,6 +94,11 @@
                 </Viewbox>
             </Button>
 
+            <Button Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="1" Style="{StaticResource codeButtonStyle}" Command="{Binding UndefinedAnswerClick}" Margin="10">
+                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center"
+                           FontSize="60" FontFamily="Segoe UI Light" Margin="50" Text="It's pretty much the same"/>
+            </Button>
+            
         </Grid>
 
         <Border Grid.ColumnSpan="4" Grid.Row="2" Background="#565656">

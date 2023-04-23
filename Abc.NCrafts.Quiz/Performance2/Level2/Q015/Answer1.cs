@@ -1,5 +1,6 @@
 ﻿namespace Abc.NCrafts.Quiz.Performance2.Level2.Q015
 {
+    [CorrectAnswer]
     public class Answer1
     {
         public decimal Run()

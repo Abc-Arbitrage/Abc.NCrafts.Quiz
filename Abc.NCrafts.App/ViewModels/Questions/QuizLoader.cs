@@ -26,19 +26,15 @@ namespace Abc.NCrafts.App.ViewModels.Questions
 
         private static Question LoadQuestion(QuestionLevel level, string questionDirectoryPath)
         {
-            var question = new Question { Level = level };
+            var question = new Question(level);
             
             foreach (var answerFilePath in Directory.GetFiles(questionDirectoryPath, "Answer*.cs"))
             {
                 var answerLines = File.ReadLines(answerFilePath).ToList();
-                var answer = new Answer();
-
-                var nonCodeAnswer = answerLines.FirstOrDefault(x => x.Contains("[NonCodeAnswer"));
-                answer.HasCode = nonCodeAnswer == null;
-
-                var correctAnswerLine = answerLines.FirstOrDefault(x => x.Contains("[CorrectAnswer"));
-                if (correctAnswerLine != null)
-                    answer.IsCorrect = true;
+                var answer = new Answer
+                {
+                    IsCorrect = answerLines.Any(x => x.Contains("[CorrectAnswer"))
+                };
 
                 TrimToClass(answerLines);
                 LoadHighlightedSectionIndexes(answerLines, answer);

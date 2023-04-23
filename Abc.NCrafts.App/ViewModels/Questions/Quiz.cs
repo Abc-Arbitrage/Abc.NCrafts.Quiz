@@ -30,9 +30,7 @@ namespace Abc.NCrafts.App.ViewModels.Questions
         public bool MoveToNextQuestion()
         {
             var currentQuestion = Questions[CurrentQuestionIndex];
-
-            var answer = currentQuestion?.SelectedAnswer;
-            if (answer == null || !answer.IsCorrect)
+            if (!currentQuestion.IsSelectedAnswerValid())
                 return false;
 
             CurrentQuestionIndex++;

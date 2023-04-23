@@ -3,6 +3,7 @@ using System.Numerics;
 
 namespace Abc.NCrafts.Quiz.Performance2.Level3.Q008
 {
+    [CorrectAnswer]
     public class Answer1
     {
         private readonly byte[] _buffer = GetBytes();

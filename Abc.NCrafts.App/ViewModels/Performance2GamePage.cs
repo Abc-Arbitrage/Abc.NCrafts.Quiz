@@ -29,22 +29,22 @@ namespace Abc.NCrafts.App.ViewModels
 
         public ICommand Answer1Click
         {
-            get { return new ActionCommand(() => SelectAnswer(Quiz.CurrentQuestion.Answer1)); }
+            get { return new ActionCommand(() => SelectAnswers(Quiz.CurrentQuestion.Answer1)); }
         }
 
         public ICommand Answer2Click
         {
-            get { return new ActionCommand(() => SelectAnswer(Quiz.CurrentQuestion.Answer2)); }
+            get { return new ActionCommand(() => SelectAnswers(Quiz.CurrentQuestion.Answer2)); }
         }
 
-        public ICommand NonCodeAnswerClick
+        public ICommand UndefinedAnswerClick
         {
-            get { return new ActionCommand(() => SelectAnswer(Quiz.CurrentQuestion.NonCodeAnswer)); }
+            get { return new ActionCommand(() => SelectAnswers(Quiz.CurrentQuestion.Answer1, Quiz.CurrentQuestion.Answer2)); }
         }
 
-        private void SelectAnswer(Answer answer)
+        private void SelectAnswers(params Answer[] answers)
         {
-            Quiz.CurrentQuestion.SelectedAnswer = answer;
+            Quiz.CurrentQuestion.SelectedAnswers = answers;
 
             var canContinue = Quiz.MoveToNextQuestion();
 
