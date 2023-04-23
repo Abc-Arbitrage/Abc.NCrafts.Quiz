@@ -4,23 +4,23 @@ namespace Abc.NCrafts.Quiz.Performance2.Unknown.Q013
 {
     public class Answer2
     {
-        public NCrafts Run()
+        public Data Run()
         {
             // begin
-            var n = new NCrafts(Guid.Empty, DateTime.MinValue, 42m);
+            var n = new Data(Guid.Empty, DateTime.MinValue, 42m);
             return DoSomething(in n);
             // end
         }
 
-        private NCrafts DoSomething(in NCrafts s) => s;
+        private Data DoSomething(in Data s) => s;
 
-        public struct NCrafts
+        public struct Data
         {
             public readonly Guid Field1;
             public readonly DateTime Field2;
             public readonly decimal Field3;
 
-            public NCrafts(Guid field1, DateTime field2, decimal field3)
+            public Data(Guid field1, DateTime field2, decimal field3)
             {
                 Field1 = field1;
                 Field2 = field2;

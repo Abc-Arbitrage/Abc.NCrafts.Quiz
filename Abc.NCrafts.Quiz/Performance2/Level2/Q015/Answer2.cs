@@ -6,14 +6,14 @@
         public decimal Run()
         {
             // begin
-            var n = new NCrafts();
+            var n = new Data();
             return DoSomething(n);
             // end
         }
 
-        private decimal DoSomething(in NCrafts s) => s.Sum;
+        private decimal DoSomething(in Data s) => s.Sum;
 
-        public struct NCrafts
+        public struct Data
         {
             public decimal Field1;
             public decimal Field2;

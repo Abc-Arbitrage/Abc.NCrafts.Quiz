@@ -6,13 +6,13 @@
         public static void Run()
         {
             // begin
-            var code = new NCrafts().GetHashCode();
+            var code = new Key().GetHashCode();
             // end
             
             Logger.Log(code);
         }
 
-        public struct NCrafts
+        public struct Key
         {
             public override int GetHashCode()
             {

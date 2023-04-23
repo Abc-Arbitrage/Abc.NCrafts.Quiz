@@ -5,23 +5,23 @@ namespace Abc.NCrafts.Quiz.Performance2.Level1
     [CorrectAnswer]
     public class Answer1
     {
-        public NCrafts Run()
+        public Data Run()
         {
             // begin
-            var n = new NCrafts(Guid.Empty, DateTime.MinValue, 42m);
+            var n = new Data(Guid.Empty, DateTime.MinValue, 42m);
             return DoSomething(ref n);
             // end
         }
 
-        private ref NCrafts DoSomething(ref NCrafts s) => ref s;
+        private ref Data DoSomething(ref Data s) => ref s;
 
-        public struct NCrafts
+        public struct Data
         {
             public Guid Field1;
             public DateTime Field2;
             public decimal Field3;
 
-            public NCrafts(Guid field1, DateTime field2, decimal field3)
+            public Data(Guid field1, DateTime field2, decimal field3)
             {
                 Field1 = field1;
                 Field2 = field2;
