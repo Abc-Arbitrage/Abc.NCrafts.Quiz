@@ -78,7 +78,7 @@
                             <svgc:SvgViewbox Stretch="Uniform" Source="../Images/Allocations.svg" />
                         </Border>
                         <StackPanel Grid.Column="1" Margin="10 15 20 20">
-                            <TextBlock FontSize="50" HorizontalAlignment="Left">Zero Alloc</TextBlock>
+                            <TextBlock FontSize="50" HorizontalAlignment="Left">Allocations</TextBlock>
                             <TextBlock FontSize="25" Foreground="White" TextWrapping="Wrap">
                                 <Run>Chase heap allocations to prevent</Run>
                                 <LineBreak />
