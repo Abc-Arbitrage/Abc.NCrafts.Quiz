@@ -10,7 +10,8 @@ namespace Abc.NCrafts.Quiz.Allocation.Level1.Q007
         public static void Run()
         {
             // begin
-            var value = int.Parse(_text.AsSpan().Slice(3, 3));
+            var numericPart = _text.AsSpan().Slice(3, 3);
+            var value = int.Parse(numericPart);
             // end
             
             Logger.Log($"Value: {value}");

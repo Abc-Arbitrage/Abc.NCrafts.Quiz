@@ -18,7 +18,7 @@ namespace Abc.NCrafts.Quiz.Allocation.Level1.Q014
                 _builder.Append(char.ToUpper(s[i]));
             }
 
-            var upper = _builder.ToString().AsSpan();
+            var upper = _builder.ToString();
             // end
 
             Logger.Log(upper);

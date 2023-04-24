@@ -18,7 +18,7 @@ namespace Abc.NCrafts.Quiz.Allocation.Level2.Q017
             Logger.Log($"Date 2: {d2}");
         }
 
-        private static DateTime Invoke(Func<long, DateTime> builder, long ticks)
+        static DateTime Invoke(Func<long, DateTime> builder, long ticks)
         {
             return builder.Invoke(ticks);
         }

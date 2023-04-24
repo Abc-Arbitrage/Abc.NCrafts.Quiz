@@ -9,7 +9,8 @@ namespace Abc.NCrafts.Quiz.Allocation.Level1.Q007
         public static void Run()
         {
             // begin
-            var value = int.Parse(_text.Skip(3).Take(3).ToArray());
+            var numericPart = _text.Skip(3).Take(3).ToArray();
+            var value = int.Parse(numericPart);
             // end
             
             Logger.Log($"Value: {value}");

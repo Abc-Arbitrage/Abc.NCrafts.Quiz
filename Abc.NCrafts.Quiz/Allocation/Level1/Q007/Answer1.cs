@@ -7,7 +7,8 @@
         public static void Run()
         {
             // begin
-            var value = int.Parse(_text.Substring(3, 3));
+            var numericPart = _text.Substring(3, 3);
+            var value = int.Parse(numericPart);
             // end
             
             Logger.Log($"Value: {value}");

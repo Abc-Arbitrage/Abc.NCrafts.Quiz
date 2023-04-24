@@ -11,9 +11,9 @@ namespace Abc.NCrafts.Quiz.Allocation.Level2.Q024
             var tickCount = Environment.TickCount64;
             
             Span<char> buffer = stackalloc char[100];
-            buffer.TryWrite($"TickCount: {tickCount}", out _);
+            buffer.TryWrite($"TickCount: {tickCount}", out var n);
             
-            ConsumeString(buffer);
+            ConsumeString(buffer[..n]);
             // end
         }
 
