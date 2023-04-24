@@ -1,5 +1,6 @@
 ﻿namespace Abc.NCrafts.Quiz.Performance2.Level3.Q026
 {
+    [CorrectAnswer]
     public class Answer2
     {
         public static void Run()
@@ -9,14 +10,14 @@
             // end
             Logger.Log($"GCD: {result}");
         }
-
+        
         private static int GreatestCommonDivisor(int a, int b)
         {
             while (b != 0)
             {
-                var tmp = b;
-                b = a % b;
-                a = tmp;
+                var mod = a % b;
+                a = b;
+                b = mod;
             }
             return a;
         }
