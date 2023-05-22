@@ -29,7 +29,7 @@ namespace Abc.NCrafts.Quiz.Performance2.Level3.Q021
                 {
                     if (!queue.TryDequeue(out value))
                     {
-                        spinWait.SpinOnce();
+                        spinWait.SpinOnce(-1);
                         continue;
                     }
                     Logger.Log($"Value: {value}");

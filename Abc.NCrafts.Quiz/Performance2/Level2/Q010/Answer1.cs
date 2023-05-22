@@ -2,10 +2,9 @@
 
 namespace Abc.NCrafts.Quiz.Performance2.Level2.Q010
 {
-    [CorrectAnswer]
     public class Answer1
     {
-        public async void Run()
+        public async Task Run()
         {
             var sum = 0L;
 

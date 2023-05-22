@@ -2,7 +2,6 @@
 
 namespace Abc.NCrafts.Quiz.Allocation.Level2.Q024
 {
-    [CorrectAnswer]
     public class Answer1
     {
         public static void Run()

@@ -1,6 +1,5 @@
 ﻿namespace Abc.NCrafts.Quiz.Allocation.Level2.Q012A
 {
-    [CorrectAnswer]
     public class Answer3
     {
         private static Service _service = new(0);
