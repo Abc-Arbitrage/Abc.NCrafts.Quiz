@@ -6,23 +6,23 @@ namespace Abc.NCrafts.Quiz.Allocation.Level2.Q017
     {
         public static void Run()
         {
-            RunImpl(Environment.TickCount);
+            AddAndLog(Environment.TickCount);
 
             // begin
-            RunImpl(Environment.TickCount);
+            AddAndLog(Environment.TickCount);
             // end
         }
 
-        private static void RunImpl(int ticks)
+        static void AddAndLog(int ticks)
         {
             var value = Invoke(x => ticks + 2, ticks);
             
             Logger.Log($"Value: {value}");
         }
 
-        static int Invoke(Func<int, int> func, int ticks)
+        static int Invoke(Func<int, int> func, int arg)
         {
-            return func.Invoke(ticks);
+            return func.Invoke(arg);
         }
     }
 }
