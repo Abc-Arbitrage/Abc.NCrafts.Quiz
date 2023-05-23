@@ -7,20 +7,23 @@ namespace Abc.NCrafts.Quiz.Allocation.Level2.Q017
     {
         public static void Run()
         {
-            var ticks = 1_000;
-            var d1 = Invoke(x => new DateTime(x), ticks);
+            RunImpl(Environment.TickCount);
 
             // begin
-            var d2 = Invoke(x => new DateTime(x), ticks);
+            RunImpl(Environment.TickCount);
             // end
-
-            Logger.Log($"Date 1: {d1}");
-            Logger.Log($"Date 2: {d2}");
         }
 
-        static DateTime Invoke(Func<long, DateTime> builder, long ticks)
+        private static void RunImpl(int ticks)
         {
-            return builder.Invoke(ticks);
+            var value = Invoke(x => x + 2, ticks);
+            
+            Logger.Log($"Value: {value}");
+        }
+
+        static int Invoke(Func<int, int> func, int ticks)
+        {
+            return func.Invoke(ticks);
         }
     }
 }
