@@ -15,8 +15,8 @@ namespace Abc.NCrafts.App.Views
 
         private void EndViewOnLoaded(object sender, RoutedEventArgs e)
         {
-            EmailTextBox.Focus();
-            EmailTextBox.SelectAll();
+            PlayerNameTextBox.Focus();
+            PlayerNameTextBox.SelectAll();
         }
     }
 }

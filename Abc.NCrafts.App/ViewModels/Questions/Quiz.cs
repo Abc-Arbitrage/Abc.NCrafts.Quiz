@@ -5,15 +5,9 @@ namespace Abc.NCrafts.App.ViewModels.Questions
 {
     public class Quiz
     {
-        public int CurrentScore { get; set; }
-        public int CurrentQuestionIndex { get; set; }
-        public List<Question> Questions { get; set; }
-        public bool IsSuccess { get; set; }
-
-        public Quiz()
-        {
-            Questions = new List<Question>();
-        }
+        public int CurrentQuestionIndex { get; private set; }
+        public List<Question> Questions { get; } = new();
+        public bool IsSuccess { get; private set; }
 
         public Question CurrentQuestion => CurrentQuestionIndex < Questions.Count ? Questions[CurrentQuestionIndex] : null;
 
