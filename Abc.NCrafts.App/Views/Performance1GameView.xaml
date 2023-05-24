@@ -49,23 +49,48 @@
             </StackPanel>
         </Border>
 
-        <UniformGrid Grid.Row="1" Rows="1">
-            <Button Style="{StaticResource codeButtonStyle}" Command="{Binding Answer1Click}" Margin="10">
+        <Grid Grid.Row="1" VerticalAlignment="Stretch" IsSharedSizeScope="True">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <Button Grid.Column="0" Style="{StaticResource codeButtonStyle}" Command="{Binding Answer1Click}" Margin="10">
                 <Viewbox Stretch="Uniform">
-                    <avalonEdit:TextEditor views:AvalonEditExtensions.Text="{Binding Answer1Text}"
-                                           SyntaxHighlighting="{Binding SyntaxHighlighting}"
-                                           views:AvalonEditExtensions.HighlightedLines="{Binding Answer1HighlightedLines}" />
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition SharedSizeGroup="col" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition SharedSizeGroup="row" />
+                        </Grid.RowDefinitions>
+                        <avalonEdit:TextEditor views:AvalonEditExtensions.Text="{Binding Answer1Text}"
+                                               SyntaxHighlighting="{Binding SyntaxHighlighting}"
+                                               views:AvalonEditExtensions.HighlightedLines="{Binding Answer1HighlightedLines}" />
+                    </Grid>
                 </Viewbox>
             </Button>
 
-            <Button Style="{StaticResource codeButtonStyle}" Command="{Binding Answer2Click}" Margin="10">
+            <Button Grid.Row="0" Grid.Column="1" Style="{StaticResource codeButtonStyle}" Command="{Binding Answer2Click}" Margin="10">
                 <Viewbox Stretch="Uniform">
-                    <avalonEdit:TextEditor views:AvalonEditExtensions.Text="{Binding Answer2Text}"
-                                           SyntaxHighlighting="{Binding SyntaxHighlighting}"
-                                           views:AvalonEditExtensions.HighlightedLines="{Binding Answer2HighlightedLines}" />
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition SharedSizeGroup="col" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition SharedSizeGroup="row" />
+                        </Grid.RowDefinitions>
+                        <avalonEdit:TextEditor views:AvalonEditExtensions.Text="{Binding Answer2Text}"
+                                               SyntaxHighlighting="{Binding SyntaxHighlighting}"
+                                               views:AvalonEditExtensions.HighlightedLines="{Binding Answer2HighlightedLines}" />
+                    </Grid>
                 </Viewbox>
             </Button>
-        </UniformGrid>
+        </Grid>
 
         <Border Grid.Row="2" Background="#565656">
             <Border.Effect>

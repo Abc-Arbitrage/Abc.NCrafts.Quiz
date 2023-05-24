@@ -9,6 +9,7 @@
         xmlns:viewModels="clr-namespace:Abc.NCrafts.App.ViewModels"
         xmlns:views="clr-namespace:Abc.NCrafts.App.Views"
         Title="ABC NewCrafts Quiz"
+        Icon="/Images/NCraftsLogo.png"
         WindowStyle="None" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowState="Maximized"
         Height="720" Width="1280">
 
