@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Runtime.CompilerServices;
 
 namespace Abc.NCrafts.Quiz.Performance2.Level2.Q017
@@ -6,14 +7,17 @@ namespace Abc.NCrafts.Quiz.Performance2.Level2.Q017
     [CorrectAnswer]
     public class Answer1
     {
+        private static readonly Item[] _items = Enumerable.Range(0, 100)
+                                                          .Select(i => new Item { Value2 = i })
+                                                          .ToArray();
+
         public static void Run()
         {
             // begin
             var sum = 0L;
             for (var index = 0; index < 100; index++)
             {
-                var item = new Item { Value2 = index };
-                sum += GetValue2(item);
+                sum += GetValue2(_items[index]);
             }
             // end
             Logger.Log($"Sum: {sum}");
@@ -32,6 +36,8 @@ namespace Abc.NCrafts.Quiz.Performance2.Level2.Q017
             public DateTime Value3 { get; set; }
             public decimal Value4 { get; set; }
             public TimeSpan Value5 { get; set; }
+            public Guid Value6 { get; set; }
+            public Guid Value7 { get; set; }
         }
     }
 }

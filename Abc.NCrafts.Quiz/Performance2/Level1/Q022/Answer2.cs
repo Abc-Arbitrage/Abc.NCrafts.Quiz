@@ -3,6 +3,7 @@ using System.Linq;
 
 namespace Abc.NCrafts.Quiz.Performance2.Level1.Q022
 {
+    [CorrectAnswer]
     public class Answer2
     {
         private static readonly List<int> _values;
