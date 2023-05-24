@@ -5,8 +5,8 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:viewModels="clr-namespace:Abc.NCrafts.App.ViewModels"
              mc:Ignorable="d"
-             d:DesignHeight="1024" d:DesignWidth="1280" d:DataContext="{d:DesignInstance viewModels:EndPage}"
-             Loaded="EndViewOnLoaded">
+             d:DesignHeight="1024" d:DesignWidth="1280"
+             d:DataContext="{d:DesignInstance viewModels:EndPage}">
 
     <UserControl.Resources>
         <ResourceDictionary>
@@ -42,8 +42,6 @@
                 <LineBreak />
                 <Run Text="chance to win one of our prizes!" />
             </TextBlock>
-
-            <TextBox x:Name="PlayerNameTextBox" HorizontalAlignment="Stretch" TextAlignment="Center" FontSize="60" Text="{Binding PlayerName, Mode=TwoWay}" BorderThickness="1" Margin="50,20,50,0" Padding="5" />
         </StackPanel>
 
         <Border Grid.ColumnSpan="4" Grid.Row="2" Background="#565656" Margin="0 0 0 0">

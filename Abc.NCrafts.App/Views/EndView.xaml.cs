@@ -12,11 +12,5 @@ namespace Abc.NCrafts.App.Views
         {
             InitializeComponent();
         }
-
-        private void EndViewOnLoaded(object sender, RoutedEventArgs e)
-        {
-            PlayerNameTextBox.Focus();
-            PlayerNameTextBox.SelectAll();
-        }
     }
 }

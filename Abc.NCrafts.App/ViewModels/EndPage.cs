@@ -1,14 +1,9 @@
-﻿using System;
-using System.Configuration;
-using System.IO;
-using Abc.NCrafts.App.ViewModels.Questions;
+﻿using Abc.NCrafts.App.ViewModels.Questions;
 
 namespace Abc.NCrafts.App.ViewModels
 {
     public class EndPage : ViewModel
     {
-        private const string _defaultNameText = "Your name here";
-
         public EndPage(MainViewModel mainViewModel)
             : base(mainViewModel)
         {
@@ -32,17 +27,5 @@ namespace Abc.NCrafts.App.ViewModels
               """.Trim();
 
         public bool CanContinue => Quiz.CurrentQuestion != null;
-
-        public string PlayerName { get; set; } = _defaultNameText;
-
-        public override void GoToNext()
-        {
-            if (!string.IsNullOrWhiteSpace(PlayerName) && PlayerName != _defaultNameText)
-                File.AppendAllText(Path.Combine(ConfigurationManager.AppSettings["PlayerNamePath"] ?? ".", "players.txt"), PlayerName + Environment.NewLine);
-
-            PlayerName = _defaultNameText;
-
-            base.GoToNext();
-        }
     }
 }
