@@ -7,7 +7,7 @@ namespace Abc.NCrafts.App.ViewModels.Questions
 {
     public class Question
     {
-        private readonly Markdown _markdown = new Markdown();
+        private readonly Markdown _markdown = new();
         private string _htmlHelpContent;
 
         public Question(QuestionLevel level)
@@ -16,7 +16,7 @@ namespace Abc.NCrafts.App.ViewModels.Questions
         }
 
         public QuestionLevel Level { get; }
-        public List<Answer> Answers { get; }= new List<Answer>();
+        public List<Answer> Answers { get; } = new();
         public IReadOnlyCollection<Answer> SelectedAnswers { get; set; } = Array.Empty<Answer>();
 
         public Answer Answer1 => Answers.FirstOrDefault();
@@ -25,7 +25,7 @@ namespace Abc.NCrafts.App.ViewModels.Questions
 
         public string MarkdownHelpContent { get; set; }
 
-        public string HtmlHelpContent => _htmlHelpContent ?? (_htmlHelpContent = CreateHtmlHelpContent());
+        public string HtmlHelpContent => _htmlHelpContent ??= CreateHtmlHelpContent();
 
         private string CreateHtmlHelpContent()
         {
@@ -39,15 +39,13 @@ namespace Abc.NCrafts.App.ViewModels.Questions
             for (var index = 0; index < Answers.Count - 1; index++)
             {
                 var randomIndex = Random.Shared.Next(index, Answers.Count);
-                var tmp = Answers[index];
-                Answers[index] = Answers[randomIndex];
-                Answers[randomIndex] = tmp;
+                (Answers[index], Answers[randomIndex]) = (Answers[randomIndex], Answers[index]);
             }
         }
 
         public bool IsSelectedAnswerValid()
         {
-            return Answers.Where(x => x.IsCorrect).All(x => SelectedAnswers.Contains(x));
+            return Answers.Where(x => x.IsCorrect).ToHashSet().SetEquals(SelectedAnswers);
         }
     }
 }

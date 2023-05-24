@@ -9,7 +9,8 @@
              xmlns:svgc="http://sharpvectors.codeplex.com/svgc/"
              xmlns:app="clr-namespace:Abc.NCrafts.App"
              mc:Ignorable="d"
-             d:DesignHeight="1091.045" d:DesignWidth="1400" d:DataContext="{d:DesignInstance viewModels:Performance2GamePage}"
+             d:DesignWidth="1200" d:DesignHeight="800"
+             d:DataContext="{d:DesignInstance viewModels:Performance2GamePage}"
              x:Name="gameView"
              Loaded="OnLoaded">
 
@@ -23,82 +24,57 @@
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="../SharedResources.xaml" />
             </ResourceDictionary.MergedDictionaries>
-            <BooleanToVisibilityConverter x:Key="VisibilityConverter"/>
+            <BooleanToVisibilityConverter x:Key="VisibilityConverter" />
             <app:ReverseBooleanToVisibilityConverter x:Key="ReverseVisibilityConverter" />
         </ResourceDictionary>
     </UserControl.Resources>
 
     <Grid Background="White">
-
         <Grid.RowDefinitions>
             <RowDefinition Height="180" />
-            <RowDefinition Height="45*" />
+            <RowDefinition Height="*" />
             <RowDefinition Height="80" />
         </Grid.RowDefinitions>
 
-        <Border Grid.ColumnSpan="4" Grid.Row="0" Background="#FFB800" Margin="0 0 0 0">
+        <Border Grid.Row="0" Background="#FFB800" Margin="0 0 0 0">
             <Border.Effect>
                 <DropShadowEffect Direction="270" Opacity="0.3" ShadowDepth="3" />
             </Border.Effect>
             <StackPanel Orientation="Horizontal" Margin="20" HorizontalAlignment="Center">
-                <svgc:SvgViewbox Stretch="Uniform" Source="../Images/Performance.svg" Margin="0,0,30,0"/>
+                <svgc:SvgViewbox Stretch="Uniform" Source="../Images/Performance.svg" Margin="0,0,30,0" />
                 <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center"
                            FontSize="60" FontFamily="Segoe UI Light" Margin="10">
-                    <Run Text="{Binding Path=QuestionNumber, Mode=OneWay}" />
-                    <Run>. Which code is more likely to run faster?</Run>
+                    <Run Text="{Binding Path=QuestionNumber, Mode=OneWay}" /><Run>. Which code is more likely to run faster?</Run>
                 </TextBlock>
             </StackPanel>
         </Border>
 
-        <Grid Grid.ColumnSpan="3" Grid.Row="1" VerticalAlignment="Stretch" IsSharedSizeScope="True">
+        <DockPanel Grid.Row="1">
+            <Button DockPanel.Dock="Bottom" Style="{StaticResource codeButtonStyle}" Command="{Binding UndefinedAnswerClick}" Margin="10">
+                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center"
+                           FontSize="60" FontFamily="Segoe UI Light" Margin="50" Text="It's pretty much the same" />
+            </Button>
 
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition />
-                <ColumnDefinition />
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*" />
-                <RowDefinition Height="Auto"/>
-            </Grid.RowDefinitions>
-
-            <Button Grid.Column="0" Style="{StaticResource codeButtonStyle}" Command="{Binding Answer1Click}" Margin="10">
-                <Viewbox Stretch="Uniform">
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition SharedSizeGroup="col" />
-                        </Grid.ColumnDefinitions>
-                        <Grid.RowDefinitions>
-                            <RowDefinition SharedSizeGroup="row" />
-                        </Grid.RowDefinitions>
+            <UniformGrid Rows="1">
+                <Button Style="{StaticResource codeButtonStyle}" Command="{Binding Answer1Click}" Margin="10">
+                    <Viewbox Stretch="Uniform">
                         <avalonEdit:TextEditor views:AvalonEditExtensions.Text="{Binding Answer1Text}"
                                                SyntaxHighlighting="{Binding SyntaxHighlighting}"
                                                views:AvalonEditExtensions.HighlightedLines="{Binding Answer1HighlightedLines}" />
-                    </Grid>
-                </Viewbox>
+                    </Viewbox>
+                </Button>
 
-            </Button>
-            <Button Grid.Column="1" Style="{StaticResource codeButtonStyle}" Command="{Binding Answer2Click}" Margin="10">
-                <Viewbox Stretch="Uniform">
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition SharedSizeGroup="col" />
-                        </Grid.ColumnDefinitions>
-                        <Grid.RowDefinitions>
-                            <RowDefinition SharedSizeGroup="row" />
-                        </Grid.RowDefinitions>
+                <Button Style="{StaticResource codeButtonStyle}" Command="{Binding Answer2Click}" Margin="10">
+                    <Viewbox Stretch="Uniform">
                         <avalonEdit:TextEditor views:AvalonEditExtensions.Text="{Binding Answer2Text}"
                                                SyntaxHighlighting="{Binding SyntaxHighlighting}"
                                                views:AvalonEditExtensions.HighlightedLines="{Binding Answer2HighlightedLines}" />
-                    </Grid>
-                </Viewbox>
-            </Button>
-            <Button Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="1" Style="{StaticResource codeButtonStyle}" Command="{Binding UndefinedAnswerClick}" Margin="10">
-            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center"
-                       FontSize="60" FontFamily="Segoe UI Light" Margin="50" Text="It's pretty much the same"/>
-            </Button>
-        </Grid>
+                    </Viewbox>
+                </Button>
+            </UniformGrid>
+        </DockPanel>
 
-        <Border Grid.ColumnSpan="4" Grid.Row="2" Background="#565656">
+        <Border Grid.Row="2" Background="#565656">
             <Border.Effect>
                 <DropShadowEffect Direction="90" Opacity="0.3" ShadowDepth="3" />
             </Border.Effect>
@@ -111,16 +87,16 @@
                     <ColumnDefinition Width="Auto" />
                 </Grid.ColumnDefinitions>
 
-                <Image Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Left" Source="../Images/AbamLogo.png" RenderOptions.BitmapScalingMode="HighQuality" Width="256" Margin="20"/>
+                <Image Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Left" Source="../Images/AbamLogo.png" RenderOptions.BitmapScalingMode="HighQuality" Width="256" Margin="20" />
 
                 <StackPanel Grid.Column="0" Grid.ColumnSpan="4" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Center">
                     <TextBlock FontSize="25" FontFamily="Segoe UI Light" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,0,10,0">Difficulty:</TextBlock>
-                    <svgc:SvgViewbox Stretch="Uniform" Source="../Images/WhiteFilledStar.svg" Height="30" Visibility="{Binding IsEasyQuestion, Converter={StaticResource VisibilityConverter}}" Margin="2"/>
-                    <svgc:SvgViewbox Stretch="Uniform" Source="../Images/WhiteEmptyStar.svg" Height="30" Visibility="{Binding IsEasyQuestion, Converter={StaticResource ReverseVisibilityConverter}}" Margin="2"/>
-                    <svgc:SvgViewbox Stretch="Uniform" Source="../Images/WhiteFilledStar.svg" Height="30" Visibility="{Binding IsMediumQuestion, Converter={StaticResource VisibilityConverter}}" Margin="2"/>
-                    <svgc:SvgViewbox Stretch="Uniform" Source="../Images/WhiteEmptyStar.svg" Height="30" Visibility="{Binding IsMediumQuestion, Converter={StaticResource ReverseVisibilityConverter}}" Margin="2"/>
-                    <svgc:SvgViewbox Stretch="Uniform" Source="../Images/WhiteFilledStar.svg" Height="30" Visibility="{Binding IsHardQuestion, Converter={StaticResource VisibilityConverter}}" Margin="2"/>
-                    <svgc:SvgViewbox Stretch="Uniform" Source="../Images/WhiteEmptyStar.svg" Height="30" Visibility="{Binding IsHardQuestion, Converter={StaticResource ReverseVisibilityConverter}}"/>
+                    <svgc:SvgViewbox Stretch="Uniform" Source="../Images/WhiteFilledStar.svg" Height="30" Visibility="{Binding IsEasyQuestion, Converter={StaticResource VisibilityConverter}}" Margin="2" />
+                    <svgc:SvgViewbox Stretch="Uniform" Source="../Images/WhiteEmptyStar.svg" Height="30" Visibility="{Binding IsEasyQuestion, Converter={StaticResource ReverseVisibilityConverter}}" Margin="2" />
+                    <svgc:SvgViewbox Stretch="Uniform" Source="../Images/WhiteFilledStar.svg" Height="30" Visibility="{Binding IsMediumQuestion, Converter={StaticResource VisibilityConverter}}" Margin="2" />
+                    <svgc:SvgViewbox Stretch="Uniform" Source="../Images/WhiteEmptyStar.svg" Height="30" Visibility="{Binding IsMediumQuestion, Converter={StaticResource ReverseVisibilityConverter}}" Margin="2" />
+                    <svgc:SvgViewbox Stretch="Uniform" Source="../Images/WhiteFilledStar.svg" Height="30" Visibility="{Binding IsHardQuestion, Converter={StaticResource VisibilityConverter}}" Margin="2" />
+                    <svgc:SvgViewbox Stretch="Uniform" Source="../Images/WhiteEmptyStar.svg" Height="30" Visibility="{Binding IsHardQuestion, Converter={StaticResource ReverseVisibilityConverter}}" />
                 </StackPanel>
 
                 <Button Grid.Column="2"
@@ -131,7 +107,7 @@
                         Margin="10 0"
                         Background="#626262"
                         ToolTip="Show help content. It will give you the solution." />
-                
+
                 <Button Grid.Column="3"
                         Command="{Binding GoToNextCommand}"
                         Content="Stop this madness" Width="224" Height="50"
@@ -140,6 +116,7 @@
 
             </Grid>
         </Border>
+
         <Border Background="#7E000000" Grid.Row="0" Grid.Column="0" Grid.RowSpan="3" Visibility="{Binding IsHelpVisible, Converter={StaticResource VisibilityConverter}}" MouseDown="HtmlHelpClick" IsVisibleChanged="OnIsVisibleChanged">
             <Border Width="760" Height="420" VerticalAlignment="Center" HorizontalAlignment="Center" Background="#FFF" Padding="10">
                 <Border.Effect>
@@ -149,7 +126,7 @@
                     <Border DockPanel.Dock="Bottom">
                         <Button HorizontalAlignment="Right" Command="{Binding CloseHelp}" SnapsToDevicePixels="True">Close</Button>
                     </Border>
-                    <WebBrowser x:Name="_webBrowser" LoadCompleted="OnWebBrowserLoaded"/>
+                    <WebBrowser x:Name="_webBrowser" LoadCompleted="OnWebBrowserLoaded" />
                 </DockPanel>
             </Border>
         </Border>

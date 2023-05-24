@@ -27,20 +27,11 @@ namespace Abc.NCrafts.App.ViewModels
 
         public int[] Answer2HighlightedLines => GetHighlightedLines(Quiz.CurrentQuestion.Answer2);
 
-        public ICommand Answer1Click
-        {
-            get { return new ActionCommand(() => SelectAnswers(Quiz.CurrentQuestion.Answer1)); }
-        }
+        public ICommand Answer1Click => new ActionCommand(() => SelectAnswers(Quiz.CurrentQuestion.Answer1));
 
-        public ICommand Answer2Click
-        {
-            get { return new ActionCommand(() => SelectAnswers(Quiz.CurrentQuestion.Answer2)); }
-        }
+        public ICommand Answer2Click => new ActionCommand(() => SelectAnswers(Quiz.CurrentQuestion.Answer2));
 
-        public ICommand UndefinedAnswerClick
-        {
-            get { return new ActionCommand(() => SelectAnswers(Quiz.CurrentQuestion.Answer1, Quiz.CurrentQuestion.Answer2)); }
-        }
+        public ICommand UndefinedAnswerClick => new ActionCommand(() => SelectAnswers(Quiz.CurrentQuestion.Answer1, Quiz.CurrentQuestion.Answer2));
 
         private void SelectAnswers(params Answer[] answers)
         {
@@ -71,7 +62,7 @@ namespace Abc.NCrafts.App.ViewModels
             handler?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        public IHighlightingDefinition SyntaxHighlighting => _syntaxHighlighting ?? (_syntaxHighlighting = SyntaxHighLightingLoader.LoadHighlightingDefinition());
+        public IHighlightingDefinition SyntaxHighlighting => _syntaxHighlighting ??= SyntaxHighLightingLoader.LoadHighlightingDefinition();
 
         public int QuestionNumber => Quiz.CurrentQuestionIndex + 1;
 
@@ -83,10 +74,7 @@ namespace Abc.NCrafts.App.ViewModels
 
         public string HtmlHelpContent => MainViewModel.Quiz.CurrentQuestion.HtmlHelpContent;
 
-        public ICommand CloseHelp
-        {
-            get { return new ActionCommand(() => IsHelpVisible = false); }
-        }
+        public ICommand CloseHelp => new ActionCommand(() => IsHelpVisible = false);
 
         public bool IsEasyQuestion => MainViewModel.Quiz.CurrentQuestion.Level >= QuestionLevel.Level1;
         public bool IsMediumQuestion => MainViewModel.Quiz.CurrentQuestion.Level >= QuestionLevel.Level2;
