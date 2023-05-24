@@ -8,25 +8,28 @@
         xmlns:app="clr-namespace:Abc.NCrafts.App"
         xmlns:viewModels="clr-namespace:Abc.NCrafts.App.ViewModels"
         xmlns:views="clr-namespace:Abc.NCrafts.App.Views"
-        
-        Title="MainWindow" WindowStyle="None" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowState="Maximized" Height="720" Width="1280" >
+        Title="ABC NewCrafts Quiz"
+        WindowStyle="None" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowState="Maximized"
+        Height="720" Width="1280">
+
     <Window.Resources>
         <DataTemplate DataType="{x:Type viewModels:WelcomePage}">
-            <views:WelcomeView></views:WelcomeView>
+            <views:WelcomeView />
         </DataTemplate>
         <DataTemplate DataType="{x:Type viewModels:AllocationGamePage}">
-            <views:AllocationGameView></views:AllocationGameView>
+            <views:AllocationGameView />
         </DataTemplate>
         <DataTemplate DataType="{x:Type viewModels:Performance1GamePage}">
-            <views:Performance1GameView></views:Performance1GameView>
+            <views:Performance1GameView />
         </DataTemplate>
         <DataTemplate DataType="{x:Type viewModels:Performance2GamePage}">
-            <views:Performance2GameView></views:Performance2GameView>
+            <views:Performance2GameView />
         </DataTemplate>
         <DataTemplate DataType="{x:Type viewModels:EndPage}">
-            <views:EndView></views:EndView>
+            <views:EndView />
         </DataTemplate>
     </Window.Resources>
-    
-    <ContentControl Content="{Binding CurrentPage}"></ContentControl>
+
+    <ContentControl Content="{Binding CurrentPage}" />
+
 </Window>
