@@ -41,7 +41,7 @@
                 <DropShadowEffect Direction="270" Opacity="0.3" ShadowDepth="3" />
             </Border.Effect>
             <StackPanel Orientation="Horizontal" Margin="20" HorizontalAlignment="Center">
-                <svgc:SvgViewbox Stretch="Uniform" Source="../Images/Performance.svg" Margin="0,0,30,0" />
+                <svgc:SvgViewbox Stretch="Uniform" Source="/Images/Performance.svg" Margin="0,0,30,0" />
                 <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center"
                            FontSize="60" FontFamily="Segoe UI Light" Margin="10">
                     <Run Text="{Binding Path=QuestionNumber, Mode=OneWay}" /><Run>. Which code is more likely to run faster?</Run>
@@ -80,16 +80,16 @@
                     <ColumnDefinition Width="Auto" />
                 </Grid.ColumnDefinitions>
 
-                <Image Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Left" Source="../Images/AbamLogo.png" RenderOptions.BitmapScalingMode="HighQuality" Width="256" Margin="20" />
+                <Image Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Left" Source="/Images/AbamLogo.png" RenderOptions.BitmapScalingMode="HighQuality" Width="256" Margin="20" />
 
                 <StackPanel Grid.Column="0" Grid.ColumnSpan="4" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Center">
                     <TextBlock FontSize="25" FontFamily="Segoe UI Light" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,0,10,0">Difficulty:</TextBlock>
-                    <svgc:SvgViewbox Stretch="Uniform" Source="../Images/WhiteFilledStar.svg" Height="30" Visibility="{Binding IsEasyQuestion, Converter={StaticResource VisibilityConverter}}" Margin="2" />
-                    <svgc:SvgViewbox Stretch="Uniform" Source="../Images/WhiteEmptyStar.svg" Height="30" Visibility="{Binding IsEasyQuestion, Converter={StaticResource ReverseVisibilityConverter}}" Margin="2" />
-                    <svgc:SvgViewbox Stretch="Uniform" Source="../Images/WhiteFilledStar.svg" Height="30" Visibility="{Binding IsMediumQuestion, Converter={StaticResource VisibilityConverter}}" Margin="2" />
-                    <svgc:SvgViewbox Stretch="Uniform" Source="../Images/WhiteEmptyStar.svg" Height="30" Visibility="{Binding IsMediumQuestion, Converter={StaticResource ReverseVisibilityConverter}}" Margin="2" />
-                    <svgc:SvgViewbox Stretch="Uniform" Source="../Images/WhiteFilledStar.svg" Height="30" Visibility="{Binding IsHardQuestion, Converter={StaticResource VisibilityConverter}}" Margin="2" />
-                    <svgc:SvgViewbox Stretch="Uniform" Source="../Images/WhiteEmptyStar.svg" Height="30" Visibility="{Binding IsHardQuestion, Converter={StaticResource ReverseVisibilityConverter}}" />
+                    <svgc:SvgViewbox Stretch="Uniform" Source="/Images/WhiteFilledStar.svg" Height="30" Visibility="{Binding IsEasyQuestion, Converter={StaticResource VisibilityConverter}}" Margin="2" />
+                    <svgc:SvgViewbox Stretch="Uniform" Source="/Images/WhiteEmptyStar.svg" Height="30" Visibility="{Binding IsEasyQuestion, Converter={StaticResource ReverseVisibilityConverter}}" Margin="2" />
+                    <svgc:SvgViewbox Stretch="Uniform" Source="/Images/WhiteFilledStar.svg" Height="30" Visibility="{Binding IsMediumQuestion, Converter={StaticResource VisibilityConverter}}" Margin="2" />
+                    <svgc:SvgViewbox Stretch="Uniform" Source="/Images/WhiteEmptyStar.svg" Height="30" Visibility="{Binding IsMediumQuestion, Converter={StaticResource ReverseVisibilityConverter}}" Margin="2" />
+                    <svgc:SvgViewbox Stretch="Uniform" Source="/Images/WhiteFilledStar.svg" Height="30" Visibility="{Binding IsHardQuestion, Converter={StaticResource VisibilityConverter}}" Margin="2" />
+                    <svgc:SvgViewbox Stretch="Uniform" Source="/Images/WhiteEmptyStar.svg" Height="30" Visibility="{Binding IsHardQuestion, Converter={StaticResource ReverseVisibilityConverter}}" />
                 </StackPanel>
 
                 <Button Grid.Column="2"

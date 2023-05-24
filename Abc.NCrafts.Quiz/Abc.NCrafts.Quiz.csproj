@@ -14,14 +14,4 @@
     <PackageReference Include="BenchmarkDotNet" Version="0.13.5" />
   </ItemGroup>
   
-  <ItemGroup>
-    <Folder Include="Allocation\Level1" />
-    <Folder Include="Allocation\Level3" />
-    <Folder Include="Allocation\Level2" />
-    <Folder Include="Performance2\Level2" />
-    <Folder Include="Performance2\Level3" />
-    <Folder Include="Performance1\Level2" />
-    <Folder Include="Performance1\Level3" />
-  </ItemGroup>
-  
 </Project>

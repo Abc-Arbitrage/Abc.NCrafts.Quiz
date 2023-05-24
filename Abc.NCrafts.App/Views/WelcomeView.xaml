@@ -30,22 +30,22 @@
                 <DropShadowEffect Direction="270" Opacity="0.3" ShadowDepth="3" />
             </Border.Effect>
             <StackPanel Orientation="Horizontal" Margin="20" HorizontalAlignment="Center">
-                <Image VerticalAlignment="Center" Source="../Images/AbcLogo.png" RenderOptions.BitmapScalingMode="HighQuality" Width="200" Height="200" />
+                <Image VerticalAlignment="Center" Source="/Images/AbcLogo.png" RenderOptions.BitmapScalingMode="HighQuality" Width="200" Height="200" />
                 <Label Content="NewCrafts Quiz" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="120" FontFamily="Segoe UI Light" Margin="10" Padding="40 0 0 0" />
             </StackPanel>
         </Border>
 
-        <flowControls:FlowItemsControl2D  Grid.Row="1" VerticalAlignment="Center" >
+        <flowControls:FlowItemsControl2D Grid.Row="1" VerticalAlignment="Center">
 
-            <Button Command="{Binding StartPerformance2QuizCommand}" VerticalAlignment="Stretch" Margin="0" Padding="0 20 0 20" Height="700" >
+            <Button Command="{Binding StartPerformance2QuizCommand}" VerticalAlignment="Stretch" Margin="0" Padding="0 20 0 20" Height="700">
                 <Viewbox Stretch="Uniform">
                     <Grid>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto" />
                             <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
                         <Border Grid.Column="0" Margin="20 20 10 20" Width="150" Height="150">
-                            <svgc:SvgViewbox Stretch="Uniform" Source="../Images/Performance.svg" />
+                            <svgc:SvgViewbox Stretch="Uniform" Source="/Images/Performance.svg" />
                         </Border>
                         <StackPanel Grid.Column="1" Margin="10 15 20 20">
                             <TextBlock FontSize="50" HorizontalAlignment="Left">Performance 201</TextBlock>
@@ -56,26 +56,26 @@
                             </TextBlock>
                             <StackPanel Orientation="Horizontal" Margin="0,30,0,0">
                                 <TextBlock FontSize="25" HorizontalAlignment="Left" Margin="0,0,10,0">Difficulty:</TextBlock>
-                                <svgc:SvgViewbox Stretch="Uniform" Source="../Images/BlackFilledStar.svg" Height="30" Margin="2"/>
-                                <svgc:SvgViewbox Stretch="Uniform" Source="../Images/BlackFilledStar.svg" Height="30" Margin="2"/>
-                                <svgc:SvgViewbox Stretch="Uniform" Source="../Images/BlackFilledStar.svg" Height="30" Margin="2"/>
-                                <svgc:SvgViewbox Stretch="Uniform" Source="../Images/BlackFilledStar.svg" Height="30" Margin="2"/>
-                                <svgc:SvgViewbox Stretch="Uniform" Source="../Images/BlackEmptyStar.svg" Height="30"/>
+                                <svgc:SvgViewbox Stretch="Uniform" Source="/Images/BlackFilledStar.svg" Height="30" Margin="2" />
+                                <svgc:SvgViewbox Stretch="Uniform" Source="/Images/BlackFilledStar.svg" Height="30" Margin="2" />
+                                <svgc:SvgViewbox Stretch="Uniform" Source="/Images/BlackFilledStar.svg" Height="30" Margin="2" />
+                                <svgc:SvgViewbox Stretch="Uniform" Source="/Images/BlackFilledStar.svg" Height="30" Margin="2" />
+                                <svgc:SvgViewbox Stretch="Uniform" Source="/Images/BlackEmptyStar.svg" Height="30" />
                             </StackPanel>
                         </StackPanel>
                     </Grid>
                 </Viewbox>
             </Button>
 
-            <Button Command="{Binding StartAllocationQuizCommand}" VerticalAlignment="Stretch" Margin="0" Padding="0" Height="700" >
+            <Button Command="{Binding StartAllocationQuizCommand}" VerticalAlignment="Stretch" Margin="0" Padding="0" Height="700">
                 <Viewbox Stretch="Uniform">
                     <Grid>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto" />
                             <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
                         <Border Grid.Column="0" Margin="20 20 10 20" Width="150" Height="150">
-                            <svgc:SvgViewbox Stretch="Uniform" Source="../Images/Allocations.svg" />
+                            <svgc:SvgViewbox Stretch="Uniform" Source="/Images/Allocations.svg" />
                         </Border>
                         <StackPanel Grid.Column="1" Margin="10 15 20 20">
                             <TextBlock FontSize="50" HorizontalAlignment="Left">Allocations</TextBlock>
@@ -86,40 +86,40 @@
                             </TextBlock>
                             <StackPanel Orientation="Horizontal" Margin="0,30,0,0">
                                 <TextBlock FontSize="25" HorizontalAlignment="Left" Margin="0,0,10,0">Difficulty:</TextBlock>
-                                <svgc:SvgViewbox Stretch="Uniform" Source="../Images/BlackFilledStar.svg" Height="30" Margin="2"/>
-                                <svgc:SvgViewbox Stretch="Uniform" Source="../Images/BlackFilledStar.svg" Height="30" Margin="2"/>
-                                <svgc:SvgViewbox Stretch="Uniform" Source="../Images/BlackFilledStar.svg" Height="30" Margin="2"/>
-                                <svgc:SvgViewbox Stretch="Uniform" Source="../Images/BlackFilledStar.svg" Height="30" Margin="2"/>
-                                <svgc:SvgViewbox Stretch="Uniform" Source="../Images/BlackEmptyStar.svg" Height="30"/>
+                                <svgc:SvgViewbox Stretch="Uniform" Source="/Images/BlackFilledStar.svg" Height="30" Margin="2" />
+                                <svgc:SvgViewbox Stretch="Uniform" Source="/Images/BlackFilledStar.svg" Height="30" Margin="2" />
+                                <svgc:SvgViewbox Stretch="Uniform" Source="/Images/BlackFilledStar.svg" Height="30" Margin="2" />
+                                <svgc:SvgViewbox Stretch="Uniform" Source="/Images/BlackFilledStar.svg" Height="30" Margin="2" />
+                                <svgc:SvgViewbox Stretch="Uniform" Source="/Images/BlackEmptyStar.svg" Height="30" />
                             </StackPanel>
                         </StackPanel>
                     </Grid>
                 </Viewbox>
             </Button>
-            <Button Command="{Binding StartPerformance1QuizCommand}" VerticalAlignment="Stretch" Margin="0" Padding="0 20 0 20" Height="700" >
+            <Button Command="{Binding StartPerformance1QuizCommand}" VerticalAlignment="Stretch" Margin="0" Padding="0 20 0 20" Height="700">
                 <Viewbox Stretch="Uniform">
                     <Grid>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto" />
                             <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
                         <Border Grid.Column="0" Margin="20 20 10 20" Width="150" Height="150">
-                            <svgc:SvgViewbox Stretch="Uniform" Source="../Images/Performance.svg" />
+                            <svgc:SvgViewbox Stretch="Uniform" Source="/Images/Performance.svg" />
                         </Border>
                         <StackPanel Grid.Column="1" Margin="10 15 20 20">
                             <TextBlock FontSize="50" HorizontalAlignment="Left">Performance 101</TextBlock>
                             <TextBlock FontSize="25" Foreground="White" TextWrapping="Wrap">
-                                    <Run>Find the code that is most likely</Run>
-                                    <LineBreak />
-                                    <Run>to perform better</Run>
+                                <Run>Find the code that is most likely</Run>
+                                <LineBreak />
+                                <Run>to perform better</Run>
                             </TextBlock>
                             <StackPanel Orientation="Horizontal" Margin="0,30,0,0">
                                 <TextBlock FontSize="25" HorizontalAlignment="Left" Margin="0,0,10,0">Difficulty:</TextBlock>
-                                <svgc:SvgViewbox Stretch="Uniform" Source="../Images/BlackFilledStar.svg" Height="30" Margin="2"/>
-                                <svgc:SvgViewbox Stretch="Uniform" Source="../Images/BlackFilledStar.svg" Height="30" Margin="2"/>
-                                <svgc:SvgViewbox Stretch="Uniform" Source="../Images/BlackFilledStar.svg" Height="30" Margin="2"/>
-                                <svgc:SvgViewbox Stretch="Uniform" Source="../Images/BlackEmptyStar.svg" Height="30"  Margin="2"/>
-                                <svgc:SvgViewbox Stretch="Uniform" Source="../Images/BlackEmptyStar.svg" Height="30"/>
+                                <svgc:SvgViewbox Stretch="Uniform" Source="/Images/BlackFilledStar.svg" Height="30" Margin="2" />
+                                <svgc:SvgViewbox Stretch="Uniform" Source="/Images/BlackFilledStar.svg" Height="30" Margin="2" />
+                                <svgc:SvgViewbox Stretch="Uniform" Source="/Images/BlackFilledStar.svg" Height="30" Margin="2" />
+                                <svgc:SvgViewbox Stretch="Uniform" Source="/Images/BlackEmptyStar.svg" Height="30" Margin="2" />
+                                <svgc:SvgViewbox Stretch="Uniform" Source="/Images/BlackEmptyStar.svg" Height="30" />
                             </StackPanel>
                         </StackPanel>
                     </Grid>
@@ -128,7 +128,7 @@
 
         </flowControls:FlowItemsControl2D>
 
-        <Border Grid.ColumnSpan="2" Grid.Row="4" Background="#565656" Margin="0 0 0 0">
+        <Border Grid.Row="2" Background="#565656" Margin="0 0 0 0">
             <Border.Effect>
                 <DropShadowEffect Direction="90" Opacity="0.3" ShadowDepth="3" />
             </Border.Effect>

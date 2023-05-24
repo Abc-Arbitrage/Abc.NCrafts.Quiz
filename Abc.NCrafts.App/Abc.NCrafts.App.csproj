@@ -9,23 +9,16 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Reference Include="System.Configuration" />
-    <Reference Include="System.Xaml" />
-    <Reference Include="WindowsBase" />
-    <Reference Include="PresentationCore" />
-    <Reference Include="PresentationFramework" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="AvalonEdit" Version="6.3.0.90" />
-    <PackageReference Include="FlowControls-wpf" Version="1.0.0" />
-    <PackageReference Include="FontAwesome.WPF" Version="4.7.0.9" />
+    <PackageReference Include="FlowControls-wpf" Version="1.0.0" NoWarn="NU1701" />
+    <PackageReference Include="FontAwesome.WPF" Version="4.7.0.9" NoWarn="NU1701" />
     <PackageReference Include="MarkdownSharp" Version="2.0.5" />
-    <PackageReference Include="Fody" Version="6.2.0" PrivateAssets="all" />
-    <PackageReference Include="PropertyChanged.Fody" Version="3.2.8" PrivateAssets="all" />
-    <PackageReference Include="SharpVectors" Version="1.0" />
+    <PackageReference Include="Fody" Version="6.7.0" PrivateAssets="all" />
+    <PackageReference Include="PropertyChanged.Fody" Version="4.1.0" PrivateAssets="all" />
+    <PackageReference Include="SharpVectors.Wpf" Version="1.8.1" />
     <PackageReference Include="System.Configuration.ConfigurationManager" Version="7.0.0" />
   </ItemGroup>
+
   <ItemGroup>
     <Resource Include="**\*.png" />
     <Resource Include="**\*.svg" />
@@ -33,11 +26,6 @@
 
   <ItemGroup>
     <EmbeddedResource Include="**\*.xshd" />
-  </ItemGroup>
-  
-  <ItemGroup>
-    <None Remove="Images\ProNetMemory.png" />
-    <None Remove="Images\WithingsMove.png" />
   </ItemGroup>
 
 </Project>

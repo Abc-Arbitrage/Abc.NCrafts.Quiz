@@ -29,7 +29,7 @@
                 <DropShadowEffect Direction="270" Opacity="0.3" ShadowDepth="3" />
             </Border.Effect>
             <StackPanel Orientation="Horizontal" Margin="20" HorizontalAlignment="Center">
-                <Image VerticalAlignment="Center" Source="../Images/AbcLogo.png" RenderOptions.BitmapScalingMode="HighQuality" Width="128" Height="128" />
+                <Image VerticalAlignment="Center" Source="/Images/AbcLogo.png" RenderOptions.BitmapScalingMode="HighQuality" Width="128" Height="128" />
                 <Label Content="Thanks for having played!" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="60" FontFamily="Segoe UI Light" Margin="10" Padding="40 0 0 0" />
             </StackPanel>
         </Border>
@@ -40,7 +40,7 @@
             </TextBlock>
 
             <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" HorizontalAlignment="Center" Margin="20">
-                <Image VerticalAlignment="Center" Source="../Images/WithingsMove.png" RenderOptions.BitmapScalingMode="HighQuality" Width="350" Height="350" >
+                <Image VerticalAlignment="Center" Source="/Images/WithingsMove.png" RenderOptions.BitmapScalingMode="HighQuality" Width="350" Height="350" >
                     <Image.RenderTransform>
                         <TranslateTransform x:Name="leftImageTransform" X="0" Y="0"/>
                     </Image.RenderTransform>
@@ -58,9 +58,9 @@
                         </EventTrigger>
                     </Image.Triggers>
                 </Image>
-                <Image VerticalAlignment="Center" Source="../Images/MiBox.png" RenderOptions.BitmapScalingMode="HighQuality" Width="350" Height="350" >
+                <Image VerticalAlignment="Center" Source="/Images/MiBox.png" RenderOptions.BitmapScalingMode="HighQuality" Width="350" Height="350" >
                 </Image>
-                <Image VerticalAlignment="Center" Source="../Images/ProNetMemory.png" RenderOptions.BitmapScalingMode="HighQuality" Width="350" Height="350" Stretch="Uniform" >
+                <Image VerticalAlignment="Center" Source="/Images/ProNetMemory.png" RenderOptions.BitmapScalingMode="HighQuality" Width="350" Height="350" Stretch="Uniform" >
                     <Image.RenderTransform>
                         <TranslateTransform x:Name="rightImageTransform" X="0" Y="0"/>
                     </Image.RenderTransform>
