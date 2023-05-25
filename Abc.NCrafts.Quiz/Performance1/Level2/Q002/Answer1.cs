@@ -2,7 +2,6 @@
 
 namespace Abc.NCrafts.Quiz.Performance1.Level2.Q002
 {
-    [CorrectAnswer]
     public class Answer1
     {
         private static int[] _items;

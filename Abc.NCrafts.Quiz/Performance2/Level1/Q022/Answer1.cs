@@ -3,6 +3,7 @@ using System.Linq;
 
 namespace Abc.NCrafts.Quiz.Performance2.Level1.Q022
 {
+    [CorrectAnswer]
     public class Answer1
     {
         private static readonly List<int> _values;
@@ -16,11 +17,12 @@ namespace Abc.NCrafts.Quiz.Performance2.Level1.Q022
         public static void Run()
         {
             var sum = 0L;
+            var values = _values;
 
             // begin
-            for (var i = 0; i < _values.Count; i++)
+            for (var i = 0; i < values.Count; i++)
             {
-                sum += _values[i];
+                sum += values[i];
             }
             // end
 

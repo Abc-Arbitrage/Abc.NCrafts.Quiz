@@ -3,6 +3,7 @@ using System.Runtime.CompilerServices;
 
 namespace Abc.NCrafts.Quiz.Performance1.Level2.Q002
 {
+    [CorrectAnswer]
     public class Answer2
     {
         private static int[] _items;
